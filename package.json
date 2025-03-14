@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "email": "tsc-node emailSender.ts",
+    "start": "ts-node backend/src/app.ts"
   },
   "repository": {
     "type": "git",
@@ -18,11 +20,17 @@
   "homepage": "https://github.com/Sleepyy17/UNIHACK2025#readme",
   "description": "",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "morgan": "^1.10.0",
     "nodemailer": "^6.10.0"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "@types/dotenv": "^6.1.1",
+    "@types/express": "^5.0.0",
+    "@types/morgan": "^1.9.9",
     "@types/nodemailer": "^6.4.17"
   }
 }
