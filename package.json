@@ -1,0 +1,28 @@
+{
+  "name": "unihack2025",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sleepyy17/UNIHACK2025.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sleepyy17/UNIHACK2025/issues"
+  },
+  "homepage": "https://github.com/Sleepyy17/UNIHACK2025#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "nodemailer": "^6.10.0"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/nodemailer": "^6.4.17"
+  }
+}

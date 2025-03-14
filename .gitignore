@@ -1,0 +1,24 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+
+# Compiled files
+*.tsbuildinfo
+
+# IDE files
+.vscode/
+.idea/
+.DS_Store
+
+# Misc
+*.bak
+*.swp
