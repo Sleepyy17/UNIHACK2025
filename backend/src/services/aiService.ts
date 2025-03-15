@@ -17,7 +17,7 @@ const pinecone = new Pinecone({
 });
 
 // Initialize Pinecone index
-const index = pinecone.Index('hackathon');
+const index = pinecone.Index('unihack');
 
 const SYSTEM_PROMPT = `You are an expert project management assistant that helps an Async team create structured and relevant stand-up summaries from user logs.
 
@@ -171,7 +171,7 @@ async function storeChatMemory(
             input: message,
         });
 
-        await index.upsert([{
+        const res = await index.namespace('ns1').upsert([{
             id: `${userId}-${groupId}-${Date.now()}`,
             values: embedding.data[0].embedding,
             metadata: {
@@ -182,6 +182,7 @@ async function storeChatMemory(
                 timestamp: new Date().toISOString()
             }
         }]);
+        console.log(res);
     } catch (error) {
         console.error('Error storing chat memory:', error);
         // Don't throw the error as this is not critical for the main functionality

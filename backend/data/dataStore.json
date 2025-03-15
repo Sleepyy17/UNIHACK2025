@@ -23,6 +23,98 @@
       "updatedAt": "2025-03-15T12:24:43.283Z"
     }
   ],
-  "standups": [],
-  "blockers": []
+  "standups": [
+    {
+      "logId": "6db8b246-c37b-4043-be87-adfaf11574e1",
+      "userId": "b3cd11b9-5023-4f75-986f-435788647636",
+      "userName": "John Doe",
+      "groupId": "4599e87c-90f8-48d1-8489-f71c00ddd5ce",
+      "groupName": "Frontend Team",
+      "workDone": "Today I implemented user authentication and fixed some bugs. Tomorrow I'll work on the group management features. I'm blocked by waiting for API access.",
+      "workNext": "- Working on group management features",
+      "blockers": [],
+      "createdAt": "2025-03-15T17:22:40.354Z",
+      "updatedAt": "2025-03-15T17:22:40.354Z"
+    },
+    {
+      "logId": "378988b4-5f73-439a-b5af-f26ef2904bb6",
+      "userId": "b3cd11b9-5023-4f75-986f-435788647636",
+      "userName": "John Doe",
+      "groupId": "4599e87c-90f8-48d1-8489-f71c00ddd5ce",
+      "groupName": "Frontend Team",
+      "workDone": "Today I implemented user authentication and fixed some bugs. Tomorrow I'll work on the group management features. I'm blocked by waiting for API access.",
+      "workNext": "- *Working on group management features*",
+      "blockers": [
+        "*Waiting for API access (John Doe, Empty)*"
+      ],
+      "createdAt": "2025-03-15T17:29:15.841Z",
+      "updatedAt": "2025-03-15T17:29:15.841Z"
+    },
+    {
+      "logId": "22f3b716-7ef9-4693-adec-fa3280225da0",
+      "userId": "b3cd11b9-5023-4f75-986f-435788647636",
+      "userName": "John Doe",
+      "groupId": "4599e87c-90f8-48d1-8489-f71c00ddd5ce",
+      "groupName": "Frontend Team",
+      "workDone": "Today I implemented user authentication and fixed some bugs. Tomorrow I'll work on the group management features. I'm blocked by waiting for API access.",
+      "workNext": "- Working on group management features",
+      "blockers": [
+        "Waiting for API access (John Doe)"
+      ],
+      "createdAt": "2025-03-15T17:38:56.817Z",
+      "updatedAt": "2025-03-15T17:38:56.817Z"
+    },
+    {
+      "logId": "050962af-9ba6-4d08-bf5b-0a234320cadc",
+      "userId": "b3cd11b9-5023-4f75-986f-435788647636",
+      "userName": "John Doe",
+      "groupId": "4599e87c-90f8-48d1-8489-f71c00ddd5ce",
+      "groupName": "Frontend Team",
+      "workDone": "Today I implemented user authentication and fixed some bugs. Tomorrow I'll work on the group management features. I'm blocked by waiting for API access.",
+      "workNext": "- Working on group management",
+      "blockers": [
+        "*Waiting for API access* (John Doe)"
+      ],
+      "createdAt": "2025-03-15T17:39:50.236Z",
+      "updatedAt": "2025-03-15T17:39:50.236Z"
+    }
+  ],
+  "blockers": [
+    {
+      "blockerId": "f2707724-980d-46e9-af92-21450b842261",
+      "userId": "b3cd11b9-5023-4f75-986f-435788647636",
+      "userName": "John Doe",
+      "groupId": "4599e87c-90f8-48d1-8489-f71c00ddd5ce",
+      "groupName": "Frontend Team",
+      "description": "*Waiting for API access (John Doe, Empty)*",
+      "priority": "medium",
+      "status": "active",
+      "createdAt": "2025-03-15T17:29:15.841Z",
+      "updatedAt": "2025-03-15T17:29:15.841Z"
+    },
+    {
+      "blockerId": "a8842bc4-eb3d-4f1d-98cf-d43b7f345d17",
+      "userId": "b3cd11b9-5023-4f75-986f-435788647636",
+      "userName": "John Doe",
+      "groupId": "4599e87c-90f8-48d1-8489-f71c00ddd5ce",
+      "groupName": "Frontend Team",
+      "description": "Waiting for API access (John Doe)",
+      "priority": "medium",
+      "status": "active",
+      "createdAt": "2025-03-15T17:38:56.817Z",
+      "updatedAt": "2025-03-15T17:38:56.817Z"
+    },
+    {
+      "blockerId": "3ae95a86-d9b0-4d08-9efe-d789e757ac0c",
+      "userId": "b3cd11b9-5023-4f75-986f-435788647636",
+      "userName": "John Doe",
+      "groupId": "4599e87c-90f8-48d1-8489-f71c00ddd5ce",
+      "groupName": "Frontend Team",
+      "description": "*Waiting for API access* (John Doe)",
+      "priority": "medium",
+      "status": "active",
+      "createdAt": "2025-03-15T17:39:50.236Z",
+      "updatedAt": "2025-03-15T17:39:50.236Z"
+    }
+  ]
 }
