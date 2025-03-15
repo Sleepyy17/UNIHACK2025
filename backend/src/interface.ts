@@ -10,7 +10,7 @@ export interface User {
     name: string;
     email: string;
     password: string;
-    groups: string[];
+    groups: Group[];
 }
 
 export interface MemberStatus {

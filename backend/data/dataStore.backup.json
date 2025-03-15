@@ -1,6 +1,73 @@
 {
-  "users": [],
-  "groups": [],
+  "users": [
+    {
+      "userId": "9fb67853-c315-4ee1-9324-5568356b2d26",
+      "name": "ajl",
+      "email": "ajl@gmail.com",
+      "password": "$2a$10$SN5NGQSoag79cV238mdE2.8GT7UKzCALVX.dkvRoVaYI5y0n8kVaC",
+      "groups": []
+    },
+    {
+      "userId": "96cc4b1b-cb8d-46b8-a5b1-246dd0a83b20",
+      "name": "b",
+      "email": "b@b.b",
+      "password": "$2a$10$cN4nQMgy59S9tr5d9zBky./4e2fT0AOmQs75d/dAYLxUtrqfb0JnC",
+      "groups": [
+        {
+          "groupId": "0f0f8d28-1294-4943-a572-f4a791b2b898",
+          "groupName": "gfdgdfg",
+          "description": "dfgdg",
+          "ownerId": "96cc4b1b-cb8d-46b8-a5b1-246dd0a83b20",
+          "ownerName": "b",
+          "members": [
+            "96cc4b1b-cb8d-46b8-a5b1-246dd0a83b20"
+          ],
+          "memberNames": [
+            "b"
+          ],
+          "memberStatuses": [
+            {
+              "userId": "96cc4b1b-cb8d-46b8-a5b1-246dd0a83b20",
+              "userName": "b",
+              "currentStatus": "Just joined the group",
+              "lastUpdated": "2025-03-15T21:27:38.450Z"
+            }
+          ],
+          "activeBlockers": [],
+          "recentSummaries": [],
+          "createdAt": "2025-03-15T21:27:38.450Z",
+          "updatedAt": "2025-03-15T21:27:38.450Z"
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "groupId": "0f0f8d28-1294-4943-a572-f4a791b2b898",
+      "groupName": "gfdgdfg",
+      "description": "dfgdg",
+      "ownerId": "96cc4b1b-cb8d-46b8-a5b1-246dd0a83b20",
+      "ownerName": "b",
+      "members": [
+        "96cc4b1b-cb8d-46b8-a5b1-246dd0a83b20"
+      ],
+      "memberNames": [
+        "b"
+      ],
+      "memberStatuses": [
+        {
+          "userId": "96cc4b1b-cb8d-46b8-a5b1-246dd0a83b20",
+          "userName": "b",
+          "currentStatus": "Just joined the group",
+          "lastUpdated": "2025-03-15T21:27:38.450Z"
+        }
+      ],
+      "activeBlockers": [],
+      "recentSummaries": [],
+      "createdAt": "2025-03-15T21:27:38.450Z",
+      "updatedAt": "2025-03-15T21:27:38.450Z"
+    }
+  ],
   "standups": [],
   "blockers": []
 }

@@ -18,9 +18,9 @@ export const createGroup = async (req: Request, res: Response) => {
         if (!user) {
             return res.status(404).json({ error: 'User not found' });
         }
-
+        const groupId = uuidv4()
         const newGroup: Group = {
-            groupId: uuidv4(),
+            groupId: groupId,
             groupName,
             description,
             ownerId: userId,
@@ -41,6 +41,7 @@ export const createGroup = async (req: Request, res: Response) => {
 
         const { groups } = getData();
         groups.push(newGroup);
+        user.groups.push(newGroup);
         saveDataStore();
 
         res.status(201).json(newGroup);
@@ -81,7 +82,7 @@ export const addMember = async (req: Request, res: Response) => {
         }
 
         group.members.push(memberIdToAdd);
-        userToAdd.groups.push(groupId);
+        userToAdd.groups.push(group);
         saveDataStore();
 
         res.json(group);
@@ -137,8 +138,8 @@ export const addMemberByName = async (req: Request, res: Response) => {
 
         // Add group to user's groups
         const user = users.find(u => u.userId === userToAdd.userId);
-        if (user && !user.groups.includes(groupId)) {
-            user.groups.push(groupId);
+        if (user && !user.groups.includes(group)) {
+            user.groups.push(group);
         }
 
         saveDataStore();
@@ -320,8 +321,8 @@ export const joinGroup = async (req: Request, res: Response) => {
         group.updatedAt = new Date();
 
         // Add group to user's groups
-        if (!user.groups.includes(groupId)) {
-            user.groups.push(groupId);
+        if (!user.groups.includes(group)) {
+            user.groups.push(group);
         }
 
         saveDataStore();

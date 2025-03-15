@@ -15,6 +15,7 @@ function getRandomInt(min, max) {
 export default function Profile({token}) {
     const [userData, setUserData] = React.useState('');
     const [openJoin, setOpenJoin] = React.useState(false);
+    const [addMembers, setAddMembers] = React.useState([])
     const handleClickOpenJoin = () => {
       setOpenJoin(true);
     };
@@ -23,6 +24,15 @@ export default function Profile({token}) {
       setOpenJoin(false);
     };
   
+    const [openCreate, setOpenCreate] = React.useState(false);
+    const handleClickOpenCreate = () => {
+      setOpenCreate(true);
+    };
+  
+    const handleCloseCreate = () => {
+      setOpenCreate(false);
+    };
+
     const teamDisplay = {
         width: '100%',
         display: 'flex',
@@ -57,14 +67,22 @@ export default function Profile({token}) {
         console.log(error.response.data.server);
       })
     }, []);
+
+    React.useEffect(() => {
+      displayTeams();
+    }, [userData, addMembers])
     
+    React.useEffect(() => {
+      displayTeams();
+    }, [addMembers])
+
     const displayTeams = () => {
       if (userData && userData.groups.length == 0) return (<Typography variant="h5" style={{padding:'8px'}}>BRuh Join a team</Typography>);
       else {
         return (
           <Box sx={teamDisplay}>
             {userData && userData.groups.map((team) => (<>
-            <Link to={`/Teams/${team.Name}`}>
+            <Link to={`/Teams/${team.groupName}`}>
                 <div class="main">
                   <div class="card" style={{backgroundImage: `url(/imgs/BackImages/${getRandomInt(1, 10)}.jpg)`, backgroundSize: 'cover'}}>
                     <div class="card_content" >
@@ -285,8 +303,8 @@ export default function Profile({token}) {
                       </svg>
                     </div>
                     <div class="text">
-                      <div class="text_m">{team.Name}</div>
-                      <div class="text_s">{team.admin}</div>
+                      <div class="text_m">{team.groupName}</div>
+                      <div class="text_s">{team.ownerName}</div>
                     </div>
                   </div>
                   <div class="btns">
@@ -326,6 +344,18 @@ export default function Profile({token}) {
                         component: 'form',
                         onSubmit: (event) => {
                           event.preventDefault();
+                          const formData = new FormData(event.currentTarget);
+                          const group = formData.get('group-name');
+                          axios.post(`${API_URL}/api/groups/${group}/join`, {
+                            'X-User-Id': token,
+                            'groupId': group
+                          }).then((response) => {
+                            const updatedUser = {
+                              ...userData,
+                              groups: { ...group, ...response.data }
+                            };
+                            setUserData(updatedUser)
+                          }).catch((error) => {console.log(error.response.data.server)})
                           handleCloseJoin();
                         },
                       },
@@ -333,9 +363,9 @@ export default function Profile({token}) {
                     sx={{
                       '& .MuiDialog-container': {
                         '& .MuiPaper-root': {
-                          bgcolor:'#e2dacd',
-                          width: 550,
-                          height: 225,
+                          bgcolor:'#d38d48',
+                          width: 400,
+                          height: 170,
                         },
                       },
                     }}
@@ -346,27 +376,125 @@ export default function Profile({token}) {
                         required
                         fullWidth
                         margin='dense'
-                        id='presentation-title'
-                        name='presentation-title'
-                        label='Presentation Title'
+                        id='group-name'
+                        name='group-name'
+                        label='Group Name'
                         variant='standard'
                         autoComplete='off'
                         sx={{
                           '& label.Mui-focused': {
-                            color: '#41444d'
+                            color: '#693502'
                           },
                           '& .MuiInput-underline:after': {
-                            borderBottomColor: '#41444d'
+                            borderBottomColor: '#693502'
                           },
                         }}
                       />
                     </DialogContent>
-                    <DialogActions>
-                      <Button onClick={handleCloseJoin}>Cancel</Button>
-                      <Button type="submit">Join</Button>
+                    <DialogActions sx={{justifyContent: 'space-between'}}>
+                      <Button sx ={{color: 'white'}}onClick={handleCloseJoin}>Cancel</Button>
+                      <Button sx={{color: '#693502'}}type="submit">Join</Button>
                     </DialogActions>
                   </Dialog>
-                  <Button sx={{width: '80%', fontSize: '1.3em', bgcolor: '#693502'}} variant='contained'>Create a Team</Button>
+                  <Button onClick={handleClickOpenCreate} sx={{width: '80%', fontSize: '1.3em', bgcolor: '#693502'}} variant='contained'>Create a Team</Button>
+                  <Dialog
+                    open={openCreate}
+                    onClose={handleCloseCreate}
+                    slotProps={{
+                      paper: {
+                        component: 'form',
+                        onSubmit: (event) => {
+                          event.preventDefault();
+                          const formData = new FormData(event.currentTarget);
+                          const group = formData.get('group-name');
+                          const description = formData.get('description')
+                          const users = formData.get('users').split(',');
+                          axios.post(`${API_URL}/api/groups/create`, 
+                            {
+                              "groupName": group,
+                              "description": description,
+                            },
+                            {
+                              headers: {
+                                'X-User-Id': token
+                              },
+                            }
+                          ).then((response) => {setAddMembers(response.data.memberNames)})
+                          .catch((error) => {console.log(error.response.data.server)})
+                          handleCloseCreate();
+                        },
+                      },
+                    }}
+                    sx={{
+                      '& .MuiDialog-container': {
+                        '& .MuiPaper-root': {
+                          bgcolor:'#d38d48',
+                          width: 400,
+                          height: 300,
+                        },
+                      },
+                    }}
+                  >
+                    <DialogContent>
+                      <TextField
+                        required
+                        fullWidth
+                        margin='dense'
+                        id='group-name'
+                        name='group-name'
+                        label='Group Name'
+                        variant='standard'
+                        autoComplete='off'
+                        sx={{
+                          '& label.Mui-focused': {
+                            color: '#693502'
+                          },
+                          '& .MuiInput-underline:after': {
+                            borderBottomColor: '#693502'
+                          },
+                        }}
+                      />
+                      <TextField
+                        required
+                        fullWidth
+                        margin='dense'
+                        id='description'
+                        name='description'
+                        label='Description'
+                        variant='standard'
+                        autoComplete='off'
+                        sx={{
+                          '& label.Mui-focused': {
+                            color: '#693502'
+                          },
+                          '& .MuiInput-underline:after': {
+                            borderBottomColor: '#693502'
+                          },
+                        }}
+                      />
+                      <TextField
+                        fullWidth
+                        margin='dense'
+                        id='users'
+                        name='users'
+                        label='Add Users'
+                        variant='standard'
+                        autoComplete='off'
+                        sx={{
+                          '& label.Mui-focused': {
+                            color: '#693502'
+                          },
+                          '& .MuiInput-underline:after': {
+                            borderBottomColor: '#693502'
+                          },
+                        }}
+                      />
+                    </DialogContent>
+                    <DialogActions sx={{justifyContent: 'space-between'}}>
+                      <Button sx ={{color: 'white'}}onClick={handleCloseCreate}>Cancel</Button>
+                      <Button sx={{color: '#693502'}}type="submit">Create</Button>
+                    </DialogActions>
+                  </Dialog>
                 </Box>
               </Box>
               <Box sx={teamContainer}>
