@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import {Typography, Box} from '@mui/material';
+import {TextField, Typography, Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle} from '@mui/material';
 import axios from 'axios';
 import HourglassTopIcon from '@mui/icons-material/HourglassTop';
 import "./style.css";
@@ -13,7 +13,16 @@ function getRandomInt(min, max) {
   let randomInt = getRandomInt(1, 10);
 
 export default function Profile({token}) {
-    const [teamData, setTeamData] = React.useState([]);
+    const [userData, setUserData] = React.useState('');
+    const [openJoin, setOpenJoin] = React.useState(false);
+    const handleClickOpenJoin = () => {
+      setOpenJoin(true);
+    };
+  
+    const handleCloseJoin = () => {
+      setOpenJoin(false);
+    };
+  
     const teamDisplay = {
         width: '100%',
         display: 'flex',
@@ -36,54 +45,25 @@ export default function Profile({token}) {
         width: '20vw',
     }
 
-
     const teamContainer = {
         width: '59vw'
     }
 
     React.useEffect(() => {
-        axios.get(`${API_URL}/api/users/me`, {headers: {'X-User-Id': token}})
-        .then((response) => {
-          console.log(response.data)
-
-        })
-        // setTeamData([
-        //     {
-        //         Name: "OvercookedCookies",
-        //         numMembers: 4,
-        //         numBlockers: 100,
-        //         admin: "Ashwin T"
-        //     },{
-        //         Name: "UNIHACK2025",
-        //         numMembers: 1,
-        //         numBlockers: 0,
-        //         admin: "You!"
-
-        //     },{
-        //         Name: "Game Soc",
-        //         numMembers: 3,
-        //         numBlockers: 10,
-        //         admin: "Vincent N"
-        //     },{
-        //         Name: "Charity Committee",
-        //         numMembers: 2,
-        //         numBlockers: 20,
-        //         admin: "Michael D"
-        //     },{
-        //         Name: "Cooked Cookies",
-        //         numMembers: 100,
-        //         numBlockers: 4,
-        //         admin: "Niwhsa T"
-        //     }
-        // ]);
+      axios.get(`${API_URL}/api/users/me`, {headers: {'X-User-Id': token}})
+      .then((response) => {
+        setUserData(response.data);
+      }).catch((error) => {
+        console.log(error.response.data.server);
+      })
     }, []);
     
     const displayTeams = () => {
-      if (teamData.length == 0) return (<Typography variant="h5" style={{padding:'8px'}}>BRuh Join a team</Typography>);
+      if (userData && userData.groups.length == 0) return (<Typography variant="h5" style={{padding:'8px'}}>BRuh Join a team</Typography>);
       else {
         return (
           <Box sx={teamDisplay}>
-            {teamData.map((team) => (<>
+            {userData && userData.groups.map((team) => (<>
             <Link to={`/Teams/${team.Name}`}>
                 <div class="main">
                   <div class="card" style={{backgroundImage: `url(/imgs/BackImages/${getRandomInt(1, 10)}.jpg)`, backgroundSize: 'cover'}}>
@@ -329,13 +309,64 @@ export default function Profile({token}) {
         <Box sx={{height: '100%'}}>
           <Box sx={contentContainer}>
             <Box sx={{display: 'flex', justifyContent: 'center', width: '100%', marginTop: '4%', gap: '10%'}}>
-              <Box> 
+              <Box sx={{display: 'flex', flexDirection: 'column', height: '100%', gap: '10px'}}> 
                 <Box>
                   <img src="/imgs/pfp.svg" style={pfpStyle}></img>
                 </Box>
                 <Box style={{fontSize: '50px', padding:'8px', color:'black', fontFamily: 'Heebo', fontWeight: 'bold'}}>
-                    Brian Nguyen<br></br>
-                    Teams: {teamData.length}
+                    {userData && userData.name}<br></br>
+                </Box>
+                <Box sx={{display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', gap: '15px'}}>
+                  <Button onClick={handleClickOpenJoin} sx={{width: '60%', height: '60px', fontSize: '1.2em', bgcolor: '#d38d48'}} variant='contained'>Join Team</Button>
+                  <Dialog
+                    open={openJoin}
+                    onClose={handleCloseJoin}
+                    slotProps={{
+                      paper: {
+                        component: 'form',
+                        onSubmit: (event) => {
+                          event.preventDefault();
+                          handleCloseJoin();
+                        },
+                      },
+                    }}
+                    sx={{
+                      '& .MuiDialog-container': {
+                        '& .MuiPaper-root': {
+                          bgcolor:'#e2dacd',
+                          width: 550,
+                          height: 225,
+                        },
+                      },
+                    }}
+                    
+                  >
+                    <DialogContent>
+                      <TextField
+                        required
+                        fullWidth
+                        margin='dense'
+                        id='presentation-title'
+                        name='presentation-title'
+                        label='Presentation Title'
+                        variant='standard'
+                        autoComplete='off'
+                        sx={{
+                          '& label.Mui-focused': {
+                            color: '#41444d'
+                          },
+                          '& .MuiInput-underline:after': {
+                            borderBottomColor: '#41444d'
+                          },
+                        }}
+                      />
+                    </DialogContent>
+                    <DialogActions>
+                      <Button onClick={handleCloseJoin}>Cancel</Button>
+                      <Button type="submit">Join</Button>
+                    </DialogActions>
+                  </Dialog>
+                  <Button sx={{width: '80%', fontSize: '1.3em', bgcolor: '#693502'}} variant='contained'>Create a Team</Button>
                 </Box>
               </Box>
               <Box sx={teamContainer}>
