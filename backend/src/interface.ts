@@ -20,7 +20,9 @@ export interface Group {
     groupName: string;
     description: string;
     ownerId: string;
+    ownerName: string;
     members: string[];
+    memberNames: string[];
     createdAt: Date;
     updatedAt: Date;
 }
@@ -28,7 +30,9 @@ export interface Group {
 export interface Standup {
     logId: string;
     userId: string;
+    userName: string;
     groupId: string;
+    groupName: string;
     workDone: string;
     workNext: string;
     blockers: string[];
@@ -39,7 +43,9 @@ export interface Standup {
 export interface Blocker {
     blockerId: string;
     userId: string;
+    userName: string;
     groupId: string;
+    groupName: string;
     description: string;
     priority: 'low' | 'medium' | 'high';
     status: 'active' | 'resolved';

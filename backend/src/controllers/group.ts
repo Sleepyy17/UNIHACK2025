@@ -13,12 +13,20 @@ export const createGroup = async (req: Request, res: Response) => {
             return res.status(400).json({ error: 'Missing required fields' });
         }
 
+        const { users } = getData();
+        const user = users.find(u => u.userId === userId);
+        if (!user) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+
         const newGroup: Group = {
             groupId: uuidv4(),
             groupName,
             description,
             ownerId: userId,
+            ownerName: user.name,
             members: [userId],
+            memberNames: [user.name],
             createdAt: new Date(),
             updatedAt: new Date()
         };

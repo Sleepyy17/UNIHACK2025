@@ -64,11 +64,17 @@ components:
         ownerId:
           type: string
           format: uuid
+        ownerName:
+          type: string
         members:
           type: array
           items:
             type: string
             format: uuid
+        memberNames:
+          type: array
+          items:
+            type: string
         createdAt:
           type: string
           format: date-time
@@ -85,9 +91,13 @@ components:
         userId:
           type: string
           format: uuid
+        userName:
+          type: string
         groupId:
           type: string
           format: uuid
+        groupName:
+          type: string
         workDone:
           type: string
         workNext:
@@ -112,9 +122,13 @@ components:
         userId:
           type: string
           format: uuid
+        userName:
+          type: string
         groupId:
           type: string
           format: uuid
+        groupName:
+          type: string
         description:
           type: string
         priority:
@@ -663,6 +677,73 @@ paths:
                   $ref: '#/components/schemas/Blocker'
         '403':
           description: Not authorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/chat/standup:
+    post:
+      summary: Process standup message with AI
+      tags:
+        - AI Chat
+      security:
+        - UserIdAuth: []
+      parameters:
+        - $ref: '#/components/parameters/UserIdHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - groupId
+                - message
+              properties:
+                groupId:
+                  type: string
+                  format: uuid
+                  example: "123e4567-e89b-12d3-a456-426614174000"
+                message:
+                  type: string
+                  example: "Today I implemented user authentication and fixed some bugs. Tomorrow I'll work on the group management features. I'm blocked by waiting for API access."
+      responses:
+        '200':
+          description: Message processed successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  summary:
+                    type: string
+                    description: AI-generated summary of the standup
+                  newStatus:
+                    type: string
+                    description: Current working status
+                  blockers:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        summary:
+                          type: string
+                        userName:
+                          type: string
+                        blockingUser:
+                          type: string
+                          nullable: true
+                  standup:
+                    $ref: '#/components/schemas/Standup'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Unauthorized
           content:
             application/json:
               schema:
