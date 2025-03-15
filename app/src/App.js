@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material';
+import { createGlobalStyle } from 'styled-components'; 
 
 import PageManager from './PageManager';
 
@@ -12,13 +13,28 @@ const theme = createTheme({
     ].join(','),
   },});
 
+const GlobalStyle = createGlobalStyle`
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  #root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+`
+
 function App() {
   return (
     <>
-    <Router>
-      <PageManager/>
-    </Router>
-   </>
+      <GlobalStyle/>
+      <Router>
+        <PageManager/>
+      </Router>
+    </>
   );
 }
 

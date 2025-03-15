@@ -8,7 +8,6 @@ export const userRegister = (email: string, password: string) => {
 
     const userId = dataStore.users.length;
     dataStore.users.push({ userId, email, password });
-  
     return { userId };
 };
 

@@ -58,7 +58,6 @@ function Profile (props) {
         justifyContent: 'space-between',
         fontFamily: 'Inter',
         backgroundColor: 'rgb(232, 200, 168)'
-
     }
 
     const pfpStyle = {

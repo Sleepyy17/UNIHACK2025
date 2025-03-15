@@ -9,10 +9,13 @@ import Profile from './pages/Profile'
 import OverCookedCookies from './pages/OverCookedCookies';
 import Landing from './pages/Landing';
 import GroupsLanding from './pages/GroupsLanding';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
 
 const PageManager = () => {
     // Setting token for login permissions
     const [token, setToken] = useState(undefined);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const checkToken = localStorage.getItem('token');
@@ -22,25 +25,6 @@ const PageManager = () => {
       }, []);
 
     // This helps us with links to other pages
-    const navigate = useNavigate();
-
-    const logout = async () => {
-        // const response = await fetch(`${LOCAL_SERVER}/v2/auth/logout`, {
-        //   method: 'PUT',
-        //   headers: {
-        //     token
-        //   }
-        // });
-        // const data = await response.json();
-        // if (data.error) {
-        //   alert(data.error);
-        // } else {
-        //   console.log('Logged out!');
-        //   setToken(null);
-        //   localStorage.removeItem('token');
-        //   navigate('/');
-        // }
-      };
 
       const headerStyle = {
         display: 'flex',
@@ -53,7 +37,7 @@ const PageManager = () => {
 
     return (
         <>
-         <>
+          <>
           <div style={headerStyle}>
             <Box  sx={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
               <Link to="/">
@@ -78,8 +62,8 @@ const PageManager = () => {
             :
 
           <Box>
-          <Link to="/profile">
-            <Button className='cta' variant="contained" style={{ color: 'white', margin:'10px'}} ><span class="span">REGISTER</span>
+          <Link to="/register">
+            <Button onClick={() => {}} className='cta' variant="contained" style={{ background: '#d38d48', color: 'white', margin:'10px'}} ><span class="span">Register</span>
   <span class="second">
     <svg
       width="50px"
@@ -114,8 +98,8 @@ const PageManager = () => {
     </svg>
   </span></Button>
           </Link>
-          <Link to="/profile">
-            <Button className='cta' variant="contained" style={{ color: 'white', margin:'10px'}} ><span class="span">LOGIN</span>
+          <Link to="/login">
+            <Button onClick={() => {console.log('hello')}} className='cta' variant="contained" style={{ background: '#693502',color: 'white', margin:'10px'}} ><span class="span">LOGIN</span>
   <span class="second">
     <svg
       width="50px"
@@ -163,35 +147,11 @@ const PageManager = () => {
                  <Route path="/" element={<Landing token={token} setToken={setToken}/>}></Route>
                 <Route path="/Teams/:TeamName" element={<GroupsLanding token={token} setToken={setToken}/>}></Route>
                 <Route path="/profile" element={<Profile token={token} setToken={setToken}/>}></Route>
+                <Route path="/login" element={<LoginPage setToken={setToken}/>}></Route>
+                <Route path="/register" element={<RegisterPage setToken={setToken}/>}></Route>
             </Routes>
         </>
     )
-    //     <>
-        
-    //         {token
-    //             ? (
-                  
-    //             )
-    //             : (
-    //                 <>
-    //                   <div style={{ display: 'flex', alignItems: 'center', backgroundColor:'#292A3B' }}>
-    //                     <img src="darklogo.png" alt="LOGO" style={{ width: '100px', height: 'auto', margin: '10px' }}/>
-    //                     <Link to="/register">
-    //                           <Button variant="contained" style={{ color: 'white', margin:'10px'}}>Register</Button>
-    //                       </Link>
-    //                       &nbsp;&nbsp;
-    //                       <Link to="/login">
-    //                           <Button variant="contained" style={{ color: 'white', margin:'10px'}}>Login</Button>
-    //                       </Link>
-    //                   </div>
-    //                 </>
-    //             )
-    //         }
-
-            
-    //     </>
-        
-    // )
 }
 
 export default PageManager;
