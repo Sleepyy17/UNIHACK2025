@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { processStandupMessage } from '../services/aiService';
 import { getData, saveDataStore } from '../dataStore';
-import { Blocker } from '../interface';
+import { Blocker, Standup } from '../interface';
 import { v4 as uuidv4 } from 'uuid';
 
 export const chatWithAI = async (req: Request, res: Response) => {
@@ -14,6 +14,15 @@ export const chatWithAI = async (req: Request, res: Response) => {
             return res.status(400).json({ error: 'Missing required fields' });
         }
 
+        // Get user and group info
+        const { users, groups } = getData();
+        const user = users.find(u => u.userId === userId);
+        const group = groups.find(g => g.groupId === groupId);
+
+        if (!user || !group) {
+            return res.status(404).json({ error: 'User or group not found' });
+        }
+
         // Process message with AI
         const aiResponse = await processStandupMessage(userId, groupId, message);
 
@@ -21,10 +30,12 @@ export const chatWithAI = async (req: Request, res: Response) => {
         const { standups, blockers } = getData();
 
         // Create new standup
-        const newStandup = {
+        const newStandup: Standup = {
             logId: uuidv4(),
             userId,
+            userName: user.name,
             groupId,
+            groupName: group.groupName,
             workDone: message,
             workNext: aiResponse.newStatus,
             blockers: aiResponse.blockers.map(b => b.summary),
@@ -39,7 +50,9 @@ export const chatWithAI = async (req: Request, res: Response) => {
             const newBlocker: Blocker = {
                 blockerId: uuidv4(),
                 userId,
+                userName: user.name,
                 groupId,
+                groupName: group.groupName,
                 description: blockerInfo.summary,
                 priority: 'medium', // Default priority
                 status: 'active',
