@@ -12,11 +12,16 @@ export const addBlocker = async (req: Request, res: Response) => {
             return res.status(400).json({ error: 'Missing required fields' });
         }
 
-        const { groups } = getData();
+        const { groups, users } = getData();
         const group = groups.find(g => g.groupId === groupId);
+        const user = users.find(u => u.userId === userId);
 
         if (!group) {
             return res.status(404).json({ error: 'Group not found' });
+        }
+
+        if (!user) {
+            return res.status(404).json({ error: 'User not found' });
         }
 
         if (!group.members.includes(userId)) {
@@ -26,7 +31,9 @@ export const addBlocker = async (req: Request, res: Response) => {
         const newBlocker: Blocker = {
             blockerId: uuidv4(),
             userId,
+            userName: user.name,
             groupId,
+            groupName: group.groupName,
             description,
             priority,
             status: 'active',

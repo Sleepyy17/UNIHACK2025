@@ -1,56 +1,6 @@
 {
-  "users": [
-    {
-      "userId": "b3cd11b9-5023-4f75-986f-435788647636",
-      "name": "John Doe",
-      "email": "john@example.com",
-      "password": "$2a$10$HZXZAmaFgOjH2JXzvQE0a..IrpfSsYG.5ZWG5BDycqM/1lDc9hkja",
-      "groups": [],
-      "createdAt": "2025-03-15T12:24:01.021Z",
-      "updatedAt": "2025-03-15T12:24:01.021Z"
-    },
-    {
-      "userId": "190c5460-f11f-4dea-9625-1b30b0e3d0e6",
-      "name": "ajl",
-      "email": "ajl@gmail.com",
-      "password": "$2a$10$hqV.Q5MbbP8pb93.A7KvUOQRklcg9wCBsPBdwndBZAguek7GXvJpi",
-      "groups": []
-    },
-    {
-      "userId": "2d833e5d-6100-48df-9452-71ecac37d7bc",
-      "name": "b",
-      "email": "b@b.b",
-      "password": "$2a$10$t2/reOfOTKDoXoEllw09bOnabBjMhzap12dixrWUKXeh408NsKbXy",
-      "groups": []
-    },
-    {
-      "userId": "c704c031-acc9-443c-9479-383de52dde1d",
-      "name": "test",
-      "email": "test@test.c",
-      "password": "$2a$10$oOxdfW8NRZ4BUzxsh9ZLfOcz5P7pUprJ42NK69Ubd.Y.2eSa2t7xK",
-      "groups": []
-    },
-    {
-      "userId": "5cae0d28-14f8-40bc-b11e-a8c1651e38fc",
-      "name": "test",
-      "email": "test@test.com",
-      "password": "$2a$10$zmRYy92rvGKb1XeZllxh5.mf0jB.wW8lGflNqKMUGJT4CUIjBZOaS",
-      "groups": []
-    }
-  ],
-  "groups": [
-    {
-      "groupId": "4599e87c-90f8-48d1-8489-f71c00ddd5ce",
-      "groupName": "Frontend Team",
-      "description": "Daily standups for the frontend development team",
-      "ownerId": "b3cd11b9-5023-4f75-986f-435788647636",
-      "members": [
-        "b3cd11b9-5023-4f75-986f-435788647636"
-      ],
-      "createdAt": "2025-03-15T12:24:43.283Z",
-      "updatedAt": "2025-03-15T12:24:43.283Z"
-    }
-  ],
+  "users": [],
+  "groups": [],
   "standups": [],
   "blockers": []
 }

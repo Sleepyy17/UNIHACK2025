@@ -13,18 +13,40 @@ export interface User {
     groups: string[];
 }
 
+export interface MemberStatus {
+    userId: string;
+    userName: string;
+    currentStatus: string;
+    lastUpdated: Date;
+}
+
+export interface GroupSummary {
+    date: Date;
+    content: string;
+    generatedBy: string;
+}
+
 export interface Group {
     groupId: string;
     groupName: string;
     description: string;
     ownerId: string;
+    ownerName: string;
     members: string[];
+    memberNames: string[];
+    memberStatuses: MemberStatus[];
+    activeBlockers: Blocker[];
+    recentSummaries: GroupSummary[];
+    createdAt: Date;
+    updatedAt: Date;
 }
 
 export interface Standup {
     logId: string;
     userId: string;
+    userName: string;
     groupId: string;
+    groupName: string;
     workDone: string;
     workNext: string;
     blockers: string[];
@@ -35,26 +57,13 @@ export interface Standup {
 export interface Blocker {
     blockerId: string;
     userId: string;
+    userName: string;
     groupId: string;
+    groupName: string;
     description: string;
     priority: 'low' | 'medium' | 'high';
     status: 'active' | 'resolved';
     createdAt: Date;
     updatedAt: Date;
     resolvedAt?: Date;
-}
-
-export interface GroupSummary {
-    groupId: string;
-    groupName: string;
-    period: {
-        start: Date;
-        end: Date;
-    };
-    memberUpdates: {
-        userId: string;
-        name: string;
-        standups: Standup[];
-    }[];
-    activeBlockers: Blocker[];
 }

@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { v4 as uuidv4 } from 'uuid';
 import { getData, saveDataStore } from '../dataStore';
-import { Group, Standup } from '../interface';
+import { Group, Standup, MemberStatus, GroupSummary } from '../interface';
 import { isGroupOwner } from '../middleware/auth';
 
 export const createGroup = async (req: Request, res: Response) => {
@@ -13,12 +13,30 @@ export const createGroup = async (req: Request, res: Response) => {
             return res.status(400).json({ error: 'Missing required fields' });
         }
 
+        const { users } = getData();
+        const user = users.find(u => u.userId === userId);
+        if (!user) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+
         const newGroup: Group = {
             groupId: uuidv4(),
             groupName,
             description,
             ownerId: userId,
+            ownerName: user.name,
             members: [userId],
+            memberNames: [user.name],
+            memberStatuses: [{
+                userId,
+                userName: user.name,
+                currentStatus: 'Just joined the group',
+                lastUpdated: new Date()
+            }],
+            activeBlockers: [],
+            recentSummaries: [],
+            createdAt: new Date(),
+            updatedAt: new Date()
         };
 
         const { groups } = getData();
@@ -81,7 +99,7 @@ export const getGroupInfo = async (req: Request, res: Response) => {
             return res.status(400).json({ error: 'Missing required fields' });
         }
 
-        const { groups, users } = getData();
+        const { groups, users, standups, blockers } = getData();
         const group = groups.find(g => g.groupId === groupId);
 
         if (!group) {
@@ -92,20 +110,61 @@ export const getGroupInfo = async (req: Request, res: Response) => {
             return res.status(403).json({ error: 'Not a member of this group' });
         }
 
-        // Get member details
-        const memberDetails = group.members.map(memberId => {
+        // Update member statuses from latest standups
+        const updatedMemberStatuses: MemberStatus[] = group.members.map(memberId => {
             const member = users.find(u => u.userId === memberId);
-            return member ? {
-                userId: member.userId,
-                name: member.name,
-                email: member.email
-            } : null;
-        }).filter(Boolean);
+            const latestStandup = standups
+                .filter(s => s.userId === memberId && s.groupId === groupId)
+                .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())[0];
 
-        res.json({
-            ...group,
-            members: memberDetails
+            return {
+                userId: memberId,
+                userName: member?.name || 'Unknown',
+                currentStatus: latestStandup?.workNext || 'No status update',
+                lastUpdated: latestStandup?.createdAt || group.createdAt
+            };
         });
+
+        // Get active blockers for the group
+        const activeBlockers = blockers
+            .filter(b => b.groupId === groupId && b.status === 'active')
+            .sort((a, b) => {
+                const priorityOrder = { high: 3, medium: 2, low: 1 };
+                const priorityDiff = priorityOrder[b.priority] - priorityOrder[a.priority];
+                return priorityDiff || b.createdAt.getTime() - a.createdAt.getTime();
+            });
+
+        // Get recent standups and generate summary if needed
+        const recentStandups = standups
+            .filter(s => s.groupId === groupId)
+            .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
+            .slice(0, 10);
+
+        // Only add a new summary if there are new standups since last summary
+        const lastSummary = group.recentSummaries[0];
+        const newStandupsSinceLastSummary = recentStandups.some(
+            standup => !lastSummary || standup.createdAt > lastSummary.date
+        );
+
+        if (newStandupsSinceLastSummary) {
+            const newSummary: GroupSummary = {
+                date: new Date(),
+                content: `${recentStandups.length} recent updates, ${activeBlockers.length} active blockers`,
+                generatedBy: 'system'
+            };
+            group.recentSummaries.unshift(newSummary);
+            if (group.recentSummaries.length > 5) {
+                group.recentSummaries.pop(); // Keep only 5 most recent summaries
+            }
+        }
+
+        // Update group with latest data
+        group.memberStatuses = updatedMemberStatuses;
+        group.activeBlockers = activeBlockers;
+        group.updatedAt = new Date();
+        saveDataStore();
+
+        res.json(group);
     } catch (err) {
         res.status(500).json({ error: 'Error fetching group info' });
     }

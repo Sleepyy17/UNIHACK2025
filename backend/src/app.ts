@@ -9,9 +9,11 @@ import * as userController from './controllers/user';
 import * as groupController from './controllers/group';
 import * as standupController from './controllers/standup';
 import * as blockerController from './controllers/blocker';
+import * as aiChatController from './controllers/aiChat';
 import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
 import path from 'path';
+import { resetToDefault } from './controllers/admin';
 
 const app = express();
 
@@ -61,6 +63,13 @@ app.get('/api/summary/:groupId', auth, groupController.generateSummary);
 app.post('/api/blockers/add', auth, blockerController.addBlocker);
 app.put('/api/blockers/:blockerId/resolve', auth, blockerController.resolveBlocker);
 app.get('/api/blockers/:groupId', auth, blockerController.listActiveBlockers);
+
+// AI routes
+app.post('/api/chat/standup', auth, aiChatController.chatWithAI);
+
+// Admin routes
+app.post('/reset', resetToDefault);
+
 
 // Error handling middleware
 app.use((err: Error, req: Request, res: Response, next: Function) => {
