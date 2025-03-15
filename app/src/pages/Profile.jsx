@@ -44,9 +44,7 @@ function Profile (props) {
     }
 
     const contentContainer = {
-        padding: '5vw 10vw',
-        paddingRight: '5vw',
-        backgroundColor: '#333F46',
+        padding: '2.5vw',
         color: '#f0f0f0',
         display: 'flex',
         height: '80vh',
@@ -128,23 +126,28 @@ function Profile (props) {
     }
 
     return (
-        <>
-            <Box sx={contentContainer}>
-                <Box> 
-                    <Box>
-                        <img src="./imgs/pfp.svg" style={pfpStyle}></img>
+        <Box sx={{height: '100%', display: 'flex', flexDirection: 'column'}}>
+            <Box sx={{height: '60px'}}>
+                <Typography>Profile Icon</Typography>
+            </Box>
+            <Box sx={{background: ' linear-gradient(135deg, #0d1b65 0%, #3750de 100%);', height: '100%'}}>
+                <Box sx={contentContainer}>
+                    <Box> 
+                        <Box>
+                            <img src="./imgs/pfp.svg" style={pfpStyle}></img>
+                        </Box>
+                        <Box style={{fontSize: '2vw', padding:'8px', color:'white'}}>
+                            Brian Nguyen<br></br>
+                            Teams: {teamData.length}
+                        </Box>
+                        
                     </Box>
-                    <Box>
-                        Brian Nguyen<br></br>
-                        Teams: {teamData.length}
+                    <Box sx={teamContainer}>
+                        {displayTeams()}
                     </Box>
-                    
-                </Box>
-                <Box sx={teamContainer}>
-                    {displayTeams()}
                 </Box>
             </Box>
-        </>
+        </Box>
     )
 }
 
