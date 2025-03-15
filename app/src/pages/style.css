@@ -11,12 +11,13 @@ a {
   background-color: #070606;
   border-radius: 20px;
   padding: 20px;
+  height: 170px;
   
 }
 
 .card {
   width: 100%;
-  height: 10em;
+  height: 200px;
   background-color: #252525;
   border-radius: 20px;
   cursor: pointer;
@@ -39,7 +40,7 @@ a {
 
 .fullscreen {
   width: 1.5em;
-  height: 1.5em;
+  height: 200px;
   border-radius: 5px;
   background-color: #727890;
   margin: 1em;
@@ -61,7 +62,7 @@ a {
 .card_back {
   position: absolute;
   width: 15em;
-  height: 13em;
+  height:  200px;
   background-color: rgba(38, 35, 30, 0.575);
   border-radius: 7px;
   margin-top: -5em;

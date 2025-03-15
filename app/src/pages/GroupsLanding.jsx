@@ -1,8 +1,15 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { Button, TextField, Typography, Grid, Box, Modal, Alert, AlertTitle, colors } from '@mui/material'; 
+import { Button, TextField, Typography, Grid, Box, Modal, Alert, AlertTitle, colors, getAppBarUtilityClass } from '@mui/material'; 
 import { Padding } from '@mui/icons-material';
+
+import './group.css'
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
 function GroupsLanding (props) {
     const navigate = useNavigate();
@@ -21,26 +28,98 @@ function GroupsLanding (props) {
     };
     React.useEffect(() => {
         setGroupData({
-            name: 'OverCookedCookies',
+            name: groupName,
             members: [
+            {
+                name: 'Alice Johnson',
+                currentWork: 'Designing the homepage',
+                blocker: [
                 {
-                    name: 'Member 1',
-                    currentWork: 'Work 1',
-                    blocker: [
-                        {
-                            text: 'Blocker 1'
-                        }
-                    ]
-                },
-                {
-                    name: 'Member 2',
-                    currentWork: 'Work 2',
-                    blocker: [
-                        {
-                            text: 'Blocker 2'
-                        }
-                    ]
+                    enemy: 'Backend Integration',
+                    text: 'API endpoints not ready',
                 }
+                ]
+            },
+            {
+                name: 'Bob Smith',
+                currentWork: 'Setting up CI/CD pipeline',
+                blocker: [
+                {
+                    enemy: 'Deployment Issues',
+                    text: 'Server configuration incomplete',
+                }
+                ]
+            },
+            {
+                name: 'Charlie Brown',
+                currentWork: 'Writing unit tests',
+                blocker: [
+                {
+                    enemy: 'Test Coverage',
+                    text: 'Mock data not available',
+                }
+                ]
+            },
+            {
+                name: 'Diana Prince',
+                currentWork: 'Creating user authentication',
+                blocker: [
+                {
+                    enemy: 'OAuth Integration',
+                    text: 'OAuth provider not responding',
+                }
+                ]
+            },
+            {
+                name: 'Ethan Hunt',
+                currentWork: 'Developing mobile app',
+                blocker: [
+                {
+                    enemy: 'Cross-Platform Issues',
+                    text: 'Inconsistent behavior on iOS',
+                }
+                ]
+            },
+            {
+                name: 'Fiona Gallagher',
+                currentWork: 'Database schema design',
+                blocker: [
+                {
+                    enemy: 'Data Migration',
+                    text: 'Legacy data format issues',
+                }
+                ]
+            },
+            {
+                name: 'George Martin',
+                currentWork: 'Implementing search functionality',
+                blocker: [
+                {
+                    enemy: 'Search Algorithm',
+                    text: 'Performance optimization needed',
+                }
+                ]
+            },
+            {
+                name: 'Hannah Baker',
+                currentWork: 'UI/UX improvements',
+                blocker: [
+                {
+                    enemy: 'User Feedback',
+                    text: 'Awaiting user feedback',
+                }
+                ]
+            },
+            {
+                name: 'Ian Curtis',
+                currentWork: 'Bug fixing',
+                blocker: [
+                {
+                    enemy: 'Unknown Bugs',
+                    text: 'Intermittent crash on login',
+                }
+                ]
+            }
             ]
         });
     }, []);
@@ -77,6 +156,7 @@ function GroupsLanding (props) {
         // alignItems: 'center',
         width: '95vw',
         height: '80vh',
+        padding: '20px',
         backgroundColor: 'rgb(168, 139, 110)',
     }
 
@@ -84,38 +164,96 @@ function GroupsLanding (props) {
         display: 'flex',
         flexDirection: 'column',
         backgroundColor: 'rgb(255, 128, 0)',
-        width: '20%',
+        paddingTop: '10px',
         borderRadius: '50px',
-        padding: '50px',
+        padding: '20px 20px',
+        borderTopLeftRadius: '0px',
+        borderTopRightRadius: '0px',
+        borderBottomLeftRadius: '25px',
+        borderBottomRightRadius: '25px',
+        height: '65%',
     }
 
     const teamText = {
+        padding: '20px 0px',
+        fontFamily: 'Heebo',
+        fontSize: '2vw',
+        margin: '0px',
+        padding: '5px',
+        paddingLeft: '10px',
+        color: 'rgb(25, 12, 0)',
+        fontWeight: 'bold',
         
     }
 
     const teamMemberContainer = {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '10px',
+        backgroundColor: '#99C1B9',
+        borderRadius: '20px',
+        padding: '20px',
+        height: '70%',
+        overflow: 'scroll',
+        overflowX: 'hidden',
+        
     }
 
     const teamMember = {
+        fontFamily: 'Heebo',
+        marginLeft: '10px',
+        paddingRight: '10px',
     }
 
     const teamMemberText = {
+        marginLeft: '10px',
+        fontFamily: 'Inter',
     }
 
     const blockerBoardContainer = {
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
         backgroundColor: 'rgb(255, 128, 0)',
-        width: '65%',
-        borderRadius: '50px',
+        width: '50%',
+        borderRadius: '20px',
         padding: '50px',
+        justifyContent: 'space-between',
+        alignItems: 'center',
     }
 
     const BlockerHeaderText = {
     }
 
     const blockerBoard = {
-    }   
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '10px',
+        backgroundColor: '#99C1B9',
+        borderRadius: '20px',
+        padding: '20px',
+        height: '100%',
+        width: '35%',
+        overflow: 'scroll',
+        borderTopRightRadius: '0',
+        borderBottomRightRadius: '0',
+        overflowX: 'hidden',
+    }  
+
+    const blockerBoard1 = {
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        gap: '10px',
+        backgroundColor: '#99C1B9',
+        borderRadius: '20px',
+        padding: '20px',
+        height: '100%',
+        width: '50%',
+        overflow: 'scroll',
+        borderTopLeftRadius: '0',
+        borderBottomLeftRadius: '0',
+        overflowX: 'hidden',
+    }
 
     const blocker = {
     }
@@ -123,24 +261,144 @@ function GroupsLanding (props) {
     const blockerText = {
     }
 
+    const MemberContainer = {
+        backgroundColor: '#F2D0A9',
+        borderRadius: '50px',
+        padding: '5px',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'left',
+        alignItems: 'center',
+        height: '50px',
+    }
+    
+    const HAHAHA = {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        borderRadius: '50px',
+        backgroundColor: '#99C1B9',
+        padding: '5px',
+        paddingRight: '10px',
+        margin: '5px',
+        justifyContent: 'space-between',
+        gap: '5px',
+    }
+
+    const LeftContainer = {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '10px',
+        width: '45%',
+        padding: '20px',
+    }
+
+    const SummaryContainer = {
+        backgroundColor: '#F2D0A9',
+        borderTopLeftRadius: '25px',
+        borderTopRightRadius: '25px',
+        borderBottomLeftRadius: '0px',
+        borderBottomRightRadius: '0px',
+        padding: '20px',
+        height: '25%',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'left',
+    }
+
+    const StandupNotif = (member) => {
+        return (
+            <Box>
+                <div class="card">
+                <div class="img"></div>
+                <div class="textBox">
+                    <div class="textContent">
+                    <p class="h1">{member.name}</p>
+                    <span class="span">12 min ago</span>
+                    </div>
+                    <p class="p">StandUp is not updated!</p>
+                <div>
+                </div></div></div>
+            </Box>
+        )
+    }
+
+    const BlockerNotif = (blocker) => {
+        return (
+            <Box sx={{width: '47%'}}>
+                <div class="cardL">
+    <div class="card__wrapper">
+        <div class="card___wrapper-acounts">
+            <div class="card__score">+3</div>
+        </div>
+        <div class="card__menu"><svg xmlns="http://www.w3.org/2000/svg" width="4" viewBox="0 0 4 20" height="20" fill="none"><g fill="#000"><path d="m2 4c1.10457 0 2-.89543 2-2s-.89543-2-2-2-2 .89543-2 2 .89543 2 2 2z"></path><path d="m2 12c1.10457 0 2-.8954 2-2 0-1.10457-.89543-2-2-2s-2 .89543-2 2c0 1.1046.89543 2 2 2z"></path><path d="m2 20c1.10457 0 2-.8954 2-2s-.89543-2-2-2-2 .8954-2 2 .89543 2 2 2z"></path></g></svg></div>
+    </div>
+    <div class="card__title">Web Design templates
+        Selection</div>
+    <div class="card__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elitsed do eiusmod.</div>
+    <div class="card__indicator"><span class="card__indicator-amount">135</span> Works / <span class="card__indicator-percentage">45%</span></div>
+    <div class="card__progress"><progress max="100" value="40"></progress></div>
+</div>
+            </Box>
+        )
+    }
+
     return (
-        <>  
-        
+        <>
             <Box style={contentContainer}>
                 <Box sx={contentHeader}>
                     <Typography sx={headerText}>{groupData.name}</Typography>
                 </Box>
                 <Box sx={bodyCont}>
-                    <Box sx={teamContainer}>
-                        <Typography sx={teamText}>Team</Typography>
-                        <Box sx={teamMemberContainer}>
-                            
+                    <Box sx={LeftContainer}>
+                        <Box sx={SummaryContainer}>
+                            <Typography>Summary</Typography>
+                            <Typography> Give me a summary</Typography>
+                        </Box>
+                        <Box sx={teamContainer}>
+                            <Box sx={MemberContainer}>
+                                    <Box sx={HAHAHA}>
+                                        <img src='/imgs/pfp.svg' alt="profile" style={{height: '30px', borderRadius: '50%'}}></img>
+                                        <Typography sx={teamMember}>You</Typography>
+                                    </Box>
+                                    <Typography sx={teamMemberText}>Work 1</Typography>
+                            </Box>
+                        
+                            <Typography sx={teamText}>Team</Typography>
+                            <Box sx={teamMemberContainer}>
+                                {groupData.members ? 
+                                    (groupData.members.map((member, index) => (
+                                        <Box sx={MemberContainer}>
+                                            <Box sx={HAHAHA}>
+                                                <img src={`/imgs/pfps/${getRandomInt(1,8)}.svg`} alt="profile" style={{height: '30px', borderRadius: '50%'}}></img>
+                                                <Typography sx={teamMember}>{member.name}</Typography>
+                                            </Box>
+                                            <Typography sx={teamMemberText}>{member.currentWork}</Typography>
+                                        </Box>
+                                    ))) :
+                                    (<Typography> No members </Typography>)
+                            }
+                            </Box>
                         </Box>
                     </Box>
                     <Box sx={blockerBoardContainer}>
-                        <Typography sx={BlockerHeaderText}>Blockers</Typography>
                         <Box sx={blockerBoard}>
+                            <Typography sx={BlockerHeaderText}>Late Standups</Typography>
+                            {groupData.members ? 
+                                    (groupData.members.map((member, index) => (
+                                        StandupNotif(member)
+                                    ))) :
+                                    (<Typography> No members </Typography>)
+                            }
+                        </Box>
+                        <Box sx={blockerBoard1}>
                             
+                            {groupData.members ? 
+                                    (groupData.members.map((member, index) => (
+                                        (member.blocker) ? BlockerNotif(member): <></>
+                                    ))) :
+                                    (<Typography> No members </Typography>)
+                            }
                         </Box>
                     </Box>
                 </Box>

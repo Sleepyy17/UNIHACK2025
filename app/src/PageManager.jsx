@@ -47,7 +47,7 @@ const PageManager = () => {
         flexDirection: 'row',
         justifyContent: 'space-between',
         padding: '1vw 7vw',
-        backgroundColor: '#efdedb',
+        backgroundColor: 'rgb(120, 96, 73)',
         alignItems: 'center',
       };
 

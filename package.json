@@ -20,11 +20,20 @@
   "homepage": "https://github.com/Sleepyy17/UNIHACK2025#readme",
   "description": "",
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^6.4.7",
+    "@mui/material": "^6.4.7",
+    "@mui/styled-engine-sc": "^6.4.6",
+    "@toolpad/core": "^0.13.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "install": "^0.13.0",
     "morgan": "^1.10.0",
-    "nodemailer": "^6.10.0"
+    "nodemailer": "^6.10.0",
+    "npm": "^11.2.0",
+    "styled-components": "^6.1.15"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
