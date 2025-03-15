@@ -130,3 +130,15 @@ export function clearDataStore(): void {
     });
     saveDataStore();
 }
+
+const defaultData: DataStore = {
+    users: [],
+    groups: [],
+    standups: [],
+    blockers: []
+};
+
+export const resetDataStore = () => {
+    data = { ...defaultData };
+    saveDataStore();
+};

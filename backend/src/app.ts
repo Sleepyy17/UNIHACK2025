@@ -13,6 +13,7 @@ import * as aiChatController from './controllers/aiChat';
 import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
 import path from 'path';
+import { resetToDefault } from './controllers/admin';
 
 const app = express();
 
@@ -65,6 +66,10 @@ app.get('/api/blockers/:groupId', auth, blockerController.listActiveBlockers);
 
 // AI routes
 app.post('/api/chat/standup', auth, aiChatController.chatWithAI);
+
+// Admin routes
+app.post('/reset', resetToDefault);
+
 
 // Error handling middleware
 app.use((err: Error, req: Request, res: Response, next: Function) => {

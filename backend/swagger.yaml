@@ -51,6 +51,31 @@ components:
           type: string
           format: date-time
 
+    MemberStatus:
+      type: object
+      properties:
+        userId:
+          type: string
+          format: uuid
+        userName:
+          type: string
+        currentStatus:
+          type: string
+        lastUpdated:
+          type: string
+          format: date-time
+
+    GroupSummary:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date-time
+        content:
+          type: string
+        generatedBy:
+          type: string
+
     Group:
       type: object
       properties:
@@ -75,6 +100,18 @@ components:
           type: array
           items:
             type: string
+        memberStatuses:
+          type: array
+          items:
+            $ref: '#/components/schemas/MemberStatus'
+        activeBlockers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Blocker'
+        recentSummaries:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupSummary'
         createdAt:
           type: string
           format: date-time
@@ -684,7 +721,8 @@ paths:
 
   /api/chat/standup:
     post:
-      summary: Process standup message with AI
+      summary: Process standup message with AI and update group information
+      description: Processes a standup message with AI, creates a new standup entry, updates group blockers, member statuses, and summaries
       tags:
         - AI Chat
       security:
@@ -710,7 +748,7 @@ paths:
                   example: "Today I implemented user authentication and fixed some bugs. Tomorrow I'll work on the group management features. I'm blocked by waiting for API access."
       responses:
         '200':
-          description: Message processed successfully
+          description: Message processed successfully and group information updated
           content:
             application/json:
               schema:
@@ -736,6 +774,8 @@ paths:
                           nullable: true
                   standup:
                     $ref: '#/components/schemas/Standup'
+                  groupInfo:
+                    $ref: '#/components/schemas/Group'
         '400':
           description: Invalid input
           content:
@@ -744,6 +784,30 @@ paths:
                 $ref: '#/components/schemas/Error'
         '401':
           description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /reset:
+    post:
+      summary: Reset dataStore to default state (Development only)
+      description: Resets the entire dataStore to its default empty state. This endpoint is for development purposes only.
+      tags:
+        - Admin
+      responses:
+        '200':
+          description: DataStore reset successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "DataStore reset to default state successfully"
+        '500':
+          description: Server error
           content:
             application/json:
               schema:

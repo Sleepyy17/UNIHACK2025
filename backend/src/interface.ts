@@ -15,6 +15,19 @@ export interface User {
     updatedAt: Date;
 }
 
+export interface MemberStatus {
+    userId: string;
+    userName: string;
+    currentStatus: string;
+    lastUpdated: Date;
+}
+
+export interface GroupSummary {
+    date: Date;
+    content: string;
+    generatedBy: string;
+}
+
 export interface Group {
     groupId: string;
     groupName: string;
@@ -23,6 +36,9 @@ export interface Group {
     ownerName: string;
     members: string[];
     memberNames: string[];
+    memberStatuses: MemberStatus[];
+    activeBlockers: Blocker[];
+    recentSummaries: GroupSummary[];
     createdAt: Date;
     updatedAt: Date;
 }
@@ -52,19 +68,4 @@ export interface Blocker {
     createdAt: Date;
     updatedAt: Date;
     resolvedAt?: Date;
-}
-
-export interface GroupSummary {
-    groupId: string;
-    groupName: string;
-    period: {
-        start: Date;
-        end: Date;
-    };
-    memberUpdates: {
-        userId: string;
-        name: string;
-        standups: Standup[];
-    }[];
-    activeBlockers: Blocker[];
 }

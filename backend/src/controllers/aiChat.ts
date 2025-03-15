@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { processStandupMessage } from '../services/aiService';
 import { getData, saveDataStore } from '../dataStore';
-import { Blocker, Standup } from '../interface';
+import { Blocker, Standup, GroupSummary, MemberStatus } from '../interface';
 import { v4 as uuidv4 } from 'uuid';
 
 export const chatWithAI = async (req: Request, res: Response) => {
@@ -15,7 +15,7 @@ export const chatWithAI = async (req: Request, res: Response) => {
         }
 
         // Get user and group info
-        const { users, groups } = getData();
+        const { users, groups, standups, blockers } = getData();
         const user = users.find(u => u.userId === userId);
         const group = groups.find(g => g.groupId === groupId);
 
@@ -25,9 +25,6 @@ export const chatWithAI = async (req: Request, res: Response) => {
 
         // Process message with AI
         const aiResponse = await processStandupMessage(userId, groupId, message);
-
-        // Update standup and blockers based on AI response
-        const { standups, blockers } = getData();
 
         // Create new standup
         const newStandup: Standup = {
@@ -45,7 +42,8 @@ export const chatWithAI = async (req: Request, res: Response) => {
 
         standups.push(newStandup);
 
-        // Create new blockers
+        // Create new blockers and update group's activeBlockers
+        const newBlockers: Blocker[] = [];
         for (const blockerInfo of aiResponse.blockers) {
             const newBlocker: Blocker = {
                 blockerId: uuidv4(),
@@ -60,15 +58,54 @@ export const chatWithAI = async (req: Request, res: Response) => {
                 updatedAt: new Date()
             };
             blockers.push(newBlocker);
+            newBlockers.push(newBlocker);
         }
 
+        // Update group's active blockers
+        group.activeBlockers = blockers
+            .filter(b => b.groupId === groupId && b.status === 'active')
+            .sort((a, b) => {
+                const priorityOrder = { high: 3, medium: 2, low: 1 };
+                const priorityDiff = priorityOrder[b.priority] - priorityOrder[a.priority];
+                return priorityDiff || b.createdAt.getTime() - a.createdAt.getTime();
+            });
+
+        // Update member's status in the group
+        const memberStatusIndex = group.memberStatuses.findIndex(ms => ms.userId === userId);
+        const updatedStatus: MemberStatus = {
+            userId,
+            userName: user.name,
+            currentStatus: aiResponse.newStatus,
+            lastUpdated: new Date()
+        };
+
+        if (memberStatusIndex !== -1) {
+            group.memberStatuses[memberStatusIndex] = updatedStatus;
+        } else {
+            group.memberStatuses.push(updatedStatus);
+        }
+
+        // Add new summary to the group
+        const newSummary: GroupSummary = {
+            date: new Date(),
+            content: aiResponse.summary,
+            generatedBy: 'AI'
+        };
+        group.recentSummaries.unshift(newSummary);
+        if (group.recentSummaries.length > 5) {
+            group.recentSummaries.pop(); // Keep only 5 most recent summaries
+        }
+
+        // Update group's timestamp
+        group.updatedAt = new Date();
         saveDataStore();
 
         res.json({
             summary: aiResponse.summary,
             newStatus: aiResponse.newStatus,
             blockers: aiResponse.blockers,
-            standup: newStandup
+            standup: newStandup,
+            groupInfo: group // Include updated group info in response
         });
     } catch (err) {
         console.error('Error in AI chat:', err);
