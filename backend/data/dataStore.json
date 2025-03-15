@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "userId": "b3cd11b9-5023-4f75-986f-435788647636",
+      "name": "John Doe",
+      "email": "john@example.com",
+      "password": "$2a$10$HZXZAmaFgOjH2JXzvQE0a..IrpfSsYG.5ZWG5BDycqM/1lDc9hkja",
+      "groups": [],
+      "createdAt": "2025-03-15T12:24:01.021Z",
+      "updatedAt": "2025-03-15T12:24:01.021Z"
+    }
+  ],
+  "groups": [
+    {
+      "groupId": "4599e87c-90f8-48d1-8489-f71c00ddd5ce",
+      "groupName": "Frontend Team",
+      "description": "Daily standups for the frontend development team",
+      "ownerId": "b3cd11b9-5023-4f75-986f-435788647636",
+      "members": [
+        "b3cd11b9-5023-4f75-986f-435788647636"
+      ],
+      "createdAt": "2025-03-15T12:24:43.283Z",
+      "updatedAt": "2025-03-15T12:24:43.283Z"
+    }
+  ],
+  "standups": [],
+  "blockers": []
+}

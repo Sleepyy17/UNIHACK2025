@@ -1,0 +1,669 @@
+openapi: 3.0.0
+info:
+  title: CrunchTime API
+  description: API for CrunchTime - Async Team Standups and Work Logging
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:3000
+    description: Development server
+
+components:
+  securitySchemes:
+    UserIdAuth:
+      type: apiKey
+      in: header
+      name: X-User-Id
+      description: 'User ID obtained from login/register'
+
+  parameters:
+    UserIdHeader:
+      name: X-User-Id
+      in: header
+      required: true
+      description: 'User ID obtained from login/register'
+      schema:
+        type: string
+        format: uuid
+        example: 'd290f1ee-6c54-4b01-90e6-d701748f0851'
+
+  schemas:
+    User:
+      type: object
+      properties:
+        userId:
+          type: string
+          format: uuid
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        groups:
+          type: array
+          items:
+            type: string
+            format: uuid
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    Group:
+      type: object
+      properties:
+        groupId:
+          type: string
+          format: uuid
+        groupName:
+          type: string
+        description:
+          type: string
+        ownerId:
+          type: string
+          format: uuid
+        members:
+          type: array
+          items:
+            type: string
+            format: uuid
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    Standup:
+      type: object
+      properties:
+        logId:
+          type: string
+          format: uuid
+        userId:
+          type: string
+          format: uuid
+        groupId:
+          type: string
+          format: uuid
+        workDone:
+          type: string
+        workNext:
+          type: string
+        blockers:
+          type: array
+          items:
+            type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    Blocker:
+      type: object
+      properties:
+        blockerId:
+          type: string
+          format: uuid
+        userId:
+          type: string
+          format: uuid
+        groupId:
+          type: string
+          format: uuid
+        description:
+          type: string
+        priority:
+          type: string
+          enum: [low, medium, high]
+        status:
+          type: string
+          enum: [active, resolved]
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        resolvedAt:
+          type: string
+          format: date-time
+
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+
+paths:
+  /api/auth/register:
+    post:
+      summary: Register a new user
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - email
+                - password
+              properties:
+                name:
+                  type: string
+                  example: "John Doe"
+                email:
+                  type: string
+                  format: email
+                  example: "john@example.com"
+                password:
+                  type: string
+                  format: password
+                  example: "securepassword123"
+      responses:
+        '201':
+          description: User registered successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/auth/login:
+    post:
+      summary: Login user
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - password
+              properties:
+                email:
+                  type: string
+                  format: email
+                  example: "john@example.com"
+                password:
+                  type: string
+                  format: password
+                  example: "securepassword123"
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '401':
+          description: Invalid credentials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/users/me:
+    get:
+      summary: Get current user profile
+      tags:
+        - Users
+      security:
+        - UserIdAuth: []
+      parameters:
+        - $ref: '#/components/parameters/UserIdHeader'
+      responses:
+        '200':
+          description: User profile retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/groups/create:
+    post:
+      summary: Create a new group
+      tags:
+        - Groups
+      security:
+        - UserIdAuth: []
+      parameters:
+        - $ref: '#/components/parameters/UserIdHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - groupName
+                - description
+              properties:
+                groupName:
+                  type: string
+                  example: "Frontend Team"
+                description:
+                  type: string
+                  example: "Daily standups for the frontend development team"
+      responses:
+        '201':
+          description: Group created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/groups/{groupId}/addMember:
+    post:
+      summary: Add member to group
+      tags:
+        - Groups
+      security:
+        - UserIdAuth: []
+      parameters:
+        - $ref: '#/components/parameters/UserIdHeader'
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - userId
+              properties:
+                userId:
+                  type: string
+                  format: uuid
+                  example: "123e4567-e89b-12d3-a456-426614174000"
+      responses:
+        '200':
+          description: Member added successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+        '403':
+          description: Not authorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/groups/{groupId}:
+    get:
+      summary: Get group information
+      tags:
+        - Groups
+      security:
+        - UserIdAuth: []
+      parameters:
+        - $ref: '#/components/parameters/UserIdHeader'
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Group information retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+        '404':
+          description: Group not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/standups/log:
+    post:
+      summary: Log a standup
+      tags:
+        - Standups
+      security:
+        - UserIdAuth: []
+      parameters:
+        - $ref: '#/components/parameters/UserIdHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - groupId
+                - workDone
+                - workNext
+              properties:
+                groupId:
+                  type: string
+                  format: uuid
+                  example: "123e4567-e89b-12d3-a456-426614174000"
+                workDone:
+                  type: string
+                  example: "Implemented user authentication"
+                workNext:
+                  type: string
+                  example: "Work on group management features"
+                blockers:
+                  type: array
+                  items:
+                    type: string
+                  example: ["Waiting for API access", "Need design review"]
+      responses:
+        '201':
+          description: Standup logged successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Standup'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/standups/{logId}/edit:
+    put:
+      summary: Edit a standup
+      tags:
+        - Standups
+      security:
+        - UserIdAuth: []
+      parameters:
+        - $ref: '#/components/parameters/UserIdHeader'
+        - name: logId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                workDone:
+                  type: string
+                workNext:
+                  type: string
+                blockers:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Standup updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Standup'
+        '403':
+          description: Not authorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/standups/{logId}:
+    delete:
+      summary: Delete a standup
+      tags:
+        - Standups
+      security:
+        - UserIdAuth: []
+      parameters:
+        - $ref: '#/components/parameters/UserIdHeader'
+        - name: logId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Standup deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '403':
+          description: Not authorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/standups/{groupId}:
+    get:
+      summary: Get all standups for a group
+      tags:
+        - Standups
+      security:
+        - UserIdAuth: []
+      parameters:
+        - $ref: '#/components/parameters/UserIdHeader'
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Standups retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Standup'
+        '403':
+          description: Not authorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/summary/{groupId}:
+    get:
+      summary: Generate group summary
+      tags:
+        - Groups
+      security:
+        - UserIdAuth: []
+      parameters:
+        - $ref: '#/components/parameters/UserIdHeader'
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Summary generated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  groupId:
+                    type: string
+                    format: uuid
+                  groupName:
+                    type: string
+                  period:
+                    type: object
+                    properties:
+                      start:
+                        type: string
+                        format: date-time
+                      end:
+                        type: string
+                        format: date-time
+                  memberUpdates:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        userId:
+                          type: string
+                          format: uuid
+                        name:
+                          type: string
+                        standups:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/Standup'
+                  activeBlockers:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Blocker'
+
+  /api/blockers/add:
+    post:
+      summary: Add a blocker
+      tags:
+        - Blockers
+      security:
+        - UserIdAuth: []
+      parameters:
+        - $ref: '#/components/parameters/UserIdHeader'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - groupId
+                - description
+                - priority
+              properties:
+                groupId:
+                  type: string
+                  format: uuid
+                  example: "123e4567-e89b-12d3-a456-426614174000"
+                description:
+                  type: string
+                  example: "Need access to production database"
+                priority:
+                  type: string
+                  enum: [low, medium, high]
+                  example: "high"
+      responses:
+        '201':
+          description: Blocker added successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Blocker'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/blockers/{blockerId}/resolve:
+    put:
+      summary: Resolve a blocker
+      tags:
+        - Blockers
+      security:
+        - UserIdAuth: []
+      parameters:
+        - $ref: '#/components/parameters/UserIdHeader'
+        - name: blockerId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Blocker resolved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Blocker'
+        '403':
+          description: Not authorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/blockers/{groupId}:
+    get:
+      summary: Get active blockers for a group
+      tags:
+        - Blockers
+      security:
+        - UserIdAuth: []
+      parameters:
+        - $ref: '#/components/parameters/UserIdHeader'
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Active blockers retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Blocker'
+        '403':
+          description: Not authorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error' 

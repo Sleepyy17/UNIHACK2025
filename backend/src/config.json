@@ -1,6 +1,10 @@
-
 {
     "url": "http://localhost",
-    "port": "8080",
-    "expandDocs": false
+    "port": 3000,
+    "expandDocs": false,
+    "jwt": {
+        "secret": "your-secret-key-change-in-production",
+        "expiresIn": "24h"
+    },
+    "dataPath": "./data/dataStore.json"
 }
