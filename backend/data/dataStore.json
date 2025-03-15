@@ -1,41 +1,5 @@
 {
-  "users": [
-    {
-      "userId": "5ccca582-b7f7-4452-b001-2f45b041f984",
-      "name": "ajl",
-      "email": "ajl@gmail.com",
-      "password": "$2a$10$.5oXFurYYmo3WNHzaCwwy.KFafqsxhOW8NuxPVLwW6EFEtMzfeeIK",
-      "groups": [
-        {
-            "Name": "OvercookedCookies",
-            "numMembers": 4,
-            "numBlockers": 100,
-            "admin": "Ashwin T"
-        },{
-            "Name": "UNIHACK2025",
-            "numMembers": 1,
-            "numBlockers": 0,
-            "admin": "You!"
-
-        },{
-            "Name": "Game Soc",
-            "numMembers": 3,
-            "numBlockers": 10,
-            "admin": "Vincent N"
-        },{
-            "Name": "Charity Committee",
-            "numMembers": 2,
-            "numBlockers": 20,
-            "admin": "Michael D"
-        },{
-            "Name": "Cooked Cookies",
-            "numMembers": 100,
-            "numBlockers": 4,
-            "admin": "Niwhsa T"
-        }
-    ]
-    }
-  ],
+  "users": [],
   "groups": [],
   "standups": [],
   "blockers": []

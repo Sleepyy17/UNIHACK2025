@@ -48,6 +48,8 @@ app.get('/api/users/me', auth, userController.getProfile);
 // Group routes
 app.post('/api/groups/create', auth, groupController.createGroup);
 app.post('/api/groups/:groupId/addMember', auth, groupController.addMember);
+app.post('/api/groups/:groupId/addByName', auth, groupController.addMemberByName);
+app.post('/api/groups/:groupId/join', auth, groupController.joinGroup);
 app.get('/api/groups/:groupId', auth, groupController.getGroupInfo);
 
 // Standup routes

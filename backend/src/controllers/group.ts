@@ -90,6 +90,65 @@ export const addMember = async (req: Request, res: Response) => {
     }
 };
 
+export const addMemberByName = async (req: Request, res: Response) => {
+    try {
+        const { groupId } = req.params;
+        const { memberName } = req.body;
+        const userId = req.user?.userId;
+
+        if (!groupId || !memberName || !userId) {
+            return res.status(400).json({ error: 'Missing required fields' });
+        }
+
+        const { users, groups } = getData();
+        
+        // Find the group
+        const group = groups.find(g => g.groupId === groupId);
+        if (!group) {
+            return res.status(404).json({ error: 'Group not found' });
+        }
+
+        // Check if user is authorized (must be group owner or member)
+        if (group.ownerId !== userId && !group.members.includes(userId)) {
+            return res.status(403).json({ error: 'Not authorized to add members' });
+        }
+
+        // Find the user by name
+        const userToAdd = users.find(u => u.name === memberName);
+        if (!userToAdd) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+
+        // Check if user is already in the group
+        if (group.members.includes(userToAdd.userId)) {
+            return res.status(400).json({ error: 'User is already a member of this group' });
+        }
+
+        // Add member to group
+        group.members.push(userToAdd.userId);
+        group.memberNames.push(userToAdd.name);
+        group.memberStatuses.push({
+            userId: userToAdd.userId,
+            userName: userToAdd.name,
+            currentStatus: 'No updates yet',
+            lastUpdated: new Date()
+        });
+        group.updatedAt = new Date();
+
+        // Add group to user's groups
+        const user = users.find(u => u.userId === userToAdd.userId);
+        if (user && !user.groups.includes(groupId)) {
+            user.groups.push(groupId);
+        }
+
+        saveDataStore();
+        res.json(group);
+    } catch (err) {
+        console.error('Error adding member by name:', err);
+        res.status(500).json({ error: 'Error adding member to group' });
+    }
+};
+
 export const getGroupInfo = async (req: Request, res: Response) => {
     try {
         const { groupId } = req.params;
@@ -218,5 +277,57 @@ export const generateSummary = async (req: Request, res: Response) => {
         });
     } catch (err) {
         res.status(500).json({ error: 'Error generating group summary' });
+    }
+};
+
+export const joinGroup = async (req: Request, res: Response) => {
+    try {
+        const { groupId } = req.params;
+        const userId = req.user?.userId;
+
+        if (!groupId || !userId) {
+            return res.status(400).json({ error: 'Missing required fields' });
+        }
+
+        const { users, groups } = getData();
+        
+        // Find the group
+        const group = groups.find(g => g.groupId === groupId);
+        if (!group) {
+            return res.status(404).json({ error: 'Group not found' });
+        }
+
+        // Find the user
+        const user = users.find(u => u.userId === userId);
+        if (!user) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+
+        // Check if user is already in the group
+        if (group.members.includes(userId)) {
+            return res.status(400).json({ error: 'You are already a member of this group' });
+        }
+
+        // Add member to group
+        group.members.push(userId);
+        group.memberNames.push(user.name);
+        group.memberStatuses.push({
+            userId: user.userId,
+            userName: user.name,
+            currentStatus: 'Just joined the group',
+            lastUpdated: new Date()
+        });
+        group.updatedAt = new Date();
+
+        // Add group to user's groups
+        if (!user.groups.includes(groupId)) {
+            user.groups.push(groupId);
+        }
+
+        saveDataStore();
+        res.json(group);
+    } catch (err) {
+        console.error('Error joining group:', err);
+        res.status(500).json({ error: 'Error joining group' });
     }
 }; 

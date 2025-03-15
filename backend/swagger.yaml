@@ -402,6 +402,96 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
 
+  /api/groups/{groupId}/addByName:
+    post:
+      summary: Add member to group by name (Simplified)
+      description: A simplified way to add members to a group using just their name. Assumes unique usernames.
+      tags:
+        - Groups
+      security:
+        - UserIdAuth: []
+      parameters:
+        - $ref: '#/components/parameters/UserIdHeader'
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - memberName
+              properties:
+                memberName:
+                  type: string
+                  example: "John Doe"
+      responses:
+        '200':
+          description: Member added successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+        '400':
+          description: Invalid input or user already in group
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Not authorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Group or user not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /api/groups/{groupId}/join:
+    post:
+      summary: Join a group (Self-service)
+      description: Allows a user to join a group directly without requiring admin approval.
+      tags:
+        - Groups
+      security:
+        - UserIdAuth: []
+      parameters:
+        - $ref: '#/components/parameters/UserIdHeader'
+        - name: groupId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successfully joined the group
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+        '400':
+          description: Invalid input or already a member
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Group or user not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
   /api/standups/log:
     post:
       summary: Log a standup
