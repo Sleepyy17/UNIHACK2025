@@ -19,5 +19,4 @@ export const userLogin = (email: string, password: string) => {
     if (existingUser.password != password) throw new Error("Not the right password");
 
     return { userId: existingUser.userId};
-
 }
