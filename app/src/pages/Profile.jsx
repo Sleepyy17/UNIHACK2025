@@ -388,9 +388,8 @@ const l = {
 
     return (
         <>
-         
             <Box container>
-            
+          
                 <Box sx={contentContainer}>
                     <Box> 
                         <Box>
