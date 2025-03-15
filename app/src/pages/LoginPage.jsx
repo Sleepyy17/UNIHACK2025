@@ -2,13 +2,15 @@ import React, { useRef, useEffect, useState } from 'react';
 import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import { Button, Typography, Box, TextField } from '@mui/material';
 import "./style.css"
+import { API_URL } from '../App';
+import axios from 'axios';
 
 export default function LoginPage({setToken}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
-    console.log('hello')
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const postParams = {
@@ -16,16 +18,15 @@ export default function LoginPage({setToken}) {
       'password': formData.get('login-password'),
     }
 
-    // axios.post(`${API_URL}/admin/auth/login`, postParams)
-    //   .then((response) => {
-    //     setError({isError: false, msg: ''});
-    //     setToken(response.data.token);
-    //     localStorage.setItem('token', response.data.token);
-    //     navigate('/dashboard', {replace: true});
-    //   })
-    //   .catch((error) => {
-    //     setError({isError: true, msg: error.response.data.error});
-    //   })
+    axios.post(`${API_URL}/api/auth/login`, postParams)
+      .then((response) => {
+        setToken(response.data.userId);
+        localStorage.setItem('token', response.data.userId);
+        navigate(`/profile/${response.data.userId}`, {replace: true});
+      })
+      .catch((error) => {
+        console.log(error.response.data.server);
+      })
   }
 
   return (

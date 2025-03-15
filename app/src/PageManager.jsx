@@ -14,15 +14,8 @@ import RegisterPage from './pages/RegisterPage';
 
 const PageManager = () => {
     // Setting token for login permissions
-    const [token, setToken] = useState(undefined);
+    const [token, setToken] = useState(localStorage.getItem('token'));
     const navigate = useNavigate();
-
-    useEffect(() => {
-        const checkToken = localStorage.getItem('token');
-        if (checkToken) {
-          setToken("checkToken");
-        }
-      }, []);
 
     // This helps us with links to other pages
 
@@ -50,13 +43,6 @@ const PageManager = () => {
           
           {(window.location.href.includes("profile") ? 
           <Box>
-          <Link to="/profile">
-            <Button variant="contained" style={{ color: 'white', margin:'10px'}} >Join a Team</Button>
-          </Link>
-          <Link to="/">
-            <Button variant="contained" style={{ color: 'white', margin:'10px'}} >Create a Team</Button>
-          </Link>
-
           </Box>
 
             :
@@ -139,14 +125,11 @@ const PageManager = () => {
           )}
           
           </div>
-         </>
+        </>
             <Routes>
-                {/* <Route path="/" element={<Welcome token={token} setToken={setToken}/>}></Route>
-                <Route path="/login" element={<Login token={token} setToken={setToken}/>}></Route>
-                <Route path="/register" element={<Register token={token} setToken={setToken}/>}></Route> */}
-                 <Route path="/" element={<Landing token={token} setToken={setToken}/>}></Route>
+                <Route path="/" element={<Landing token={token} setToken={setToken}/>}></Route>
                 <Route path="/Teams/:TeamName" element={<GroupsLanding token={token} setToken={setToken}/>}></Route>
-                <Route path="/profile" element={<Profile token={token} setToken={setToken}/>}></Route>
+                <Route path="/profile/:id" element={<Profile token={token}/>}></Route>
                 <Route path="/login" element={<LoginPage setToken={setToken}/>}></Route>
                 <Route path="/register" element={<RegisterPage setToken={setToken}/>}></Route>
             </Routes>

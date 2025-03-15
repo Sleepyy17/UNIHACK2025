@@ -30,8 +30,6 @@ export const register = async (req: Request, res: Response) => {
             email,
             password: hashedPassword,
             groups: [],
-            createdAt: new Date(),
-            updatedAt: new Date()
         };
 
         users.push(newUser);

@@ -16,8 +16,6 @@ export const getProfile = async (req: Request, res: Response) => {
             name: user.name,
             email: user.email,
             groups: user.groups,
-            createdAt: user.createdAt,
-            updatedAt: user.updatedAt
         });
     } catch (err) {
         res.status(500).json({ error: 'Error fetching user profile' });

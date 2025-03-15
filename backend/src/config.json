@@ -1,6 +1,6 @@
 {
     "url": "http://localhost",
-    "port": 3000,
+    "port": 5005,
     "expandDocs": false,
     "jwt": {
         "secret": "your-secret-key-change-in-production",

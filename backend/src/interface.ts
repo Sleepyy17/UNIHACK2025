@@ -11,8 +11,6 @@ export interface User {
     email: string;
     password: string;
     groups: string[];
-    createdAt: Date;
-    updatedAt: Date;
 }
 
 export interface Group {
@@ -21,8 +19,6 @@ export interface Group {
     description: string;
     ownerId: string;
     members: string[];
-    createdAt: Date;
-    updatedAt: Date;
 }
 
 export interface Standup {

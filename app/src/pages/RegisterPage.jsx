@@ -4,6 +4,7 @@ import { Button, Typography, Box, TextField } from '@mui/material';
 import "./style.css"
 import axios from 'axios';
 import ErrorMessage from '../components/ErrorMessage';
+import { API_URL } from '../App';
 /**
  * This page sets up the register page.
  */
@@ -18,7 +19,6 @@ export default function RegisterPage({setToken}) {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (password !== confirmPassword) return;
-    console.log("hello")
 
     const postParams = {
       email: email,
@@ -26,24 +26,17 @@ export default function RegisterPage({setToken}) {
       name: name
     };
 
-    // axios.post(`${API_URL}/admin/auth/register`, postParams)
-    //   .then((response) => {
-    //     setError({isError: false, msg: ''});
-    //     setToken(response.data.token);
-    //     localStorage.setItem('token', response.data.token);
-      
-    //     const defaultStore = {
-    //       store: {
-    //         presentations: []
-    //       }
-    //     }
-    //     return axios.put(`${API_URL}/store`, defaultStore, {headers: {Authorization: `Bearer ${response.data.token}`}})
-    //   })
-    //   .then(() => {navigate('/dashboard', {replace: true})})
-    //   .catch((error) => {
-    //     setError({isError: true, msg: error.response.data.error});
-    //   });
-  };
+    axios.post(`${API_URL}/api/auth/register`, postParams)
+      .then((response) => {
+        const userId = response.data.userId;
+        setToken(response.data.userId);
+        localStorage.setItem('token', response.data.userId);
+        navigate(`/profile/${userId}`, {replace: true})
+      })
+      .catch((error) => {
+        console.log(error.response.data.error)
+      });
+    };
 
   return (
     <Box className='form-background'  sx={{display: 'flex', flexDirection: 'column', height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center'}}>

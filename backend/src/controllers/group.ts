@@ -19,8 +19,6 @@ export const createGroup = async (req: Request, res: Response) => {
             description,
             ownerId: userId,
             members: [userId],
-            createdAt: new Date(),
-            updatedAt: new Date()
         };
 
         const { groups } = getData();
@@ -66,7 +64,6 @@ export const addMember = async (req: Request, res: Response) => {
 
         group.members.push(memberIdToAdd);
         userToAdd.groups.push(groupId);
-        group.updatedAt = new Date();
         saveDataStore();
 
         res.json(group);

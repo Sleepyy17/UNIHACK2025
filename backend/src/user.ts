@@ -1,13 +1,19 @@
+import { randomUUID } from "crypto";
 import { getData } from "./dataStore";
+import { v4 as uuidv4 } from 'uuid';
 
 export const userRegister = (email: string, password: string) => {
     const dataStore = getData();
     const existingUser = dataStore.users.find(user => user.email === email);
     if (existingUser) throw new Error('Email is already registered');
     if (email == undefined || password == undefined) throw new Error("Retry please");
-
-    const userId = dataStore.users.length;
-    dataStore.users.push({ userId, email, password });
+    
+    const userId = uuidv4()
+    dataStore.users.push({
+        userId, email, password,
+        name: "",
+        groups: [],
+    });
     return { userId };
 };
 
