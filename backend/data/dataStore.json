@@ -1,5 +1,13 @@
 {
-  "users": [],
+  "users": [
+    {
+      "userId": "edfae6dd-6cac-45c0-8f91-32cc5e8e0f6f",
+      "name": "b",
+      "email": "brian.nguyen292@gmail.com",
+      "password": "$2a$10$diHNLb4FFepgpxPpD5DMw.YrW0t0RBnQMaekaA4PmfLWZ3qXM9Dgq",
+      "groups": []
+    }
+  ],
   "groups": [],
   "standups": [],
   "blockers": []
