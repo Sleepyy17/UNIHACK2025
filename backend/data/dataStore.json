@@ -417,11 +417,23 @@
         {
           "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
           "userName": "b",
-          "currentStatus": "- Planning next steps.",
-          "lastUpdated": "2025-03-16T01:25:42.400Z"
+          "currentStatus": "- Working on User info",
+          "lastUpdated": "2025-03-16T01:45:52.513Z"
         }
       ],
       "activeBlockers": [
+        {
+          "blockerId": "6462a296-2faa-4e18-9315-821eec3bd80e",
+          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "userName": "b",
+          "groupId": "a",
+          "groupName": "a",
+          "description": "No blockers",
+          "priority": "medium",
+          "status": "active",
+          "createdAt": "2025-03-16T01:45:52.513Z",
+          "updatedAt": "2025-03-16T01:45:52.513Z"
+        },
         {
           "blockerId": "2b37cf60-8277-46c7-8f4a-641ca764f749",
           "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
@@ -485,6 +497,11 @@
       ],
       "recentSummaries": [
         {
+          "date": "2025-03-16T01:45:52.513Z",
+          "content": "- *Completed work:* Finished auth function\n- *Current work:* Working on User info",
+          "generatedBy": "AI"
+        },
+        {
           "date": "2025-03-16T01:25:42.400Z",
           "content": "No summary provided",
           "generatedBy": "AI"
@@ -503,15 +520,11 @@
           "date": "2025-03-16T01:23:17.386Z",
           "content": "No summary provided",
           "generatedBy": "AI"
-        },
-        {
-          "date": "2025-03-16T00:58:43.117Z",
-          "content": "No summary provided",
-          "generatedBy": "AI"
         }
       ],
       "createdAt": "2025-03-15T23:22:52.990Z",
-      "updatedAt": "2025-03-16T01:27:50.166Z"
+      "updatedAt": "2025-03-16T01:52:49.307Z",
+      "currentSummary": "- *Completed work:* Finished auth function\n- *Current work:* Working on User info"
     },
     {
       "groupId": "96b605fe-774e-4c46-a78a-28f62f83a7ae",
@@ -803,6 +816,20 @@
       ],
       "createdAt": "2025-03-16T01:19:34.990Z",
       "updatedAt": "2025-03-16T01:19:34.990Z"
+    },
+    {
+      "logId": "6214f0e6-74c3-4d54-825d-c8465cee84a8",
+      "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "userName": "b",
+      "groupId": "a",
+      "groupName": "a",
+      "workDone": "What have you done?\nFinished auth function\nWhat are you doing?\nUser info\nAny blockers?\nNo",
+      "workNext": "- Working on User info",
+      "blockers": [
+        "No blockers"
+      ],
+      "createdAt": "2025-03-16T01:45:52.513Z",
+      "updatedAt": "2025-03-16T01:45:52.513Z"
     }
   ],
   "blockers": [
@@ -865,6 +892,18 @@
       "status": "active",
       "createdAt": "2025-03-16T01:25:42.400Z",
       "updatedAt": "2025-03-16T01:25:42.400Z"
+    },
+    {
+      "blockerId": "6462a296-2faa-4e18-9315-821eec3bd80e",
+      "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "userName": "b",
+      "groupId": "a",
+      "groupName": "a",
+      "description": "No blockers",
+      "priority": "medium",
+      "status": "active",
+      "createdAt": "2025-03-16T01:45:52.513Z",
+      "updatedAt": "2025-03-16T01:45:52.513Z"
     }
   ]
 }

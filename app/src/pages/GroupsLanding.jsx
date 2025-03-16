@@ -233,7 +233,6 @@ function GroupsLanding (token) {
     }
 
     const StandupNotif = (member) => {
-
         if (member.currentStatus.localeCompare("No status update") != 0) return <></>
         const formattedDate = new Date(member.lastUpdated).toLocaleDateString('en-GB');
         return (
@@ -251,6 +250,14 @@ function GroupsLanding (token) {
             </Box>
         )
     }
+
+    const getuserWork = () => {
+        if (groupData.memberStatuses == undefined) return "No status update";
+        const work =  groupData.memberStatuses.find(g => g.userId == userData.userId);
+        if (work == undefined) return "No status update";
+        return work.currentStatus;
+    }
+
 
     const BlockerNotif = (blocker) => {
         return (
@@ -281,7 +288,7 @@ function GroupsLanding (token) {
                     <Box sx={LeftContainer}>
                         <Box sx={SummaryContainer}>
                             <Typography>Summary</Typography>
-                            <Typography> Give me a summary</Typography>
+                            <Typography>{(groupData.currentSummary) ? groupData.currentSummary : "No summary yet"}</Typography>
                         </Box>
                         <Box sx={teamContainer}>
                             <Box sx={MemberContainer}>
@@ -289,7 +296,7 @@ function GroupsLanding (token) {
                                         <img src='/imgs/pfp.svg' alt="profile" style={{height: '30px', borderRadius: '50%'}}></img>
                                         <Typography sx={teamMember}>You</Typography>
                                     </Box>
-                                    <Typography sx={teamMemberText}>Work 1</Typography>
+                                    <Typography sx={teamMemberText}>{getuserWork() }</Typography>
                             </Box>
                         
                             <Typography sx={teamText}>Team</Typography>

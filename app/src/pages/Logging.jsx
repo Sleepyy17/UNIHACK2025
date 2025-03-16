@@ -3,6 +3,7 @@ import { Form, useNavigate, useParams } from 'react-router-dom';
 import { Button, TextField, Typography, Grid, Box, Modal, Alert, AlertTitle, colors } from '@mui/material'; 
 import "./loggin.css";
 import { getAiChat } from '../helpers/helpers';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 function LoggingPage (token) {
     const navigate = useNavigate();
@@ -42,6 +43,7 @@ function LoggingPage (token) {
     // Returns a chat box for taling to the bot
     return (
         <>
+        <ArrowBackIosNewIcon sx={{position: 'absolute', margin: '70px', marginTop: '150px', cursor: 'pointer'}} onClick={() => {navigate(`/Teams/${TeamName}`)}}/>
            <Box className="container">
            <Typography variant="h3" align="center" sx={{fontFamily: 'Heebo', fontWeight: 'bold', color: '#3f51b5',}}>
                 TeamName Standup
