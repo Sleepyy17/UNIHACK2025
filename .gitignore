@@ -22,3 +22,6 @@ logs/
 # Misc
 *.bak
 *.swp
+
+# dataStore
+backend/data/*
