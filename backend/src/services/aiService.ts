@@ -50,7 +50,7 @@ Follow these rules:
 - The summary should be at max 30 words.
 - Take inspiration of a good commit message, it gets straight to the point
 - Be as descriptive as you can with the limited characters allowed
-- Make sure you use BOLD and ITALICS to highlight important details.
+- Make sure you use you only use text and never symbols or emojis
 
 7. Generate a List of Blockers that the user current has, the details should be.
    - A short summary of the blocker (not null)
@@ -59,6 +59,7 @@ Follow these rules:
 
 8. Generate the new working status of the current user basically on what they are working on.
     - This should be less than 8 words.
+    - Should only be text and no symbols or emojis.
 
 9. Generate a message to send back to the User, with a positive message and if their blockers
     related to anyone let them know their name. 

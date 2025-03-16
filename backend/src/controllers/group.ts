@@ -35,7 +35,7 @@ export const createGroup = async (req: Request, res: Response) => {
             }],
             activeBlockers: [],
             recentSummaries: [],
-            currentSummary: 'Group created. No standups yet.',
+            currentSummary: '',
             createdAt: new Date(),
             updatedAt: new Date()
         };
@@ -178,11 +178,11 @@ export const getGroupInfo = async (req: Request, res: Response) => {
             const latestStandup = standups
                 .filter(s => s.userId === memberId && s.groupId === groupId)
                 .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())[0];
-
+            
             return {
                 userId: memberId,
                 userName: member?.name || 'Unknown',
-                currentStatus: latestStandup?.workNext || 'No status update',
+                currentStatus: group.memberStatuses.find(s => s.userId === memberId)?.currentStatus || 'No status update',
                 lastUpdated: latestStandup?.createdAt || group.createdAt
             };
         });

@@ -18,40 +18,14 @@ if (!fs.existsSync(dataDir)) {
 }
 
 const DATA_FILE = path.join(dataDir, 'dataStore.json');
-const BACKUP_FILE = path.join(dataDir, 'dataStore.backup.json');
 
 // Helper function to revive dates from JSON
 function dateReviver(key: string, value: any): any {
-    const dateFields = ['createdAt', 'updatedAt', 'resolvedAt', 'start', 'end'];
+    const dateFields = ['createdAt', 'updatedAt', 'resolvedAt', 'start', 'end', 'lastUpdated'];
     if (dateFields.includes(key) && typeof value === 'string') {
         return new Date(value);
     }
     return value;
-}
-
-// Helper function to create a backup of the current data
-function createBackup(): void {
-    try {
-        if (fs.existsSync(DATA_FILE)) {
-            fs.copyFileSync(DATA_FILE, BACKUP_FILE);
-        }
-    } catch (err) {
-        console.error('Error creating backup:', err);
-    }
-}
-
-// Helper function to restore from backup
-function restoreFromBackup(): boolean {
-    try {
-        if (fs.existsSync(BACKUP_FILE)) {
-            fs.copyFileSync(BACKUP_FILE, DATA_FILE);
-            return true;
-        }
-        return false;
-    } catch (err) {
-        console.error('Error restoring from backup:', err);
-        return false;
-    }
 }
 
 export function getData(): DataStore {
@@ -83,25 +57,15 @@ export function loadDataStore(): void {
         }
     } catch (err) {
         console.error('Error loading data store:', err);
-        
-        // Attempt to restore from backup
-        if (restoreFromBackup()) {
-            console.log('Restored from backup');
-            loadDataStore(); // Try loading again
-        } else {
-            // Initialize with empty data if restore fails
-            setData(data);
-            saveDataStore();
-            console.log('Initialized empty data store after load failure');
-        }
+        // Initialize with empty data if load fails
+        setData(data);
+        saveDataStore();
+        console.log('Initialized empty data store after load failure');
     }
 }
 
 export function saveDataStore(): void {
     try {
-        // Create a backup before saving
-        createBackup();
-
         // Ensure the data directory exists
         if (!fs.existsSync(dataDir)) {
             fs.mkdirSync(dataDir, { recursive: true });

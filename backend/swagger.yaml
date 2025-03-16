@@ -112,9 +112,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/GroupSummary'
-        currentSummary:
-          type: string
-          description: The latest AI-generated summary of the group's status
         createdAt:
           type: string
           format: date-time

@@ -342,9 +342,9 @@ function GroupsLanding (token) {
     }
 
     const getuserWork = () => {
-        if (groupData.memberStatuses == undefined) return "No status update";
+        if (groupData.memberStatuses == undefined) return "No status updates";
         const work =  groupData.memberStatuses.find(g => g.userId == userData.userId);
-        if (work == undefined) return "No status update";
+        if (!work) return "No status updates. Create a standup to update";
         return work.currentStatus;
     }
 

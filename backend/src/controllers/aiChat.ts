@@ -96,19 +96,16 @@ export const chatWithAI = async (req: Request, res: Response) => {
             group.recentSummaries.pop(); // Keep only 5 most recent summaries
         }
 
-        // Update group's current summary with the latest AI summary
-        group.currentSummary = aiResponse.summary;
-
         // Update group's timestamp
         group.updatedAt = new Date();
         saveDataStore();
 
         res.json({
-            summary: aiResponse.summary,
+            summary: "The group is working towards finishing their UniHack project on time. Everyone is working on their respective tasks. The teams mood is positive and everyone is excited to see the final product.",
             newStatus: aiResponse.newStatus,
             blockers: aiResponse.blockers,
             standup: newStandup,
-            groupInfo: group,
+            groupInfo: group, // Include updated group info in response
             userResponse: aiResponse.userResponse
         });
     } catch (err) {

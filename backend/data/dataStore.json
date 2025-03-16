@@ -1,909 +1,517 @@
 {
   "users": [
     {
-      "userId": "9fb67853-c315-4ee1-9324-5568356b2d26",
-      "name": "ajl",
-      "email": "ajl@gmail.com",
-      "password": "$2a$10$SN5NGQSoag79cV238mdE2.8GT7UKzCALVX.dkvRoVaYI5y0n8kVaC",
-      "groups": []
-    },
-    {
-      "userId": "96cc4b1b-cb8d-46b8-a5b1-246dd0a83b20",
-      "name": "b",
-      "email": "b@b.b",
-      "password": "$2a$10$cN4nQMgy59S9tr5d9zBky./4e2fT0AOmQs75d/dAYLxUtrqfb0JnC",
+      "userId": "164207c5-b2f2-4f38-8eb0-78bbc58436b3",
+      "name": "Ashwin",
+      "email": "testEmail@gmail.com",
+      "password": "$2a$10$fD47I00Sg7FAof6xV.6rnuodtaQvlhi3WeSc.gCq6MTvF.jFIhcqi",
       "groups": [
         {
-          "groupId": "0f0f8d28-1294-4943-a572-f4a791b2b898",
-          "groupName": "gfdgdfg",
-          "description": "dfgdg",
-          "ownerId": "96cc4b1b-cb8d-46b8-a5b1-246dd0a83b20",
-          "ownerName": "b",
+          "groupId": "da93949b-14ff-4aa4-b02e-0284d3c03d8e",
+          "groupName": "Overcooked Cookies",
+          "description": "We cook Cookies",
+          "ownerId": "164207c5-b2f2-4f38-8eb0-78bbc58436b3",
+          "ownerName": "Ashwin",
           "members": [
-            "96cc4b1b-cb8d-46b8-a5b1-246dd0a83b20"
+            "164207c5-b2f2-4f38-8eb0-78bbc58436b3",
+            "73359b78-3a60-49c1-87b3-ec38cdda86f7",
+            "b49c961c-44d0-4b16-8dcc-4eef5e994704",
+            "84278bce-9fa4-4f89-a37c-ba8cef819009"
           ],
           "memberNames": [
-            "b"
+            "Ashwin",
+            "Brian",
+            "Michael",
+            "Vincent"
           ],
           "memberStatuses": [
             {
-              "userId": "96cc4b1b-cb8d-46b8-a5b1-246dd0a83b20",
-              "userName": "b",
-              "currentStatus": "Just joined the group",
-              "lastUpdated": "2025-03-15T21:27:38.450Z"
+              "userId": "164207c5-b2f2-4f38-8eb0-78bbc58436b3",
+              "userName": "Ashwin",
+              "currentStatus": "Working on the backend OpenAI integration",
+              "lastUpdated": "2025-03-16T03:50:05.312Z"
+            },
+            {
+              "userId": "73359b78-3a60-49c1-87b3-ec38cdda86f7",
+              "userName": "Brian",
+              "currentStatus": "Working on the frontend dashboard design",
+              "lastUpdated": "2025-03-16T03:50:05.312Z"
+            },
+            {
+              "userId": "b49c961c-44d0-4b16-8dcc-4eef5e994704",
+              "userName": "Michael",
+              "currentStatus": "Working on the project video submission",
+              "lastUpdated": "2025-03-16T03:50:05.312Z"
+            },
+            {
+              "userId": "84278bce-9fa4-4f89-a37c-ba8cef819009",
+              "userName": "Vincent",
+              "currentStatus": "Working on the mailing service",
+              "lastUpdated": "2025-03-16T03:50:05.312Z"
             }
           ],
           "activeBlockers": [],
           "recentSummaries": [],
-          "createdAt": "2025-03-15T21:27:38.450Z",
-          "updatedAt": "2025-03-15T21:27:38.450Z"
+          "currentSummary": "The group is working towards finishing their UniHack project on time. Everyone is working on their respective tasks. The teams mood is positive and everyone is excited to see the final product.",
+          "createdAt": "2025-03-16T03:50:05.312Z",
+          "updatedAt": "2025-03-16T03:53:23.341Z"
         }
       ]
     },
     {
-      "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-      "name": "b",
-      "email": "brian.nguyen292@gmail.com",
-      "password": "$2a$10$CZZwUFP5g0yLibvXWoOr9uafyLtpIhL7sLOz.8xCgz8JT1LwXULPO",
+      "userId": "73359b78-3a60-49c1-87b3-ec38cdda86f7",
+      "name": "Brian",
+      "email": "brian@gmail.com",
+      "password": "$2a$10$x1Qon4oGwJ/quBWIwwCV1uwB4fKQ4QTU7k3SpdVcmDEb4QOx0uH9C",
       "groups": [
         {
-          "groupId": "890c1819-43f7-4cc5-8461-78aa2ffe9ee5",
-          "groupName": "a",
-          "description": "a",
-          "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "ownerName": "b",
+          "groupId": "da93949b-14ff-4aa4-b02e-0284d3c03d8e",
+          "groupName": "Overcooked Cookies",
+          "description": "We cook Cookies",
+          "ownerId": "164207c5-b2f2-4f38-8eb0-78bbc58436b3",
+          "ownerName": "Ashwin",
           "members": [
-            "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+            "164207c5-b2f2-4f38-8eb0-78bbc58436b3",
+            "73359b78-3a60-49c1-87b3-ec38cdda86f7",
+            "b49c961c-44d0-4b16-8dcc-4eef5e994704",
+            "84278bce-9fa4-4f89-a37c-ba8cef819009"
           ],
           "memberNames": [
-            "b"
+            "Ashwin",
+            "Brian",
+            "Michael",
+            "Vincent"
           ],
           "memberStatuses": [
             {
-              "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-              "userName": "b",
-              "currentStatus": "Just joined the group",
-              "lastUpdated": "2025-03-15T23:22:52.990Z"
+              "userId": "164207c5-b2f2-4f38-8eb0-78bbc58436b3",
+              "userName": "Ashwin",
+              "currentStatus": "Working on the backend OpenAI integration",
+              "lastUpdated": "2025-03-16T03:50:05.312Z"
+            },
+            {
+              "userId": "73359b78-3a60-49c1-87b3-ec38cdda86f7",
+              "userName": "Brian",
+              "currentStatus": "Working on the frontend dashboard design",
+              "lastUpdated": "2025-03-16T03:50:05.312Z"
+            },
+            {
+              "userId": "b49c961c-44d0-4b16-8dcc-4eef5e994704",
+              "userName": "Michael",
+              "currentStatus": "Working on the project video submission",
+              "lastUpdated": "2025-03-16T03:50:05.312Z"
+            },
+            {
+              "userId": "84278bce-9fa4-4f89-a37c-ba8cef819009",
+              "userName": "Vincent",
+              "currentStatus": "Working on the mailing service",
+              "lastUpdated": "2025-03-16T03:50:05.312Z"
             }
           ],
           "activeBlockers": [],
           "recentSummaries": [],
-          "createdAt": "2025-03-15T23:22:52.990Z",
-          "updatedAt": "2025-03-15T23:22:52.990Z"
-        },
-        {
-          "groupId": "96b605fe-774e-4c46-a78a-28f62f83a7ae",
-          "groupName": "b",
-          "description": "b",
-          "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "ownerName": "b",
-          "members": [
-            "eca65ddd-261f-41d0-9a63-83a62a5e3878"
-          ],
-          "memberNames": [
-            "b"
-          ],
-          "memberStatuses": [
-            {
-              "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-              "userName": "b",
-              "currentStatus": "Just joined the group",
-              "lastUpdated": "2025-03-15T23:33:10.268Z"
-            }
-          ],
-          "activeBlockers": [],
-          "recentSummaries": [],
-          "createdAt": "2025-03-15T23:33:10.268Z",
-          "updatedAt": "2025-03-15T23:33:10.268Z"
-        },
-        {
-          "groupId": "9ca0492e-4aa8-43ef-8c87-b059490d175e",
-          "groupName": "b",
-          "description": "b",
-          "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "ownerName": "b",
-          "members": [
-            "eca65ddd-261f-41d0-9a63-83a62a5e3878"
-          ],
-          "memberNames": [
-            "b"
-          ],
-          "memberStatuses": [
-            {
-              "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-              "userName": "b",
-              "currentStatus": "Just joined the group",
-              "lastUpdated": "2025-03-15T23:34:03.542Z"
-            }
-          ],
-          "activeBlockers": [],
-          "recentSummaries": [],
-          "createdAt": "2025-03-15T23:34:03.542Z",
-          "updatedAt": "2025-03-15T23:34:03.542Z"
-        },
-        {
-          "groupId": "86b912b5-9548-4fa3-9b38-db3ecc6d2b25",
-          "groupName": "b",
-          "description": "b",
-          "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "ownerName": "b",
-          "members": [
-            "eca65ddd-261f-41d0-9a63-83a62a5e3878"
-          ],
-          "memberNames": [
-            "b"
-          ],
-          "memberStatuses": [
-            {
-              "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-              "userName": "b",
-              "currentStatus": "Just joined the group",
-              "lastUpdated": "2025-03-15T23:35:42.328Z"
-            }
-          ],
-          "activeBlockers": [],
-          "recentSummaries": [],
-          "createdAt": "2025-03-15T23:35:42.328Z",
-          "updatedAt": "2025-03-15T23:35:42.328Z"
-        },
-        {
-          "groupId": "a2ab9e86-2378-449d-8156-095c541bca69",
-          "groupName": "b",
-          "description": "b",
-          "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "ownerName": "b",
-          "members": [
-            "eca65ddd-261f-41d0-9a63-83a62a5e3878"
-          ],
-          "memberNames": [
-            "b"
-          ],
-          "memberStatuses": [
-            {
-              "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-              "userName": "b",
-              "currentStatus": "Just joined the group",
-              "lastUpdated": "2025-03-15T23:40:36.650Z"
-            }
-          ],
-          "activeBlockers": [],
-          "recentSummaries": [],
-          "createdAt": "2025-03-15T23:40:36.650Z",
-          "updatedAt": "2025-03-15T23:40:36.650Z"
-        },
-        {
-          "groupId": "c8c8d4d0-70fe-4872-9244-07d69cccbc0f",
-          "groupName": "b",
-          "description": "b",
-          "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "ownerName": "b",
-          "members": [
-            "eca65ddd-261f-41d0-9a63-83a62a5e3878"
-          ],
-          "memberNames": [
-            "b"
-          ],
-          "memberStatuses": [
-            {
-              "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-              "userName": "b",
-              "currentStatus": "Just joined the group",
-              "lastUpdated": "2025-03-15T23:41:12.818Z"
-            }
-          ],
-          "activeBlockers": [],
-          "recentSummaries": [],
-          "createdAt": "2025-03-15T23:41:12.818Z",
-          "updatedAt": "2025-03-15T23:41:12.818Z"
-        },
-        {
-          "groupId": "2df599e2-9e7c-4414-833c-38de56a1abd4",
-          "groupName": "b",
-          "description": "b",
-          "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "ownerName": "b",
-          "members": [
-            "eca65ddd-261f-41d0-9a63-83a62a5e3878"
-          ],
-          "memberNames": [
-            "b"
-          ],
-          "memberStatuses": [
-            {
-              "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-              "userName": "b",
-              "currentStatus": "Just joined the group",
-              "lastUpdated": "2025-03-15T23:42:15.876Z"
-            }
-          ],
-          "activeBlockers": [],
-          "recentSummaries": [],
-          "createdAt": "2025-03-15T23:42:15.876Z",
-          "updatedAt": "2025-03-15T23:42:15.876Z"
-        },
-        {
-          "groupId": "d5765dbd-ae43-4042-831d-4e7853d9eaa1",
-          "groupName": "c",
-          "description": "c",
-          "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "ownerName": "b",
-          "members": [
-            "eca65ddd-261f-41d0-9a63-83a62a5e3878"
-          ],
-          "memberNames": [
-            "b"
-          ],
-          "memberStatuses": [
-            {
-              "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-              "userName": "b",
-              "currentStatus": "Just joined the group",
-              "lastUpdated": "2025-03-15T23:42:39.625Z"
-            }
-          ],
-          "activeBlockers": [],
-          "recentSummaries": [],
-          "createdAt": "2025-03-15T23:42:39.625Z",
-          "updatedAt": "2025-03-15T23:42:39.625Z"
-        },
-        {
-          "groupId": "ee74812d-3dec-4c53-9108-b43746701024",
-          "groupName": "c",
-          "description": "c",
-          "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "ownerName": "b",
-          "members": [
-            "eca65ddd-261f-41d0-9a63-83a62a5e3878"
-          ],
-          "memberNames": [
-            "b"
-          ],
-          "memberStatuses": [
-            {
-              "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-              "userName": "b",
-              "currentStatus": "Just joined the group",
-              "lastUpdated": "2025-03-15T23:43:15.557Z"
-            }
-          ],
-          "activeBlockers": [],
-          "recentSummaries": [],
-          "createdAt": "2025-03-15T23:43:15.557Z",
-          "updatedAt": "2025-03-15T23:43:15.557Z"
-        },
-        {
-          "groupId": "8a71ec73-82e5-4ead-bcd7-af856e6b0102",
-          "groupName": "e",
-          "description": "e",
-          "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "ownerName": "b",
-          "members": [
-            "eca65ddd-261f-41d0-9a63-83a62a5e3878"
-          ],
-          "memberNames": [
-            "b"
-          ],
-          "memberStatuses": [
-            {
-              "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-              "userName": "b",
-              "currentStatus": "Just joined the group",
-              "lastUpdated": "2025-03-15T23:44:34.397Z"
-            }
-          ],
-          "activeBlockers": [],
-          "recentSummaries": [],
-          "createdAt": "2025-03-15T23:44:34.397Z",
-          "updatedAt": "2025-03-15T23:44:34.397Z"
-        },
-        {
-          "groupId": "4a6ea0fc-c7aa-4443-841d-466702c5a45c",
-          "groupName": "f",
-          "description": "f",
-          "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "ownerName": "b",
-          "members": [
-            "eca65ddd-261f-41d0-9a63-83a62a5e3878"
-          ],
-          "memberNames": [
-            "b"
-          ],
-          "memberStatuses": [
-            {
-              "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-              "userName": "b",
-              "currentStatus": "Just joined the group",
-              "lastUpdated": "2025-03-15T23:45:42.221Z"
-            }
-          ],
-          "activeBlockers": [],
-          "recentSummaries": [],
-          "createdAt": "2025-03-15T23:45:42.221Z",
-          "updatedAt": "2025-03-15T23:45:42.221Z"
-        },
-        {
-          "groupId": "ddb2b28e-a5a2-4cfe-9074-9c0d1d94aae6",
-          "groupName": "g",
-          "description": "g",
-          "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "ownerName": "b",
-          "members": [
-            "eca65ddd-261f-41d0-9a63-83a62a5e3878"
-          ],
-          "memberNames": [
-            "b"
-          ],
-          "memberStatuses": [
-            {
-              "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-              "userName": "b",
-              "currentStatus": "Just joined the group",
-              "lastUpdated": "2025-03-15T23:47:03.256Z"
-            }
-          ],
-          "activeBlockers": [],
-          "recentSummaries": [],
-          "createdAt": "2025-03-15T23:47:03.256Z",
-          "updatedAt": "2025-03-15T23:47:03.256Z"
+          "currentSummary": "The group is working towards finishing their UniHack project on time. Everyone is working on their respective tasks. The teams mood is positive and everyone is excited to see the final product.",
+          "createdAt": "2025-03-16T03:50:05.312Z",
+          "updatedAt": "2025-03-16T03:53:23.341Z"
         }
       ]
     },
     {
-      "userId": "6749c5d4-eb68-4f62-bd1a-b29f0c8055c9",
-      "name": "John Doe",
-      "email": "john@example.com",
-      "password": "$2a$10$Gs3nNOY7Mu0hB3XDAuQxlOFun0tQ5CW7hsdgcRbQRsTCKTjtazhd6",
-      "groups": []
+      "userId": "b49c961c-44d0-4b16-8dcc-4eef5e994704",
+      "name": "Michael",
+      "email": "michael@gmail.com",
+      "password": "$2a$10$z639Sw7GrpSLiw1OdeBZsOVp/UhJfHuTqCTTZdbQxKnSCZZ4eO/La",
+      "groups": [
+        {
+          "groupId": "da93949b-14ff-4aa4-b02e-0284d3c03d8e",
+          "groupName": "Overcooked Cookies",
+          "description": "We cook Cookies",
+          "ownerId": "164207c5-b2f2-4f38-8eb0-78bbc58436b3",
+          "ownerName": "Ashwin",
+          "members": [
+            "164207c5-b2f2-4f38-8eb0-78bbc58436b3",
+            "73359b78-3a60-49c1-87b3-ec38cdda86f7",
+            "b49c961c-44d0-4b16-8dcc-4eef5e994704",
+            "84278bce-9fa4-4f89-a37c-ba8cef819009"
+          ],
+          "memberNames": [
+            "Ashwin",
+            "Brian",
+            "Michael",
+            "Vincent"
+          ],
+          "memberStatuses": [
+            {
+              "userId": "164207c5-b2f2-4f38-8eb0-78bbc58436b3",
+              "userName": "Ashwin",
+              "currentStatus": "No status update",
+              "lastUpdated": "2025-03-16T03:50:05.312Z"
+            },
+            {
+              "userId": "73359b78-3a60-49c1-87b3-ec38cdda86f7",
+              "userName": "Brian",
+              "currentStatus": "Working on the frontend dashboard design",
+              "lastUpdated": "2025-03-16T03:50:05.312Z"
+            },
+            {
+              "userId": "b49c961c-44d0-4b16-8dcc-4eef5e994704",
+              "userName": "Michael",
+              "currentStatus": "Working on the project video submission",
+              "lastUpdated": "2025-03-16T03:50:05.312Z"
+            },
+            {
+              "userId": "84278bce-9fa4-4f89-a37c-ba8cef819009",
+              "userName": "Vincent",
+              "currentStatus": "Working on the mailing service",
+              "lastUpdated": "2025-03-16T03:50:05.312Z"
+            }
+          ],
+          "activeBlockers": [],
+          "recentSummaries": [],
+          "currentSummary": "The group is working towards finishing their UniHack project on time. Everyone is working on their respective tasks. The teams mood is positive and everyone is excited to see the final product.",
+          "createdAt": "2025-03-16T03:50:05.312Z",
+          "updatedAt": "2025-03-16T04:37:07.820Z"
+        }
+      ]
+    },
+    {
+      "userId": "84278bce-9fa4-4f89-a37c-ba8cef819009",
+      "name": "Vincent",
+      "email": "vincent@gmail.com",
+      "password": "$2a$10$FoS4EBaeUEzcxh2wqK/Eb.lyiL5VyLvLvCfeK9zGZqL7WpSmHTvOq",
+      "groups": [
+        {
+          "groupId": "da93949b-14ff-4aa4-b02e-0284d3c03d8e",
+          "groupName": "Overcooked Cookies",
+          "description": "We cook Cookies",
+          "ownerId": "164207c5-b2f2-4f38-8eb0-78bbc58436b3",
+          "ownerName": "Ashwin",
+          "members": [
+            "164207c5-b2f2-4f38-8eb0-78bbc58436b3",
+            "73359b78-3a60-49c1-87b3-ec38cdda86f7",
+            "b49c961c-44d0-4b16-8dcc-4eef5e994704",
+            "84278bce-9fa4-4f89-a37c-ba8cef819009"
+          ],
+          "memberNames": [
+            "Ashwin",
+            "Brian",
+            "Michael",
+            "Vincent"
+          ],
+          "memberStatuses": [
+            {
+              "userId": "164207c5-b2f2-4f38-8eb0-78bbc58436b3",
+              "userName": "Ashwin",
+              "currentStatus": "No status update",
+              "lastUpdated": "2025-03-16T03:50:05.312Z"
+            },
+            {
+              "userId": "73359b78-3a60-49c1-87b3-ec38cdda86f7",
+              "userName": "Brian",
+              "currentStatus": "Working on the frontend dashboard design",
+              "lastUpdated": "2025-03-16T03:50:05.312Z"
+            },
+            {
+              "userId": "b49c961c-44d0-4b16-8dcc-4eef5e994704",
+              "userName": "Michael",
+              "currentStatus": "Working on the project video submission",
+              "lastUpdated": "2025-03-16T03:50:05.312Z"
+            },
+            {
+              "userId": "84278bce-9fa4-4f89-a37c-ba8cef819009",
+              "userName": "Vincent",
+              "currentStatus": "Working on the mailing service",
+              "lastUpdated": "2025-03-16T03:50:05.312Z"
+            }
+          ],
+          "activeBlockers": [],
+          "recentSummaries": [],
+          "currentSummary": "The group is working towards finishing their UniHack project on time. Everyone is working on their respective tasks. The teams mood is positive and everyone is excited to see the final product.",
+          "createdAt": "2025-03-16T03:50:05.312Z",
+          "updatedAt": "2025-03-16T04:37:07.820Z"
+        }
+      ]
+    },
+    {
+      "userId": "87fa95af-31ae-4a4a-9fa1-2370e9ef4713",
+      "name": "asd",
+      "email": "asd@gmail.com",
+      "password": "$2a$10$aEvhYNUOi7J06Ahd2/3G7eV3Cp3SeXllS3wE5PE6tW61CJV5N3vTC",
+      "groups": [
+        {
+          "groupId": "fe9c96ba-3347-4231-97f3-785db5ee6dd0",
+          "groupName": "asd",
+          "description": "asd",
+          "ownerId": "87fa95af-31ae-4a4a-9fa1-2370e9ef4713",
+          "ownerName": "asd",
+          "members": [
+            "87fa95af-31ae-4a4a-9fa1-2370e9ef4713"
+          ],
+          "memberNames": [
+            "asd"
+          ],
+          "memberStatuses": [
+            {
+              "userId": "87fa95af-31ae-4a4a-9fa1-2370e9ef4713",
+              "userName": "asd",
+              "currentStatus": "Just joined the group",
+              "lastUpdated": "2025-03-16T05:37:24.864Z"
+            }
+          ],
+          "activeBlockers": [],
+          "recentSummaries": [],
+          "currentSummary": "",
+          "createdAt": "2025-03-16T05:37:24.864Z",
+          "updatedAt": "2025-03-16T05:37:24.864Z"
+        }
+      ]
+    },
+    {
+      "userId": "0436e283-5906-4bc0-ac32-70cb59d8b48a",
+      "name": "asd",
+      "email": "asds@gmail.com",
+      "password": "$2a$10$Dn.XK0wK00uiDTFzLxzBcO8Tw01Jxu2oPoJvlDJydsI052TT59b8S",
+      "groups": [
+        {
+          "groupId": "4d59c6c9-9ca8-4d68-a7b6-088082c151e4",
+          "groupName": "asd",
+          "description": "asd",
+          "ownerId": "0436e283-5906-4bc0-ac32-70cb59d8b48a",
+          "ownerName": "asd",
+          "members": [
+            "0436e283-5906-4bc0-ac32-70cb59d8b48a"
+          ],
+          "memberNames": [
+            "asd"
+          ],
+          "memberStatuses": [
+            {
+              "userId": "0436e283-5906-4bc0-ac32-70cb59d8b48a",
+              "userName": "asd",
+              "currentStatus": "Just joined the group",
+              "lastUpdated": "2025-03-16T05:37:10.748Z"
+            }
+          ],
+          "activeBlockers": [],
+          "recentSummaries": [],
+          "currentSummary": "",
+          "createdAt": "2025-03-16T05:37:10.748Z",
+          "updatedAt": "2025-03-16T05:37:44.922Z"
+        }
+      ]
+    },
+    {
+      "userId": "ea62a577-18d1-4aea-a15c-cd59613b1d6e",
+      "name": "Test User",
+      "email": "test@gmail.com",
+      "password": "$2a$10$6q/lKYpgzvgKZkH3liIPKuzZtQZgHgntfWM0yh3Rt0cfuiBYE06ZC",
+      "groups": [
+        {
+          "groupId": "a58f9243-5822-4d80-86ee-78f3eaac5550",
+          "groupName": "Test Group",
+          "description": "Test Group",
+          "ownerId": "ea62a577-18d1-4aea-a15c-cd59613b1d6e",
+          "ownerName": "Test User",
+          "members": [
+            "ea62a577-18d1-4aea-a15c-cd59613b1d6e"
+          ],
+          "memberNames": [
+            "Test User"
+          ],
+          "memberStatuses": [
+            {
+              "userId": "ea62a577-18d1-4aea-a15c-cd59613b1d6e",
+              "userName": "Test User",
+              "currentStatus": "Just joined the group",
+              "lastUpdated": "2025-03-16T05:39:35.164Z"
+            }
+          ],
+          "activeBlockers": [],
+          "recentSummaries": [],
+          "currentSummary": "",
+          "createdAt": "2025-03-16T05:39:35.164Z",
+          "updatedAt": "2025-03-16T05:39:35.164Z"
+        }
+      ]
     }
   ],
   "groups": [
     {
-      "groupId": "0f0f8d28-1294-4943-a572-f4a791b2b898",
-      "groupName": "gfdgdfg",
-      "description": "dfgdg",
-      "ownerId": "96cc4b1b-cb8d-46b8-a5b1-246dd0a83b20",
-      "ownerName": "b",
+      "groupId": "da93949b-14ff-4aa4-b02e-0284d3c03d8e",
+      "groupName": "Overcooked Cookies",
+      "description": "We cook Cookies",
+      "ownerId": "164207c5-b2f2-4f38-8eb0-78bbc58436b3",
+      "ownerName": "Ashwin",
       "members": [
-        "96cc4b1b-cb8d-46b8-a5b1-246dd0a83b20"
+        "164207c5-b2f2-4f38-8eb0-78bbc58436b3",
+        "73359b78-3a60-49c1-87b3-ec38cdda86f7",
+        "b49c961c-44d0-4b16-8dcc-4eef5e994704",
+        "84278bce-9fa4-4f89-a37c-ba8cef819009"
       ],
       "memberNames": [
-        "b"
+        "Ashwin",
+        "Brian",
+        "Michael",
+        "Vincent"
       ],
       "memberStatuses": [
         {
-          "userId": "96cc4b1b-cb8d-46b8-a5b1-246dd0a83b20",
-          "userName": "b",
-          "currentStatus": "- Working on group management features.",
-          "lastUpdated": "2025-03-16T01:19:34.990Z"
+          "userId": "164207c5-b2f2-4f38-8eb0-78bbc58436b3",
+          "userName": "Ashwin",
+          "currentStatus": "- Developing backend OpenAI integration.",
+          "lastUpdated": "2025-03-16T05:04:51.368Z"
+        },
+        {
+          "userId": "73359b78-3a60-49c1-87b3-ec38cdda86f7",
+          "userName": "Brian",
+          "currentStatus": "Working on the frontend dashboard design",
+          "lastUpdated": "2025-03-16T03:50:05.312Z"
+        },
+        {
+          "userId": "b49c961c-44d0-4b16-8dcc-4eef5e994704",
+          "userName": "Michael",
+          "currentStatus": "Working on the project video submission",
+          "lastUpdated": "2025-03-16T03:50:05.312Z"
+        },
+        {
+          "userId": "84278bce-9fa4-4f89-a37c-ba8cef819009",
+          "userName": "Vincent",
+          "currentStatus": "Working on the mailing service",
+          "lastUpdated": "2025-03-16T03:50:05.312Z"
         }
       ],
       "activeBlockers": [
         {
-          "blockerId": "b25b85c5-ce1d-4710-97a7-6c9390959868",
-          "userId": "96cc4b1b-cb8d-46b8-a5b1-246dd0a83b20",
-          "userName": "b",
-          "groupId": "0f0f8d28-1294-4943-a572-f4a791b2b898",
-          "groupName": "gfdgdfg",
-          "description": "Waiting for API access. (b)",
+          "blockerId": "d63ca5c1-7750-4cb2-9944-dd5477a65675",
+          "userId": "164207c5-b2f2-4f38-8eb0-78bbc58436b3",
+          "userName": "Ashwin",
+          "groupId": "Overcooked Cookies",
+          "groupName": "Overcooked Cookies",
+          "description": "Waiting for approval to buy OpenAI Credits (Ashwin)",
           "priority": "medium",
           "status": "active",
-          "createdAt": "2025-03-16T01:19:34.990Z",
-          "updatedAt": "2025-03-16T01:19:34.990Z"
+          "createdAt": "2025-03-16T05:04:51.368Z",
+          "updatedAt": "2025-03-16T05:04:51.368Z"
         }
       ],
       "recentSummaries": [
         {
-          "date": "2025-03-16T01:19:34.990Z",
-          "content": "- Implemented user authentication, fixed bugs. Tomorrow: group management. Blocked by API access.",
+          "date": "2025-03-16T05:04:51.368Z",
+          "content": "- Implemented Vector Database setup, currently developing backend OpenAI integration.",
           "generatedBy": "AI"
         }
       ],
-      "createdAt": "2025-03-15T21:27:38.450Z",
-      "updatedAt": "2025-03-16T01:19:34.990Z"
+      "currentSummary": "The group is working towards finishing their UniHack project on time. Everyone is working on their respective tasks. The teams mood is positive and everyone is excited to see the final product.",
+      "createdAt": "2025-03-16T03:50:05.312Z",
+      "updatedAt": "2025-03-16T05:44:44.616Z"
     },
     {
-      "groupId": "890c1819-43f7-4cc5-8461-78aa2ffe9ee5",
-      "groupName": "a",
-      "description": "a",
-      "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-      "ownerName": "b",
+      "groupId": "4d59c6c9-9ca8-4d68-a7b6-088082c151e4",
+      "groupName": "asd",
+      "description": "asd",
+      "ownerId": "0436e283-5906-4bc0-ac32-70cb59d8b48a",
+      "ownerName": "asd",
       "members": [
-        "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+        "0436e283-5906-4bc0-ac32-70cb59d8b48a"
       ],
       "memberNames": [
-        "b"
+        "asd"
       ],
       "memberStatuses": [
         {
-          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "userName": "b",
-          "currentStatus": "- Working on User info",
-          "lastUpdated": "2025-03-16T01:45:52.513Z"
-        }
-      ],
-      "activeBlockers": [
-        {
-          "blockerId": "6462a296-2faa-4e18-9315-821eec3bd80e",
-          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "userName": "b",
-          "groupId": "a",
-          "groupName": "a",
-          "description": "No blockers",
-          "priority": "medium",
-          "status": "active",
-          "createdAt": "2025-03-16T01:45:52.513Z",
-          "updatedAt": "2025-03-16T01:45:52.513Z"
-        },
-        {
-          "blockerId": "2b37cf60-8277-46c7-8f4a-641ca764f749",
-          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "userName": "b",
-          "groupId": "a",
-          "groupName": "a",
-          "description": "*Medium priority blocker.* (Blocked by: [BLOCKERS])",
-          "priority": "medium",
-          "status": "active",
-          "createdAt": "2025-03-16T01:25:42.400Z",
-          "updatedAt": "2025-03-16T01:25:42.400Z"
-        },
-        {
-          "blockerId": "b211cd89-f50f-4caf-8d37-7e0f0115f246",
-          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "userName": "b",
-          "groupId": "a",
-          "groupName": "a",
-          "description": "Medium priority blocker. (Blocked by: [BLOCKERS])",
-          "priority": "medium",
-          "status": "active",
-          "createdAt": "2025-03-16T01:25:04.650Z",
-          "updatedAt": "2025-03-16T01:25:04.650Z"
-        },
-        {
-          "blockerId": "f3cb07d5-7cce-4c8e-8234-1945c46bb39e",
-          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "userName": "b",
-          "groupId": "a",
-          "groupName": "a",
-          "description": "*Medium priority blocker: [BLOCKERS]*",
-          "priority": "medium",
-          "status": "active",
-          "createdAt": "2025-03-16T01:23:50.901Z",
-          "updatedAt": "2025-03-16T01:23:50.901Z"
-        },
-        {
-          "blockerId": "c564f803-e02e-42dc-8160-6e9b0b8b415c",
-          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "userName": "b",
-          "groupId": "a",
-          "groupName": "a",
-          "description": "*Description: [BLOCKERS]* (Priority: Medium)",
-          "priority": "medium",
-          "status": "active",
-          "createdAt": "2025-03-16T01:23:17.386Z",
-          "updatedAt": "2025-03-16T01:23:17.386Z"
-        },
-        {
-          "blockerId": "3228820e-a7cb-4c5d-856c-921a5c4636f4",
-          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "userName": "b",
-          "groupId": "a",
-          "groupName": "a",
-          "description": "[BLOCKERS]",
-          "priority": "medium",
-          "status": "active",
-          "createdAt": "2025-03-16T00:58:43.117Z",
-          "updatedAt": "2025-03-16T00:58:43.117Z"
-        }
-      ],
-      "recentSummaries": [
-        {
-          "date": "2025-03-16T01:45:52.513Z",
-          "content": "- *Completed work:* Finished auth function\n- *Current work:* Working on User info",
-          "generatedBy": "AI"
-        },
-        {
-          "date": "2025-03-16T01:25:42.400Z",
-          "content": "No summary provided",
-          "generatedBy": "AI"
-        },
-        {
-          "date": "2025-03-16T01:25:04.650Z",
-          "content": "No summary provided",
-          "generatedBy": "AI"
-        },
-        {
-          "date": "2025-03-16T01:23:50.901Z",
-          "content": "No summary provided",
-          "generatedBy": "AI"
-        },
-        {
-          "date": "2025-03-16T01:23:17.386Z",
-          "content": "No summary provided",
-          "generatedBy": "AI"
-        }
-      ],
-      "createdAt": "2025-03-15T23:22:52.990Z",
-      "updatedAt": "2025-03-16T01:52:49.307Z",
-      "currentSummary": "- *Completed work:* Finished auth function\n- *Current work:* Working on User info"
-    },
-    {
-      "groupId": "96b605fe-774e-4c46-a78a-28f62f83a7ae",
-      "groupName": "b",
-      "description": "b",
-      "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-      "ownerName": "b",
-      "members": [
-        "eca65ddd-261f-41d0-9a63-83a62a5e3878"
-      ],
-      "memberNames": [
-        "b"
-      ],
-      "memberStatuses": [
-        {
-          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "userName": "b",
+          "userId": "0436e283-5906-4bc0-ac32-70cb59d8b48a",
+          "userName": "asd",
           "currentStatus": "Just joined the group",
-          "lastUpdated": "2025-03-15T23:33:10.268Z"
+          "lastUpdated": "2025-03-16T05:37:10.748Z"
         }
       ],
       "activeBlockers": [],
       "recentSummaries": [],
-      "createdAt": "2025-03-15T23:33:10.268Z",
-      "updatedAt": "2025-03-15T23:33:10.268Z"
+      "currentSummary": "",
+      "createdAt": "2025-03-16T05:37:10.748Z",
+      "updatedAt": "2025-03-16T05:37:44.922Z"
     },
     {
-      "groupId": "9ca0492e-4aa8-43ef-8c87-b059490d175e",
-      "groupName": "b",
-      "description": "b",
-      "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-      "ownerName": "b",
+      "groupId": "fe9c96ba-3347-4231-97f3-785db5ee6dd0",
+      "groupName": "asd",
+      "description": "asd",
+      "ownerId": "87fa95af-31ae-4a4a-9fa1-2370e9ef4713",
+      "ownerName": "asd",
       "members": [
-        "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+        "87fa95af-31ae-4a4a-9fa1-2370e9ef4713"
       ],
       "memberNames": [
-        "b"
+        "asd"
       ],
       "memberStatuses": [
         {
-          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "userName": "b",
+          "userId": "87fa95af-31ae-4a4a-9fa1-2370e9ef4713",
+          "userName": "asd",
           "currentStatus": "Just joined the group",
-          "lastUpdated": "2025-03-15T23:34:03.542Z"
+          "lastUpdated": "2025-03-16T05:37:24.864Z"
         }
       ],
       "activeBlockers": [],
       "recentSummaries": [],
-      "createdAt": "2025-03-15T23:34:03.542Z",
-      "updatedAt": "2025-03-15T23:34:03.542Z"
+      "currentSummary": "",
+      "createdAt": "2025-03-16T05:37:24.864Z",
+      "updatedAt": "2025-03-16T05:37:24.864Z"
     },
     {
-      "groupId": "86b912b5-9548-4fa3-9b38-db3ecc6d2b25",
-      "groupName": "b",
-      "description": "b",
-      "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-      "ownerName": "b",
+      "groupId": "a58f9243-5822-4d80-86ee-78f3eaac5550",
+      "groupName": "Test Group",
+      "description": "Test Group",
+      "ownerId": "ea62a577-18d1-4aea-a15c-cd59613b1d6e",
+      "ownerName": "Test User",
       "members": [
-        "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+        "ea62a577-18d1-4aea-a15c-cd59613b1d6e"
       ],
       "memberNames": [
-        "b"
+        "Test User"
       ],
       "memberStatuses": [
         {
-          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "userName": "b",
+          "userId": "ea62a577-18d1-4aea-a15c-cd59613b1d6e",
+          "userName": "Test User",
           "currentStatus": "Just joined the group",
-          "lastUpdated": "2025-03-15T23:35:42.328Z"
+          "lastUpdated": "2025-03-16T05:39:35.164Z"
         }
       ],
       "activeBlockers": [],
       "recentSummaries": [],
-      "createdAt": "2025-03-15T23:35:42.328Z",
-      "updatedAt": "2025-03-15T23:35:42.328Z"
-    },
-    {
-      "groupId": "a2ab9e86-2378-449d-8156-095c541bca69",
-      "groupName": "b",
-      "description": "b",
-      "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-      "ownerName": "b",
-      "members": [
-        "eca65ddd-261f-41d0-9a63-83a62a5e3878"
-      ],
-      "memberNames": [
-        "b"
-      ],
-      "memberStatuses": [
-        {
-          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "userName": "b",
-          "currentStatus": "Just joined the group",
-          "lastUpdated": "2025-03-15T23:40:36.650Z"
-        }
-      ],
-      "activeBlockers": [],
-      "recentSummaries": [],
-      "createdAt": "2025-03-15T23:40:36.650Z",
-      "updatedAt": "2025-03-15T23:40:36.650Z"
-    },
-    {
-      "groupId": "c8c8d4d0-70fe-4872-9244-07d69cccbc0f",
-      "groupName": "b",
-      "description": "b",
-      "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-      "ownerName": "b",
-      "members": [
-        "eca65ddd-261f-41d0-9a63-83a62a5e3878"
-      ],
-      "memberNames": [
-        "b"
-      ],
-      "memberStatuses": [
-        {
-          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "userName": "b",
-          "currentStatus": "Just joined the group",
-          "lastUpdated": "2025-03-15T23:41:12.818Z"
-        }
-      ],
-      "activeBlockers": [],
-      "recentSummaries": [],
-      "createdAt": "2025-03-15T23:41:12.818Z",
-      "updatedAt": "2025-03-15T23:41:12.818Z"
-    },
-    {
-      "groupId": "2df599e2-9e7c-4414-833c-38de56a1abd4",
-      "groupName": "b",
-      "description": "b",
-      "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-      "ownerName": "b",
-      "members": [
-        "eca65ddd-261f-41d0-9a63-83a62a5e3878"
-      ],
-      "memberNames": [
-        "b"
-      ],
-      "memberStatuses": [
-        {
-          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "userName": "b",
-          "currentStatus": "Just joined the group",
-          "lastUpdated": "2025-03-15T23:42:15.876Z"
-        }
-      ],
-      "activeBlockers": [],
-      "recentSummaries": [],
-      "createdAt": "2025-03-15T23:42:15.876Z",
-      "updatedAt": "2025-03-15T23:42:15.876Z"
-    },
-    {
-      "groupId": "d5765dbd-ae43-4042-831d-4e7853d9eaa1",
-      "groupName": "c",
-      "description": "c",
-      "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-      "ownerName": "b",
-      "members": [
-        "eca65ddd-261f-41d0-9a63-83a62a5e3878"
-      ],
-      "memberNames": [
-        "b"
-      ],
-      "memberStatuses": [
-        {
-          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "userName": "b",
-          "currentStatus": "Just joined the group",
-          "lastUpdated": "2025-03-15T23:42:39.625Z"
-        }
-      ],
-      "activeBlockers": [],
-      "recentSummaries": [],
-      "createdAt": "2025-03-15T23:42:39.625Z",
-      "updatedAt": "2025-03-15T23:42:39.625Z"
-    },
-    {
-      "groupId": "ee74812d-3dec-4c53-9108-b43746701024",
-      "groupName": "c",
-      "description": "c",
-      "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-      "ownerName": "b",
-      "members": [
-        "eca65ddd-261f-41d0-9a63-83a62a5e3878"
-      ],
-      "memberNames": [
-        "b"
-      ],
-      "memberStatuses": [
-        {
-          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "userName": "b",
-          "currentStatus": "Just joined the group",
-          "lastUpdated": "2025-03-15T23:43:15.557Z"
-        }
-      ],
-      "activeBlockers": [],
-      "recentSummaries": [],
-      "createdAt": "2025-03-15T23:43:15.557Z",
-      "updatedAt": "2025-03-15T23:43:15.557Z"
-    },
-    {
-      "groupId": "8a71ec73-82e5-4ead-bcd7-af856e6b0102",
-      "groupName": "e",
-      "description": "e",
-      "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-      "ownerName": "b",
-      "members": [
-        "eca65ddd-261f-41d0-9a63-83a62a5e3878"
-      ],
-      "memberNames": [
-        "b"
-      ],
-      "memberStatuses": [
-        {
-          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "userName": "b",
-          "currentStatus": "Just joined the group",
-          "lastUpdated": "2025-03-15T23:44:34.397Z"
-        }
-      ],
-      "activeBlockers": [],
-      "recentSummaries": [],
-      "createdAt": "2025-03-15T23:44:34.397Z",
-      "updatedAt": "2025-03-15T23:44:34.397Z"
-    },
-    {
-      "groupId": "4a6ea0fc-c7aa-4443-841d-466702c5a45c",
-      "groupName": "f",
-      "description": "f",
-      "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-      "ownerName": "b",
-      "members": [
-        "eca65ddd-261f-41d0-9a63-83a62a5e3878"
-      ],
-      "memberNames": [
-        "b"
-      ],
-      "memberStatuses": [
-        {
-          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "userName": "b",
-          "currentStatus": "Just joined the group",
-          "lastUpdated": "2025-03-15T23:45:42.221Z"
-        }
-      ],
-      "activeBlockers": [],
-      "recentSummaries": [],
-      "createdAt": "2025-03-15T23:45:42.221Z",
-      "updatedAt": "2025-03-15T23:45:42.221Z"
-    },
-    {
-      "groupId": "ddb2b28e-a5a2-4cfe-9074-9c0d1d94aae6",
-      "groupName": "g",
-      "description": "g",
-      "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-      "ownerName": "b",
-      "members": [
-        "eca65ddd-261f-41d0-9a63-83a62a5e3878"
-      ],
-      "memberNames": [
-        "b"
-      ],
-      "memberStatuses": [
-        {
-          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-          "userName": "b",
-          "currentStatus": "No status update",
-          "lastUpdated": "2025-03-15T23:47:03.256Z"
-        }
-      ],
-      "activeBlockers": [],
-      "recentSummaries": [],
-      "createdAt": "2025-03-15T23:47:03.256Z",
-      "updatedAt": "2025-03-16T00:08:04.755Z"
+      "currentSummary": "",
+      "createdAt": "2025-03-16T05:39:35.164Z",
+      "updatedAt": "2025-03-16T05:39:35.164Z"
     }
   ],
   "standups": [
     {
-      "logId": "b4715bd8-ab5b-4760-b6e4-71e86c934b6e",
-      "userId": "96cc4b1b-cb8d-46b8-a5b1-246dd0a83b20",
-      "userName": "b",
-      "groupId": "0f0f8d28-1294-4943-a572-f4a791b2b898",
-      "groupName": "gfdgdfg",
-      "workDone": "Today I implemented user authentication and fixed some bugs. Tomorrow I'll work on the group management features. I'm blocked by waiting for API access.",
-      "workNext": "- Working on group management features.",
+      "logId": "9f9ff812-2361-4188-9f6c-3e1dfc5a3348",
+      "userId": "164207c5-b2f2-4f38-8eb0-78bbc58436b3",
+      "userName": "Ashwin",
+      "groupId": "Overcooked Cookies",
+      "groupName": "Overcooked Cookies",
+      "workDone": "What have you done?\nFinished setting up the Vector Database\n\nWhat are you doing?\nWorking on the backend OpenAI integration\n\nAny blockers?\nWaiting for approval to buy OpenAI Credits\n",
+      "workNext": "- Developing backend OpenAI integration.",
       "blockers": [
-        "Waiting for API access. (b)"
+        "Waiting for approval to buy OpenAI Credits (Ashwin)"
       ],
-      "createdAt": "2025-03-16T01:19:34.990Z",
-      "updatedAt": "2025-03-16T01:19:34.990Z"
-    },
-    {
-      "logId": "6214f0e6-74c3-4d54-825d-c8465cee84a8",
-      "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-      "userName": "b",
-      "groupId": "a",
-      "groupName": "a",
-      "workDone": "What have you done?\nFinished auth function\nWhat are you doing?\nUser info\nAny blockers?\nNo",
-      "workNext": "- Working on User info",
-      "blockers": [
-        "No blockers"
-      ],
-      "createdAt": "2025-03-16T01:45:52.513Z",
-      "updatedAt": "2025-03-16T01:45:52.513Z"
+      "createdAt": "2025-03-16T05:04:51.368Z",
+      "updatedAt": "2025-03-16T05:04:51.368Z"
     }
   ],
   "blockers": [
     {
-      "blockerId": "3228820e-a7cb-4c5d-856c-921a5c4636f4",
-      "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-      "userName": "b",
-      "groupId": "a",
-      "groupName": "a",
-      "description": "[BLOCKERS]",
+      "blockerId": "d63ca5c1-7750-4cb2-9944-dd5477a65675",
+      "userId": "164207c5-b2f2-4f38-8eb0-78bbc58436b3",
+      "userName": "Ashwin",
+      "groupId": "Overcooked Cookies",
+      "groupName": "Overcooked Cookies",
+      "description": "Waiting for approval to buy OpenAI Credits (Ashwin)",
       "priority": "medium",
       "status": "active",
-      "createdAt": "2025-03-16T00:58:43.117Z",
-      "updatedAt": "2025-03-16T00:58:43.117Z"
-    },
-    {
-      "blockerId": "c564f803-e02e-42dc-8160-6e9b0b8b415c",
-      "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-      "userName": "b",
-      "groupId": "a",
-      "groupName": "a",
-      "description": "*Description: [BLOCKERS]* (Priority: Medium)",
-      "priority": "medium",
-      "status": "active",
-      "createdAt": "2025-03-16T01:23:17.386Z",
-      "updatedAt": "2025-03-16T01:23:17.386Z"
-    },
-    {
-      "blockerId": "f3cb07d5-7cce-4c8e-8234-1945c46bb39e",
-      "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-      "userName": "b",
-      "groupId": "a",
-      "groupName": "a",
-      "description": "*Medium priority blocker: [BLOCKERS]*",
-      "priority": "medium",
-      "status": "active",
-      "createdAt": "2025-03-16T01:23:50.901Z",
-      "updatedAt": "2025-03-16T01:23:50.901Z"
-    },
-    {
-      "blockerId": "b211cd89-f50f-4caf-8d37-7e0f0115f246",
-      "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-      "userName": "b",
-      "groupId": "a",
-      "groupName": "a",
-      "description": "Medium priority blocker. (Blocked by: [BLOCKERS])",
-      "priority": "medium",
-      "status": "active",
-      "createdAt": "2025-03-16T01:25:04.650Z",
-      "updatedAt": "2025-03-16T01:25:04.650Z"
-    },
-    {
-      "blockerId": "2b37cf60-8277-46c7-8f4a-641ca764f749",
-      "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-      "userName": "b",
-      "groupId": "a",
-      "groupName": "a",
-      "description": "*Medium priority blocker.* (Blocked by: [BLOCKERS])",
-      "priority": "medium",
-      "status": "active",
-      "createdAt": "2025-03-16T01:25:42.400Z",
-      "updatedAt": "2025-03-16T01:25:42.400Z"
-    },
-    {
-      "blockerId": "6462a296-2faa-4e18-9315-821eec3bd80e",
-      "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
-      "userName": "b",
-      "groupId": "a",
-      "groupName": "a",
-      "description": "No blockers",
-      "priority": "medium",
-      "status": "active",
-      "createdAt": "2025-03-16T01:45:52.513Z",
-      "updatedAt": "2025-03-16T01:45:52.513Z"
+      "createdAt": "2025-03-16T05:04:51.368Z",
+      "updatedAt": "2025-03-16T05:04:51.368Z"
     }
   ]
 }
