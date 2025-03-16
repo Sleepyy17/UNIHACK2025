@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button, TextField, Typography, Grid, Box, Modal, Alert, AlertTitle, colors, getAppBarUtilityClass } from '@mui/material'; 
 import { Padding } from '@mui/icons-material';
 import AddIcon from '@mui/icons-material/Add';
+import MenuIcon from '@mui/icons-material/Menu';
 
 import './group.css'
 import { getTeamInfo, getUserInfo } from '../helpers/helpers';
@@ -140,6 +141,9 @@ function GroupsLanding (token) {
     }
 
     const BlockerHeaderText = {
+        fontFamily: 'Heebo',
+        fontSize: '1.3vw',
+        fontWeight: 'bold',
     }
     const bb = {
         width: '35%',
@@ -172,19 +176,14 @@ function GroupsLanding (token) {
         gap: '10px',
         backgroundColor: '#99C1B9',
         borderRadius: '20px',
-        // padding: '20px',
-        height: '100%',
-        width: '60%',
+        height: '98%',
+        paddingLeft: '20px',
+        paddingTop: '20px',
+        width: '55%',
         overflow: 'scroll',
         borderTopLeftRadius: '0',
         borderBottomLeftRadius: '0',
         overflowX: 'hidden',
-    }
-
-    const blocker = {
-    }
-
-    const blockerText = {
     }
 
     const MemberContainer = {
@@ -258,6 +257,8 @@ function GroupsLanding (token) {
         return work.currentStatus;
     }
 
+    console.log(groupData.activeBlockers)
+
 
     const BlockerNotif = (blocker) => {
         return (
@@ -265,21 +266,19 @@ function GroupsLanding (token) {
                 <div class="cardL">
     <div class="card__wrapper">
         <div class="card___wrapper-acounts">
-            <div class="card__score">+3</div>
         </div>
         <div class="card__menu"><svg xmlns="http://www.w3.org/2000/svg" width="4" viewBox="0 0 4 20" height="20" fill="none"><g fill="#000"><path d="m2 4c1.10457 0 2-.89543 2-2s-.89543-2-2-2-2 .89543-2 2 .89543 2 2 2z"></path><path d="m2 12c1.10457 0 2-.8954 2-2 0-1.10457-.89543-2-2-2s-2 .89543-2 2c0 1.1046.89543 2 2 2z"></path><path d="m2 20c1.10457 0 2-.8954 2-2s-.89543-2-2-2-2 .8954-2 2 .89543 2 2 2z"></path></g></svg></div>
     </div>
-    <div class="card__title">Web Design templates
-        Selection</div>
-    <div class="card__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elitsed do eiusmod.</div>
-    <div class="card__indicator"><span class="card__indicator-amount">135</span> Works / <span class="card__indicator-percentage">45%</span></div>
-    <div class="card__progress"><progress max="100" value="40"></progress></div>
+    <div class="card__title">{blocker.userName}</div>
+    <div class="card__subtitle">{blocker.description}</div>
+    <div class="card__indicator"><span class="card__indicator-amount">{blocker.priority}</span> </div>
 </div>
             </Box>
         )
     }
     return (
         <>
+            <MenuIcon sx={{ position: 'absolute', top: '20px', right: '40px', fontSize: '40px', color: 'whitesmoke' }} />
             <Box style={contentContainer}>
                 <Box sx={contentHeader}>
                     <Typography sx={headerText}>{groupData.name}</Typography>
@@ -287,8 +286,10 @@ function GroupsLanding (token) {
                 <Box sx={bodyCont}>
                     <Box sx={LeftContainer}>
                         <Box sx={SummaryContainer}>
-                            <Typography>Summary</Typography>
-                            <Typography>{(groupData.currentSummary) ? groupData.currentSummary : "No summary yet"}</Typography>
+                            <Typography sx={{    fontFamily: 'Heebo',
+        fontSize: '1.3vw',
+        fontWeight: 'bold',}}>Summary</Typography>
+                            <Typography sx={{    fontFamily: 'Inter'}}>{(groupData.currentSummary) ? groupData.currentSummary : "No summary yet"}</Typography>
                         </Box>
                         <Box sx={teamContainer}>
                             <Box sx={MemberContainer}>
@@ -311,7 +312,7 @@ function GroupsLanding (token) {
                                             <Typography sx={teamMemberText}>{member.currentStatus}</Typography>
                                         </Box>
                                     ))) :
-                                    (<Typography> No members </Typography>)
+                                    (<Typography sx={{fontFamily: 'Inter'}}> ... </Typography>)
                             }
                             </Box>
                         </Box>
@@ -332,7 +333,7 @@ function GroupsLanding (token) {
                                         (groupData.memberStatuses.map((member, index) => (
                                             StandupNotif(member)
                                         ))) :
-                                        (<Typography> No members </Typography>)
+                                        (<Typography > ... </Typography>)
                                 }
                             </Box>
                         </Box>
@@ -342,7 +343,7 @@ function GroupsLanding (token) {
                                     (groupData.activeBlockers.map((member, index) => (
                                         BlockerNotif(member)
                                     ))) :
-                                    (<Typography> No members </Typography>)
+                                    (<Typography> ... </Typography>)
                             }
                         </Box>
                     </Box>

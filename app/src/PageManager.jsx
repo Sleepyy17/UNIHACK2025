@@ -42,15 +42,13 @@ const PageManager = () => {
               </Link>
             </Box>
           
-          {(window.location.href.includes("profile") ? 
-          <Box>
-          </Box>
-
-            :
-
+          {(window.location.href.localeCompare('http://localhost:3000/') ?
+          <>
+          </>
+          : 
           <Box>
           <Link to="/register">
-            <Button onClick={() => {}} className='cta' variant="contained" style={{ background: '#d38d48', color: 'white', margin:'10px'}} ><span class="span">Register</span>
+            <Button onClick={() => {}} className='cta' variant="contained" style={{ background: '#d38d48', color: 'white', margin:'10px', fontFamily: 'Heebo'}} ><span class="span" style={{fontSize: '20px'}}>Register</span>
   <span class="second">
     <svg
       width="50px"
@@ -86,7 +84,7 @@ const PageManager = () => {
   </span></Button>
           </Link>
           <Link to="/login">
-            <Button onClick={() => {console.log('hello')}} className='cta' variant="contained" style={{ background: '#693502',color: 'white', margin:'10px'}} ><span class="span">LOGIN</span>
+            <Button onClick={() => {console.log('hello')}} className='cta' variant="contained" style={{ background: '#693502',color: 'white', margin:'10px', fontFamily: 'Heebo'}} ><span class="span" style={{fontSize: '20px'}}>LOGIN</span>
   <span class="second">
     <svg
       width="50px"
