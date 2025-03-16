@@ -6,7 +6,7 @@ import { Padding } from '@mui/icons-material';
 import AddIcon from '@mui/icons-material/Add';
 
 import './group.css'
-import { getTeamInfo } from '../helpers/helpers';
+import { getTeamInfo, getUserInfo } from '../helpers/helpers';
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -17,6 +17,7 @@ function GroupsLanding (token) {
     const navigate = useNavigate();
     const { TeamName } = useParams(); 
     const [groupData, setGroupData] = React.useState({});
+    const [userData, setUserData] = React.useState({});
 
     const fetchGroupData = async () => {
         try {
@@ -26,8 +27,20 @@ function GroupsLanding (token) {
             console.error('Error fetching group:', error);
         }
     };
+
+    const fetchUserData = async () => {
+        try {
+            const userData = await getUserInfo(token);
+            setUserData(userData);
+            console.log(userData);
+        } catch (error) {
+            console.error('Error fetching user:', error);
+        }
+    };
+
     React.useEffect(() => {
         fetchGroupData();
+        fetchUserData();
     }, []);
     const contentContainer = {
         fontFamily: 'Heebo',
@@ -302,11 +315,7 @@ function GroupsLanding (token) {
                                 <div class="card">
                                 <AddIcon sx={{fontSize: '50px', color: 'rgb(25, 12, 0)'}}></AddIcon>
                                 <div class="textBox">
-                                    <div class="textContent">
-                                    <p class="h1">Brian</p>
-                                    <span class="span">12 min ago</span>
-                                    </div>
-                                    <p class="p">StandUp is not updated!</p>
+                                    <p class="p">Update your Standup here !</p>
                                 <div>
                 </div></div></div> 
                             </Box>

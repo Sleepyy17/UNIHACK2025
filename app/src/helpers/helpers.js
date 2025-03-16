@@ -21,12 +21,12 @@ export async function make_team(name, description, user_id) {
 }
 
 export async function getUserInfo(user_id) {
-
+    console.log(user_id);
     const response = await fetch(`${LOCAL_SERVER}api/users/me`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'X-User-Id': user_id,
+            'X-User-Id': user_id.token,
         },
     });
     const data = await response.json();
@@ -45,7 +45,6 @@ export async function getTeamInfo(user_id, groupId) {
         },
     });
     const data = await response.json();
-    console.log(data);
     if (data) {
         return data;
     }
