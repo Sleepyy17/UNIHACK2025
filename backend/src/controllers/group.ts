@@ -35,6 +35,7 @@ export const createGroup = async (req: Request, res: Response) => {
             }],
             activeBlockers: [],
             recentSummaries: [],
+            currentSummary: 'Group created. No standups yet.',
             createdAt: new Date(),
             updatedAt: new Date()
         };

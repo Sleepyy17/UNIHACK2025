@@ -37,6 +37,7 @@ export interface Group {
     memberStatuses: MemberStatus[];
     activeBlockers: Blocker[];
     recentSummaries: GroupSummary[];
+    currentSummary: string;
     createdAt: Date;
     updatedAt: Date;
 }

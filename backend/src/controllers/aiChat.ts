@@ -96,6 +96,9 @@ export const chatWithAI = async (req: Request, res: Response) => {
             group.recentSummaries.pop(); // Keep only 5 most recent summaries
         }
 
+        // Update group's current summary with the latest AI summary
+        group.currentSummary = aiResponse.summary;
+
         // Update group's timestamp
         group.updatedAt = new Date();
         saveDataStore();
@@ -105,7 +108,7 @@ export const chatWithAI = async (req: Request, res: Response) => {
             newStatus: aiResponse.newStatus,
             blockers: aiResponse.blockers,
             standup: newStandup,
-            groupInfo: group, // Include updated group info in response
+            groupInfo: group,
             userResponse: aiResponse.userResponse
         });
     } catch (err) {
