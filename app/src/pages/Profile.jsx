@@ -5,6 +5,7 @@ import axios from 'axios';
 import HourglassTopIcon from '@mui/icons-material/HourglassTop';
 import "./style.css";
 import { API_URL } from '../App';
+import { getUserInfo, make_team } from '../helpers/helpers';
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -31,6 +32,7 @@ export default function Profile({token}) {
   
     const handleCloseCreate = () => {
       setOpenCreate(false);
+      getUserInfos();
     };
 
     const teamDisplay = {
@@ -59,13 +61,24 @@ export default function Profile({token}) {
         width: '59vw'
     }
 
+    const getUserInfos = async () => {
+      let data;
+      try {
+        const data = (await getUserInfo(token))
+        setUserData(data);
+      }
+      catch (error) {
+        console.log(error.response);
+      } 
+    } 
+
     React.useEffect(() => {
       axios.get(`${API_URL}/api/users/me`, {headers: {'X-User-Id': token}})
-      .then((response) => {
-        setUserData(response.data);
-      }).catch((error) => {
-        console.log(error.response.data.server);
-      })
+    .then((response) => {
+      setUserData(response.data);
+    }).catch((error) => {
+      console.log(error.response.data.server);
+    });
     }, []);
 
     React.useEffect(() => {
@@ -75,6 +88,21 @@ export default function Profile({token}) {
     React.useEffect(() => {
       displayTeams();
     }, [addMembers])
+
+
+    const createTeam = async (event) => {
+      const formData = new FormData(event.currentTarget);
+      const group = formData.get('group-name');
+      const description = formData.get('description')
+      const users = formData.get('users').split(',');
+      const newTeam = await make_team(group, description, token)
+      
+
+      // ).then((response) => {setAddMembers(response.data.memberNames)})
+      // .catch((error) => {console.log(error.response.data.server)})
+      handleCloseCreate();
+    }
+
 
     const displayTeams = () => {
       if (userData && userData.groups.length == 0) return (<Typography variant="h5" style={{padding:'8px'}}>BRuh Join a team</Typography>);
@@ -405,23 +433,7 @@ export default function Profile({token}) {
                         component: 'form',
                         onSubmit: (event) => {
                           event.preventDefault();
-                          const formData = new FormData(event.currentTarget);
-                          const group = formData.get('group-name');
-                          const description = formData.get('description')
-                          const users = formData.get('users').split(',');
-                          axios.post(`${API_URL}/api/groups/create`, 
-                            {
-                              "groupName": group,
-                              "description": description,
-                            },
-                            {
-                              headers: {
-                                'X-User-Id': token
-                              },
-                            }
-                          ).then((response) => {setAddMembers(response.data.memberNames)})
-                          .catch((error) => {console.log(error.response.data.server)})
-                          handleCloseCreate();
+                          createTeam(event);
                         },
                       },
                     }}

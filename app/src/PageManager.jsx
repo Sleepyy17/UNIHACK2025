@@ -11,6 +11,7 @@ import Landing from './pages/Landing';
 import GroupsLanding from './pages/GroupsLanding';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+import LoggingPage from './pages/Logging';
 
 const PageManager = () => {
     // Setting token for login permissions
@@ -129,6 +130,7 @@ const PageManager = () => {
             <Routes>
                 <Route path="/" element={<Landing token={token} setToken={setToken}/>}></Route>
                 <Route path="/Teams/:TeamName" element={<GroupsLanding token={token} setToken={setToken}/>}></Route>
+                <Route path="/Teams/:TeamName/form" element={<LoggingPage token={token} setToken={setToken}/>}></Route>
                 <Route path="/profile/:id" element={<Profile token={token}/>}></Route>
                 <Route path="/login" element={<LoginPage setToken={setToken}/>}></Route>
                 <Route path="/register" element={<RegisterPage setToken={setToken}/>}></Route>
