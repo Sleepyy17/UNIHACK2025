@@ -160,15 +160,16 @@ export const getGroupInfo = async (req: Request, res: Response) => {
         }
 
         const { groups, users, standups, blockers } = getData();
-        const group = groups.find(g => g.groupId === groupId);
+        const group = groups.find(g => g.groupId === groupId || g.groupName === groupId);
+        console.log('group', groupId)
 
         if (!group) {
             return res.status(404).json({ error: 'Group not found' });
         }
 
-        if (!group.members.includes(userId)) {
-            return res.status(403).json({ error: 'Not a member of this group' });
-        }
+        // if (!group.members.includes(userId)) {
+        //     return res.status(403).json({ error: 'Not a member of this group' });
+        // }
 
         // Update member statuses from latest standups
         const updatedMemberStatuses: MemberStatus[] = group.members.map(memberId => {

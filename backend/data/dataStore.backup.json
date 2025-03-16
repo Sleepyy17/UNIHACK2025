@@ -39,6 +39,314 @@
           "updatedAt": "2025-03-15T21:27:38.450Z"
         }
       ]
+    },
+    {
+      "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "name": "b",
+      "email": "brian.nguyen292@gmail.com",
+      "password": "$2a$10$CZZwUFP5g0yLibvXWoOr9uafyLtpIhL7sLOz.8xCgz8JT1LwXULPO",
+      "groups": [
+        {
+          "groupId": "890c1819-43f7-4cc5-8461-78aa2ffe9ee5",
+          "groupName": "a",
+          "description": "a",
+          "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "ownerName": "b",
+          "members": [
+            "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+          ],
+          "memberNames": [
+            "b"
+          ],
+          "memberStatuses": [
+            {
+              "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+              "userName": "b",
+              "currentStatus": "Just joined the group",
+              "lastUpdated": "2025-03-15T23:22:52.990Z"
+            }
+          ],
+          "activeBlockers": [],
+          "recentSummaries": [],
+          "createdAt": "2025-03-15T23:22:52.990Z",
+          "updatedAt": "2025-03-15T23:22:52.990Z"
+        },
+        {
+          "groupId": "96b605fe-774e-4c46-a78a-28f62f83a7ae",
+          "groupName": "b",
+          "description": "b",
+          "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "ownerName": "b",
+          "members": [
+            "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+          ],
+          "memberNames": [
+            "b"
+          ],
+          "memberStatuses": [
+            {
+              "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+              "userName": "b",
+              "currentStatus": "Just joined the group",
+              "lastUpdated": "2025-03-15T23:33:10.268Z"
+            }
+          ],
+          "activeBlockers": [],
+          "recentSummaries": [],
+          "createdAt": "2025-03-15T23:33:10.268Z",
+          "updatedAt": "2025-03-15T23:33:10.268Z"
+        },
+        {
+          "groupId": "9ca0492e-4aa8-43ef-8c87-b059490d175e",
+          "groupName": "b",
+          "description": "b",
+          "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "ownerName": "b",
+          "members": [
+            "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+          ],
+          "memberNames": [
+            "b"
+          ],
+          "memberStatuses": [
+            {
+              "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+              "userName": "b",
+              "currentStatus": "Just joined the group",
+              "lastUpdated": "2025-03-15T23:34:03.542Z"
+            }
+          ],
+          "activeBlockers": [],
+          "recentSummaries": [],
+          "createdAt": "2025-03-15T23:34:03.542Z",
+          "updatedAt": "2025-03-15T23:34:03.542Z"
+        },
+        {
+          "groupId": "86b912b5-9548-4fa3-9b38-db3ecc6d2b25",
+          "groupName": "b",
+          "description": "b",
+          "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "ownerName": "b",
+          "members": [
+            "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+          ],
+          "memberNames": [
+            "b"
+          ],
+          "memberStatuses": [
+            {
+              "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+              "userName": "b",
+              "currentStatus": "Just joined the group",
+              "lastUpdated": "2025-03-15T23:35:42.328Z"
+            }
+          ],
+          "activeBlockers": [],
+          "recentSummaries": [],
+          "createdAt": "2025-03-15T23:35:42.328Z",
+          "updatedAt": "2025-03-15T23:35:42.328Z"
+        },
+        {
+          "groupId": "a2ab9e86-2378-449d-8156-095c541bca69",
+          "groupName": "b",
+          "description": "b",
+          "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "ownerName": "b",
+          "members": [
+            "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+          ],
+          "memberNames": [
+            "b"
+          ],
+          "memberStatuses": [
+            {
+              "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+              "userName": "b",
+              "currentStatus": "Just joined the group",
+              "lastUpdated": "2025-03-15T23:40:36.650Z"
+            }
+          ],
+          "activeBlockers": [],
+          "recentSummaries": [],
+          "createdAt": "2025-03-15T23:40:36.650Z",
+          "updatedAt": "2025-03-15T23:40:36.650Z"
+        },
+        {
+          "groupId": "c8c8d4d0-70fe-4872-9244-07d69cccbc0f",
+          "groupName": "b",
+          "description": "b",
+          "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "ownerName": "b",
+          "members": [
+            "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+          ],
+          "memberNames": [
+            "b"
+          ],
+          "memberStatuses": [
+            {
+              "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+              "userName": "b",
+              "currentStatus": "Just joined the group",
+              "lastUpdated": "2025-03-15T23:41:12.818Z"
+            }
+          ],
+          "activeBlockers": [],
+          "recentSummaries": [],
+          "createdAt": "2025-03-15T23:41:12.818Z",
+          "updatedAt": "2025-03-15T23:41:12.818Z"
+        },
+        {
+          "groupId": "2df599e2-9e7c-4414-833c-38de56a1abd4",
+          "groupName": "b",
+          "description": "b",
+          "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "ownerName": "b",
+          "members": [
+            "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+          ],
+          "memberNames": [
+            "b"
+          ],
+          "memberStatuses": [
+            {
+              "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+              "userName": "b",
+              "currentStatus": "Just joined the group",
+              "lastUpdated": "2025-03-15T23:42:15.876Z"
+            }
+          ],
+          "activeBlockers": [],
+          "recentSummaries": [],
+          "createdAt": "2025-03-15T23:42:15.876Z",
+          "updatedAt": "2025-03-15T23:42:15.876Z"
+        },
+        {
+          "groupId": "d5765dbd-ae43-4042-831d-4e7853d9eaa1",
+          "groupName": "c",
+          "description": "c",
+          "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "ownerName": "b",
+          "members": [
+            "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+          ],
+          "memberNames": [
+            "b"
+          ],
+          "memberStatuses": [
+            {
+              "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+              "userName": "b",
+              "currentStatus": "Just joined the group",
+              "lastUpdated": "2025-03-15T23:42:39.625Z"
+            }
+          ],
+          "activeBlockers": [],
+          "recentSummaries": [],
+          "createdAt": "2025-03-15T23:42:39.625Z",
+          "updatedAt": "2025-03-15T23:42:39.625Z"
+        },
+        {
+          "groupId": "ee74812d-3dec-4c53-9108-b43746701024",
+          "groupName": "c",
+          "description": "c",
+          "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "ownerName": "b",
+          "members": [
+            "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+          ],
+          "memberNames": [
+            "b"
+          ],
+          "memberStatuses": [
+            {
+              "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+              "userName": "b",
+              "currentStatus": "Just joined the group",
+              "lastUpdated": "2025-03-15T23:43:15.557Z"
+            }
+          ],
+          "activeBlockers": [],
+          "recentSummaries": [],
+          "createdAt": "2025-03-15T23:43:15.557Z",
+          "updatedAt": "2025-03-15T23:43:15.557Z"
+        },
+        {
+          "groupId": "8a71ec73-82e5-4ead-bcd7-af856e6b0102",
+          "groupName": "e",
+          "description": "e",
+          "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "ownerName": "b",
+          "members": [
+            "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+          ],
+          "memberNames": [
+            "b"
+          ],
+          "memberStatuses": [
+            {
+              "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+              "userName": "b",
+              "currentStatus": "Just joined the group",
+              "lastUpdated": "2025-03-15T23:44:34.397Z"
+            }
+          ],
+          "activeBlockers": [],
+          "recentSummaries": [],
+          "createdAt": "2025-03-15T23:44:34.397Z",
+          "updatedAt": "2025-03-15T23:44:34.397Z"
+        },
+        {
+          "groupId": "4a6ea0fc-c7aa-4443-841d-466702c5a45c",
+          "groupName": "f",
+          "description": "f",
+          "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "ownerName": "b",
+          "members": [
+            "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+          ],
+          "memberNames": [
+            "b"
+          ],
+          "memberStatuses": [
+            {
+              "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+              "userName": "b",
+              "currentStatus": "Just joined the group",
+              "lastUpdated": "2025-03-15T23:45:42.221Z"
+            }
+          ],
+          "activeBlockers": [],
+          "recentSummaries": [],
+          "createdAt": "2025-03-15T23:45:42.221Z",
+          "updatedAt": "2025-03-15T23:45:42.221Z"
+        },
+        {
+          "groupId": "ddb2b28e-a5a2-4cfe-9074-9c0d1d94aae6",
+          "groupName": "g",
+          "description": "g",
+          "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "ownerName": "b",
+          "members": [
+            "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+          ],
+          "memberNames": [
+            "b"
+          ],
+          "memberStatuses": [
+            {
+              "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+              "userName": "b",
+              "currentStatus": "Just joined the group",
+              "lastUpdated": "2025-03-15T23:47:03.256Z"
+            }
+          ],
+          "activeBlockers": [],
+          "recentSummaries": [],
+          "createdAt": "2025-03-15T23:47:03.256Z",
+          "updatedAt": "2025-03-15T23:47:03.256Z"
+        }
+      ]
     }
   ],
   "groups": [
@@ -66,6 +374,306 @@
       "recentSummaries": [],
       "createdAt": "2025-03-15T21:27:38.450Z",
       "updatedAt": "2025-03-15T21:27:38.450Z"
+    },
+    {
+      "groupId": "890c1819-43f7-4cc5-8461-78aa2ffe9ee5",
+      "groupName": "a",
+      "description": "a",
+      "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "ownerName": "b",
+      "members": [
+        "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+      ],
+      "memberNames": [
+        "b"
+      ],
+      "memberStatuses": [
+        {
+          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "userName": "b",
+          "currentStatus": "No status update",
+          "lastUpdated": "2025-03-15T23:22:52.990Z"
+        }
+      ],
+      "activeBlockers": [],
+      "recentSummaries": [],
+      "createdAt": "2025-03-15T23:22:52.990Z",
+      "updatedAt": "2025-03-16T00:16:16.911Z"
+    },
+    {
+      "groupId": "96b605fe-774e-4c46-a78a-28f62f83a7ae",
+      "groupName": "b",
+      "description": "b",
+      "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "ownerName": "b",
+      "members": [
+        "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+      ],
+      "memberNames": [
+        "b"
+      ],
+      "memberStatuses": [
+        {
+          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "userName": "b",
+          "currentStatus": "Just joined the group",
+          "lastUpdated": "2025-03-15T23:33:10.268Z"
+        }
+      ],
+      "activeBlockers": [],
+      "recentSummaries": [],
+      "createdAt": "2025-03-15T23:33:10.268Z",
+      "updatedAt": "2025-03-15T23:33:10.268Z"
+    },
+    {
+      "groupId": "9ca0492e-4aa8-43ef-8c87-b059490d175e",
+      "groupName": "b",
+      "description": "b",
+      "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "ownerName": "b",
+      "members": [
+        "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+      ],
+      "memberNames": [
+        "b"
+      ],
+      "memberStatuses": [
+        {
+          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "userName": "b",
+          "currentStatus": "Just joined the group",
+          "lastUpdated": "2025-03-15T23:34:03.542Z"
+        }
+      ],
+      "activeBlockers": [],
+      "recentSummaries": [],
+      "createdAt": "2025-03-15T23:34:03.542Z",
+      "updatedAt": "2025-03-15T23:34:03.542Z"
+    },
+    {
+      "groupId": "86b912b5-9548-4fa3-9b38-db3ecc6d2b25",
+      "groupName": "b",
+      "description": "b",
+      "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "ownerName": "b",
+      "members": [
+        "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+      ],
+      "memberNames": [
+        "b"
+      ],
+      "memberStatuses": [
+        {
+          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "userName": "b",
+          "currentStatus": "Just joined the group",
+          "lastUpdated": "2025-03-15T23:35:42.328Z"
+        }
+      ],
+      "activeBlockers": [],
+      "recentSummaries": [],
+      "createdAt": "2025-03-15T23:35:42.328Z",
+      "updatedAt": "2025-03-15T23:35:42.328Z"
+    },
+    {
+      "groupId": "a2ab9e86-2378-449d-8156-095c541bca69",
+      "groupName": "b",
+      "description": "b",
+      "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "ownerName": "b",
+      "members": [
+        "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+      ],
+      "memberNames": [
+        "b"
+      ],
+      "memberStatuses": [
+        {
+          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "userName": "b",
+          "currentStatus": "Just joined the group",
+          "lastUpdated": "2025-03-15T23:40:36.650Z"
+        }
+      ],
+      "activeBlockers": [],
+      "recentSummaries": [],
+      "createdAt": "2025-03-15T23:40:36.650Z",
+      "updatedAt": "2025-03-15T23:40:36.650Z"
+    },
+    {
+      "groupId": "c8c8d4d0-70fe-4872-9244-07d69cccbc0f",
+      "groupName": "b",
+      "description": "b",
+      "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "ownerName": "b",
+      "members": [
+        "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+      ],
+      "memberNames": [
+        "b"
+      ],
+      "memberStatuses": [
+        {
+          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "userName": "b",
+          "currentStatus": "Just joined the group",
+          "lastUpdated": "2025-03-15T23:41:12.818Z"
+        }
+      ],
+      "activeBlockers": [],
+      "recentSummaries": [],
+      "createdAt": "2025-03-15T23:41:12.818Z",
+      "updatedAt": "2025-03-15T23:41:12.818Z"
+    },
+    {
+      "groupId": "2df599e2-9e7c-4414-833c-38de56a1abd4",
+      "groupName": "b",
+      "description": "b",
+      "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "ownerName": "b",
+      "members": [
+        "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+      ],
+      "memberNames": [
+        "b"
+      ],
+      "memberStatuses": [
+        {
+          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "userName": "b",
+          "currentStatus": "Just joined the group",
+          "lastUpdated": "2025-03-15T23:42:15.876Z"
+        }
+      ],
+      "activeBlockers": [],
+      "recentSummaries": [],
+      "createdAt": "2025-03-15T23:42:15.876Z",
+      "updatedAt": "2025-03-15T23:42:15.876Z"
+    },
+    {
+      "groupId": "d5765dbd-ae43-4042-831d-4e7853d9eaa1",
+      "groupName": "c",
+      "description": "c",
+      "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "ownerName": "b",
+      "members": [
+        "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+      ],
+      "memberNames": [
+        "b"
+      ],
+      "memberStatuses": [
+        {
+          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "userName": "b",
+          "currentStatus": "Just joined the group",
+          "lastUpdated": "2025-03-15T23:42:39.625Z"
+        }
+      ],
+      "activeBlockers": [],
+      "recentSummaries": [],
+      "createdAt": "2025-03-15T23:42:39.625Z",
+      "updatedAt": "2025-03-15T23:42:39.625Z"
+    },
+    {
+      "groupId": "ee74812d-3dec-4c53-9108-b43746701024",
+      "groupName": "c",
+      "description": "c",
+      "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "ownerName": "b",
+      "members": [
+        "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+      ],
+      "memberNames": [
+        "b"
+      ],
+      "memberStatuses": [
+        {
+          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "userName": "b",
+          "currentStatus": "Just joined the group",
+          "lastUpdated": "2025-03-15T23:43:15.557Z"
+        }
+      ],
+      "activeBlockers": [],
+      "recentSummaries": [],
+      "createdAt": "2025-03-15T23:43:15.557Z",
+      "updatedAt": "2025-03-15T23:43:15.557Z"
+    },
+    {
+      "groupId": "8a71ec73-82e5-4ead-bcd7-af856e6b0102",
+      "groupName": "e",
+      "description": "e",
+      "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "ownerName": "b",
+      "members": [
+        "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+      ],
+      "memberNames": [
+        "b"
+      ],
+      "memberStatuses": [
+        {
+          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "userName": "b",
+          "currentStatus": "Just joined the group",
+          "lastUpdated": "2025-03-15T23:44:34.397Z"
+        }
+      ],
+      "activeBlockers": [],
+      "recentSummaries": [],
+      "createdAt": "2025-03-15T23:44:34.397Z",
+      "updatedAt": "2025-03-15T23:44:34.397Z"
+    },
+    {
+      "groupId": "4a6ea0fc-c7aa-4443-841d-466702c5a45c",
+      "groupName": "f",
+      "description": "f",
+      "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "ownerName": "b",
+      "members": [
+        "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+      ],
+      "memberNames": [
+        "b"
+      ],
+      "memberStatuses": [
+        {
+          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "userName": "b",
+          "currentStatus": "Just joined the group",
+          "lastUpdated": "2025-03-15T23:45:42.221Z"
+        }
+      ],
+      "activeBlockers": [],
+      "recentSummaries": [],
+      "createdAt": "2025-03-15T23:45:42.221Z",
+      "updatedAt": "2025-03-15T23:45:42.221Z"
+    },
+    {
+      "groupId": "ddb2b28e-a5a2-4cfe-9074-9c0d1d94aae6",
+      "groupName": "g",
+      "description": "g",
+      "ownerId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "ownerName": "b",
+      "members": [
+        "eca65ddd-261f-41d0-9a63-83a62a5e3878"
+      ],
+      "memberNames": [
+        "b"
+      ],
+      "memberStatuses": [
+        {
+          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "userName": "b",
+          "currentStatus": "No status update",
+          "lastUpdated": "2025-03-15T23:47:03.256Z"
+        }
+      ],
+      "activeBlockers": [],
+      "recentSummaries": [],
+      "createdAt": "2025-03-15T23:47:03.256Z",
+      "updatedAt": "2025-03-16T00:08:04.755Z"
     }
   ],
   "standups": [],
