@@ -30,5 +30,12 @@ body {
       gap: 20px;
       background-color: rgb(135, 199, 255);
   }
+
+  .botBox {
+    background-image: url('./bot.svg');
+    background-repeat: no-repeat;
+    background-size: 15%;
+    background-position: bottom right;
+  }
   
   

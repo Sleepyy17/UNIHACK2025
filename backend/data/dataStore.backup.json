@@ -391,14 +391,101 @@
         {
           "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
           "userName": "b",
-          "currentStatus": "No status update",
-          "lastUpdated": "2025-03-15T23:22:52.990Z"
+          "currentStatus": "- Planning next steps.",
+          "lastUpdated": "2025-03-16T01:25:42.400Z"
         }
       ],
-      "activeBlockers": [],
-      "recentSummaries": [],
+      "activeBlockers": [
+        {
+          "blockerId": "2b37cf60-8277-46c7-8f4a-641ca764f749",
+          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "userName": "b",
+          "groupId": "a",
+          "groupName": "a",
+          "description": "*Medium priority blocker.* (Blocked by: [BLOCKERS])",
+          "priority": "medium",
+          "status": "active",
+          "createdAt": "2025-03-16T01:25:42.400Z",
+          "updatedAt": "2025-03-16T01:25:42.400Z"
+        },
+        {
+          "blockerId": "b211cd89-f50f-4caf-8d37-7e0f0115f246",
+          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "userName": "b",
+          "groupId": "a",
+          "groupName": "a",
+          "description": "Medium priority blocker. (Blocked by: [BLOCKERS])",
+          "priority": "medium",
+          "status": "active",
+          "createdAt": "2025-03-16T01:25:04.650Z",
+          "updatedAt": "2025-03-16T01:25:04.650Z"
+        },
+        {
+          "blockerId": "f3cb07d5-7cce-4c8e-8234-1945c46bb39e",
+          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "userName": "b",
+          "groupId": "a",
+          "groupName": "a",
+          "description": "*Medium priority blocker: [BLOCKERS]*",
+          "priority": "medium",
+          "status": "active",
+          "createdAt": "2025-03-16T01:23:50.901Z",
+          "updatedAt": "2025-03-16T01:23:50.901Z"
+        },
+        {
+          "blockerId": "c564f803-e02e-42dc-8160-6e9b0b8b415c",
+          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "userName": "b",
+          "groupId": "a",
+          "groupName": "a",
+          "description": "*Description: [BLOCKERS]* (Priority: Medium)",
+          "priority": "medium",
+          "status": "active",
+          "createdAt": "2025-03-16T01:23:17.386Z",
+          "updatedAt": "2025-03-16T01:23:17.386Z"
+        },
+        {
+          "blockerId": "3228820e-a7cb-4c5d-856c-921a5c4636f4",
+          "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+          "userName": "b",
+          "groupId": "a",
+          "groupName": "a",
+          "description": "[BLOCKERS]",
+          "priority": "medium",
+          "status": "active",
+          "createdAt": "2025-03-16T00:58:43.117Z",
+          "updatedAt": "2025-03-16T00:58:43.117Z"
+        }
+      ],
+      "recentSummaries": [
+        {
+          "date": "2025-03-16T01:25:42.400Z",
+          "content": "No summary provided",
+          "generatedBy": "AI"
+        },
+        {
+          "date": "2025-03-16T01:25:04.650Z",
+          "content": "No summary provided",
+          "generatedBy": "AI"
+        },
+        {
+          "date": "2025-03-16T01:23:50.901Z",
+          "content": "No summary provided",
+          "generatedBy": "AI"
+        },
+        {
+          "date": "2025-03-16T01:23:17.386Z",
+          "content": "No summary provided",
+          "generatedBy": "AI"
+        },
+        {
+          "date": "2025-03-16T00:58:43.117Z",
+          "content": "No summary provided",
+          "generatedBy": "AI"
+        }
+      ],
       "createdAt": "2025-03-15T23:22:52.990Z",
-      "updatedAt": "2025-03-16T00:28:21.700Z"
+      "updatedAt": "2025-03-16T01:27:50.161Z"
     },
     {
       "groupId": "96b605fe-774e-4c46-a78a-28f62f83a7ae",
@@ -676,6 +763,174 @@
       "updatedAt": "2025-03-16T00:08:04.755Z"
     }
   ],
-  "standups": [],
-  "blockers": []
+  "standups": [
+    {
+      "logId": "f4a8e72b-d335-4e64-9286-b601b4397e8a",
+      "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "userName": "b",
+      "groupId": "a",
+      "groupName": "a",
+      "workDone": "s",
+      "workNext": "Status not specified",
+      "blockers": [],
+      "createdAt": "2025-03-16T00:55:33.243Z",
+      "updatedAt": "2025-03-16T00:55:33.243Z"
+    },
+    {
+      "logId": "5502a139-dc68-40b9-a609-2dc7e01882a2",
+      "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "userName": "b",
+      "groupId": "a",
+      "groupName": "a",
+      "workDone": "asd",
+      "workNext": "Status not specified",
+      "blockers": [],
+      "createdAt": "2025-03-16T00:55:37.497Z",
+      "updatedAt": "2025-03-16T00:55:37.497Z"
+    },
+    {
+      "logId": "a05e98d0-666e-4f74-9184-6f5e6b6cd982",
+      "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "userName": "b",
+      "groupId": "a",
+      "groupName": "a",
+      "workDone": "a",
+      "workNext": "Status not specified",
+      "blockers": [],
+      "createdAt": "2025-03-16T00:58:25.927Z",
+      "updatedAt": "2025-03-16T00:58:25.927Z"
+    },
+    {
+      "logId": "24798102-16f3-4f69-b729-ffaabbee1303",
+      "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "userName": "b",
+      "groupId": "a",
+      "groupName": "a",
+      "workDone": "asd",
+      "workNext": "- *Planning next steps.*",
+      "blockers": [
+        "[BLOCKERS]"
+      ],
+      "createdAt": "2025-03-16T00:58:43.117Z",
+      "updatedAt": "2025-03-16T00:58:43.117Z"
+    },
+    {
+      "logId": "a8e7ab7f-09d4-4062-9191-398adbcd3f02",
+      "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "userName": "b",
+      "groupId": "a",
+      "groupName": "a",
+      "workDone": "sadasd",
+      "workNext": "- *Planning next steps.*",
+      "blockers": [
+        "*Description: [BLOCKERS]* (Priority: Medium)"
+      ],
+      "createdAt": "2025-03-16T01:23:17.386Z",
+      "updatedAt": "2025-03-16T01:23:17.386Z"
+    },
+    {
+      "logId": "2d98d933-f861-47cb-84ab-023da6e577fe",
+      "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "userName": "b",
+      "groupId": "a",
+      "groupName": "a",
+      "workDone": "das",
+      "workNext": "- *Planning next steps.*",
+      "blockers": [
+        "*Medium priority blocker: [BLOCKERS]*"
+      ],
+      "createdAt": "2025-03-16T01:23:50.901Z",
+      "updatedAt": "2025-03-16T01:23:50.901Z"
+    },
+    {
+      "logId": "70afc271-138a-469b-a781-88a34615c5fe",
+      "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "userName": "b",
+      "groupId": "a",
+      "groupName": "a",
+      "workDone": "I finished user log in",
+      "workNext": "- Planning next steps.",
+      "blockers": [
+        "Medium priority blocker. (Blocked by: [BLOCKERS])"
+      ],
+      "createdAt": "2025-03-16T01:25:04.650Z",
+      "updatedAt": "2025-03-16T01:25:04.650Z"
+    },
+    {
+      "logId": "625a7169-f25e-4012-a327-587eb4c44a20",
+      "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "userName": "b",
+      "groupId": "a",
+      "groupName": "a",
+      "workDone": "What have you done?\nUser info\nWhat are you doing?\nget user data\nAny blockers?\nNo",
+      "workNext": "- Planning next steps.",
+      "blockers": [
+        "*Medium priority blocker.* (Blocked by: [BLOCKERS])"
+      ],
+      "createdAt": "2025-03-16T01:25:42.400Z",
+      "updatedAt": "2025-03-16T01:25:42.400Z"
+    }
+  ],
+  "blockers": [
+    {
+      "blockerId": "3228820e-a7cb-4c5d-856c-921a5c4636f4",
+      "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "userName": "b",
+      "groupId": "a",
+      "groupName": "a",
+      "description": "[BLOCKERS]",
+      "priority": "medium",
+      "status": "active",
+      "createdAt": "2025-03-16T00:58:43.117Z",
+      "updatedAt": "2025-03-16T00:58:43.117Z"
+    },
+    {
+      "blockerId": "c564f803-e02e-42dc-8160-6e9b0b8b415c",
+      "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "userName": "b",
+      "groupId": "a",
+      "groupName": "a",
+      "description": "*Description: [BLOCKERS]* (Priority: Medium)",
+      "priority": "medium",
+      "status": "active",
+      "createdAt": "2025-03-16T01:23:17.386Z",
+      "updatedAt": "2025-03-16T01:23:17.386Z"
+    },
+    {
+      "blockerId": "f3cb07d5-7cce-4c8e-8234-1945c46bb39e",
+      "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "userName": "b",
+      "groupId": "a",
+      "groupName": "a",
+      "description": "*Medium priority blocker: [BLOCKERS]*",
+      "priority": "medium",
+      "status": "active",
+      "createdAt": "2025-03-16T01:23:50.901Z",
+      "updatedAt": "2025-03-16T01:23:50.901Z"
+    },
+    {
+      "blockerId": "b211cd89-f50f-4caf-8d37-7e0f0115f246",
+      "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "userName": "b",
+      "groupId": "a",
+      "groupName": "a",
+      "description": "Medium priority blocker. (Blocked by: [BLOCKERS])",
+      "priority": "medium",
+      "status": "active",
+      "createdAt": "2025-03-16T01:25:04.650Z",
+      "updatedAt": "2025-03-16T01:25:04.650Z"
+    },
+    {
+      "blockerId": "2b37cf60-8277-46c7-8f4a-641ca764f749",
+      "userId": "eca65ddd-261f-41d0-9a63-83a62a5e3878",
+      "userName": "b",
+      "groupId": "a",
+      "groupName": "a",
+      "description": "*Medium priority blocker.* (Blocked by: [BLOCKERS])",
+      "priority": "medium",
+      "status": "active",
+      "createdAt": "2025-03-16T01:25:42.400Z",
+      "updatedAt": "2025-03-16T01:25:42.400Z"
+    }
+  ]
 }

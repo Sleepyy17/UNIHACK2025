@@ -17,7 +17,7 @@ export const chatWithAI = async (req: Request, res: Response) => {
         // Get user and group info
         const { users, groups, standups, blockers } = getData();
         const user = users.find(u => u.userId === userId);
-        const group = groups.find(g => g.groupId === groupId);
+        const group = groups.find(g => g.groupId === groupId || g.groupName === groupId);
 
         if (!user || !group) {
             return res.status(404).json({ error: 'User or group not found' });

@@ -49,3 +49,23 @@ export async function getTeamInfo(user_id, groupId) {
         return data;
     }
 }
+
+export async function getAiChat(user_id, groupId, standup) {
+    const requestBody = { 
+        "groupId": groupId,
+        "message": standup,
+    };
+    console.log(user_id)
+    const response = await fetch(`${LOCAL_SERVER}api/chat/standup`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-User-Id': user_id.token,
+        },
+        body: JSON.stringify(requestBody),
+    });
+    const data = await response.json();
+    if (data) {
+        return data;
+    }
+}

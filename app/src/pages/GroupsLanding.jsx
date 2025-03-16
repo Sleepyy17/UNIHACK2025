@@ -271,7 +271,6 @@ function GroupsLanding (token) {
             </Box>
         )
     }
-
     return (
         <>
             <Box style={contentContainer}>
