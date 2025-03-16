@@ -184,3 +184,137 @@ div::-webkit-scrollbar-thumb {
     border-radius: 100px;
   }
   
+  /* Base container styles */
+.standup-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur();
+
+
+  background-color: #ffcc99;
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+}
+
+/* Time input section */
+.time-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.time-label {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 16px;
+}
+
+.time-input {
+  border: 2px solid #000;
+  border-radius: 8px;
+  font-size: 32px;
+  padding: 4px 16px;
+  width: 120px;
+  text-align: center;
+}
+
+/* AM/PM toggle button group */
+.ampm-toggle {
+  margin-left: 16px;
+  display: flex;
+}
+
+.ampm-toggle button {
+  border: 2px solid #000;
+  padding: 4px 16px;
+  font-size: 18px;
+  background-color: #e0e0e0;
+  color: #909090;
+}
+
+.ampm-toggle button.active {
+  background-color: white;
+  color: black;
+}
+
+.ampm-toggle button:first-child {
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+}
+
+.ampm-toggle button:last-child {
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+  border-left: none;
+}
+
+/* Days section */
+.days-container {
+  background-color: #ffeedd;
+  border-radius: 24px;
+  padding: 16px 24px;
+  margin-bottom: 24px;
+}
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.day-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.day-name {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.day-checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  padding: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.day-checkbox:checked {
+  background-color: #77dd77;
+}
+
+/* Template section */
+.template-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.template-content {
+  background-color: #ffeedd;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.template-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.template-item {
+  margin-bottom: 8px;
+  font-size: 18px;
+}

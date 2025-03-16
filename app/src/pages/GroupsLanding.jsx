@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button, TextField, Typography, Grid, Box, Modal, Alert, AlertTitle, colors, getAppBarUtilityClass } from '@mui/material'; 
 import { Padding } from '@mui/icons-material';
 import AddIcon from '@mui/icons-material/Add';
-import MenuIcon from '@mui/icons-material/Menu';
+import TuneIcon from '@mui/icons-material/Tune';
 
 import './group.css'
 import { getTeamInfo, getUserInfo } from '../helpers/helpers';
@@ -14,11 +14,102 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+
+const StandupTemplate = () => {
+  const [time, setTime] = React.useState('11:00');
+  const [amPm, setAmPm] = React.useState('AM');
+  const [selectedDays, setSelectedDays] = React.useState({
+    Mon: false,
+    Tue: true,
+    Wed: false,
+    Thu: true,
+    Fri: false,
+    Sat: false,
+    Sun: false
+  });
+
+  const handleTimeChange = (e) => {
+    setTime(e.target.value);
+  };
+
+  const toggleAmPm = (value) => {
+    setAmPm(value);
+  };
+
+  const toggleDay = (day) => {
+    setSelectedDays({
+      ...selectedDays,
+      [day]: !selectedDays[day]
+    });
+  };
+
+  const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+  return (
+    <div className="standup-container">
+      <div className="time-section">
+        <span className="time-label">Time:</span>
+        <input
+          type="text"
+          value={time}
+          onChange={handleTimeChange}
+          className="time-input"
+        />
+        <div className="ampm-toggle">
+          <button
+            className={amPm === 'AM' ? 'active' : ''}
+            onClick={() => toggleAmPm('AM')}
+          >
+            AM
+          </button>
+          <button
+            className={amPm === 'PM' ? 'active' : ''}
+            onClick={() => toggleAmPm('PM')}
+          >
+            PM
+          </button>
+        </div>
+      </div>
+
+      <div className="days-container">
+        <div className="days-grid">
+          {days.map((day) => (
+            <div key={day} className="day-column">
+              <div className="day-name">{day}</div>
+              <input
+                type="checkbox"
+                checked={selectedDays[day]}
+                onChange={() => toggleDay(day)}
+                className="day-checkbox"
+                aria-label={`Select ${day}`}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <h2 className="template-title">Standup Template:</h2>
+      <div className="template-content">
+        <ul className="template-list">
+          <li className="template-item">What have you done?</li>
+          <li className="template-item">What are you doing?</li>
+          <li className="template-item">Any blockers?</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
 function GroupsLanding (token) {
     const navigate = useNavigate();
     const { TeamName } = useParams(); 
     const [groupData, setGroupData] = React.useState({});
     const [userData, setUserData] = React.useState({});
+    const [open, setOpen] = React.useState(false);
+
+    const toggle = (opens) => {
+        setOpen(opens);
+    }
 
     const fetchGroupData = async () => {
         try {
@@ -278,7 +369,13 @@ function GroupsLanding (token) {
     }
     return (
         <>
-            <MenuIcon sx={{ position: 'absolute', top: '20px', right: '40px', fontSize: '40px', color: 'whitesmoke', cursor: "pointer" }} />
+            <TuneIcon sx={{ position: 'absolute', top: '20px', right: '40px', fontSize: '40px', color: 'whitesmoke', cursor: "pointer" }
+            } onClick={() => toggle(!open)}
+                    />
+
+                {open ? <StandupTemplate /> : <></>}
+
+
             <Box style={contentContainer}>
                 <Box sx={contentHeader}>
                     <Typography sx={headerText}>{groupData.name}</Typography>
