@@ -60,7 +60,10 @@ Follow these rules:
 8. Generate the new working status of the current user basically on what they are working on.
     - This should be less than 8 words.
 
-9. Finally present the output neatly with the headers.
+9. Generate a message to send back to the User, with a positive message and if their blockers
+    related to anyone let them know their name. 
+
+10. Finally present the output neatly with the headers.
 
 [SUMMARY]
 - The summary from step 6
@@ -69,7 +72,10 @@ Follow these rules:
 - A list of blockers from step 7
 
 [NEWSTATUS]
-- The new working status from step 8`;
+- The new working status from step 8
+
+[USERRESPONSE]
+- The message from step 9 make sure its positive and if blockers are related to anyone let them know their name.`;
 
 interface ChatResponse {
     summary: string;
@@ -79,6 +85,7 @@ interface ChatResponse {
         blockingUser: string | null;
     }>;
     newStatus: string;
+    userResponse: string;
 }
 
 export async function processStandupMessage(
@@ -131,6 +138,7 @@ function parseAIResponse(response: string): ChatResponse {
     let summary = '';
     let blockers: Array<{summary: string; userName: string; blockingUser: string | null}> = [];
     let newStatus = '';
+    let userResponse = '';
 
     for (const section of sections) {
         if (section.startsWith('[SUMMARY]')) {
@@ -149,13 +157,16 @@ function parseAIResponse(response: string): ChatResponse {
                 });
         } else if (section.startsWith('[NEWSTATUS]')) {
             newStatus = section.replace('[NEWSTATUS]\n', '').trim();
+        } else if (section.startsWith('[USERRESPONSE]')) {
+            userResponse = section.replace('[USERRESPONSE]\n', '').trim();
         }
     }
 
     return {
         summary: summary || 'No summary provided',
         blockers: blockers.length ? blockers : [],
-        newStatus: newStatus || 'Status not specified'
+        newStatus: newStatus || 'Status not specified',
+        userResponse: userResponse || 'No response provided'
     };
 }
 

@@ -866,6 +866,9 @@ paths:
                     $ref: '#/components/schemas/Standup'
                   groupInfo:
                     $ref: '#/components/schemas/Group'
+                  userResponse:
+                    type: string
+                    description: AI-generated personalized response to the user
         '400':
           description: Invalid input
           content:
