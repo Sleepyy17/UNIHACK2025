@@ -14,7 +14,6 @@ declare global {
 export const auth = (req: Request, res: Response, next: NextFunction) => {
     try {
         const userId = req.header('X-User-Id');
-        
         if (!userId) {
             throw new Error();
         }

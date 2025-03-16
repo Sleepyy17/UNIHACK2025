@@ -106,7 +106,7 @@ export const chatWithAI = async (req: Request, res: Response) => {
             blockers: aiResponse.blockers,
             standup: newStandup,
             groupInfo: group, // Include updated group info in response
-            userResponse: aiResponse.userResponse // Added user response to API response
+            userResponse: aiResponse.userResponse
         });
     } catch (err) {
         console.error('Error in AI chat:', err);

@@ -27,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-export const API_URL = 'http://localhost:5005';
+export const API_URL = 'http://localhost:3000';
 
 function App() {
   return (

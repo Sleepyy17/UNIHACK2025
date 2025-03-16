@@ -5,7 +5,11 @@ info:
   version: 1.0.0
 
 servers:
+<<<<<<< HEAD
   - url: http://localhost:5005
+=======
+  - url: http://localhost:5050
+>>>>>>> faad738 (asdasd)
     description: Development server
 
 components:
