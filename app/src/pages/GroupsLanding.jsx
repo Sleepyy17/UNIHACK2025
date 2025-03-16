@@ -278,7 +278,7 @@ function GroupsLanding (token) {
     }
     return (
         <>
-            <MenuIcon sx={{ position: 'absolute', top: '20px', right: '40px', fontSize: '40px', color: 'whitesmoke' }} />
+            <MenuIcon sx={{ position: 'absolute', top: '20px', right: '40px', fontSize: '40px', color: 'whitesmoke', cursor: "pointer" }} />
             <Box style={contentContainer}>
                 <Box sx={contentHeader}>
                     <Typography sx={headerText}>{groupData.name}</Typography>
