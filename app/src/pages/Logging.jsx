@@ -46,7 +46,7 @@ function LoggingPage (token) {
         <ArrowBackIosNewIcon sx={{position: 'absolute', margin: '70px', marginTop: '150px', cursor: 'pointer'}} onClick={() => {navigate(`/Teams/${TeamName}`)}}/>
            <Box className="container">
            <Typography variant="h3" align="center" sx={{fontFamily: 'Heebo', fontWeight: 'bold', color: '#3f51b5',}}>
-                TeamName Standup
+                {TeamName} Standup
             </Typography>  
             <Box className="questions">
             {give_questions(["What have you done?", "What are you doing?", "Any blockers?"])}

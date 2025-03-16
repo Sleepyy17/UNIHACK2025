@@ -82,7 +82,7 @@ function GroupsLanding (token) {
     const teamContainer = {
         display: 'flex',
         flexDirection: 'column',
-        backgroundColor: 'rgb(255, 128, 0)',
+        backgroundColor: 'rgba(255, 128, 0, 0.3)',
         paddingTop: '10px',
         borderRadius: '50px',
         padding: '20px 20px',
@@ -100,7 +100,7 @@ function GroupsLanding (token) {
         margin: '0px',
         padding: '5px',
         paddingLeft: '10px',
-        color: 'rgb(25, 12, 0)',
+        color: 'rgb(0, 0, 0)',
         fontWeight: 'bold',
         
     }
@@ -320,10 +320,10 @@ function GroupsLanding (token) {
                     <Box sx={blockerBoardContainer}>
                         <Box sx={bb}>
                             <Box onClick={() => {navigate(`/Teams/${groupData.groupName}/form`)}}>
-                                <div class="card">
-                                <AddIcon sx={{fontSize: '50px', color: 'rgb(25, 12, 0)'}}></AddIcon>
+                                <div class="card" style={{backgroundColor: 'display: flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: '10px', padding: '20px', borderRadius: '20px', height: '50px', width: '100%', backgroundColor: 'rgba(255, 255, 255, 0.46)'}}>
+                                <AddIcon sx={{fontSize: '50px', color: 'rgb(255, 255, 255)'}}></AddIcon>
                                 <div class="textBox">
-                                    <p class="p">Update your Standup here !</p>
+                                    <p class="p" style={{fontSize: '15px', fontWeight: '500'}}>Update your Standup here !</p>
                                 <div>
                 </div></div></div> 
                             </Box>
